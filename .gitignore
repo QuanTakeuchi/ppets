@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Test/tooling caches
+.pytest_cache/
+
+# Editor/IDE
+.idea/
+
+# Word lock files
+~$*.doc*
+
+# Video walkthrough transcripts (not part of the repo)
+video1_transcript.md
+video2_transcript.md
