@@ -4,6 +4,10 @@ __pycache__/
 
 # Test/tooling caches
 .pytest_cache/
+.coverage
+
+# Generated experiment output (regenerate with experiments/*.py)
+experiments/output/
 
 # Editor/IDE
 .idea/

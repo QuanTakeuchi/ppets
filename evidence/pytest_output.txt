@@ -1,0 +1,49 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- C:\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core
+plugins: anyio-4.14.2
+collecting ... collected 40 items
+
+tests/test_config.py::test_defaults_are_valid PASSED                     [  2%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides0] PASSED [  5%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides1] PASSED [  7%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides2] PASSED [ 10%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides3] PASSED [ 12%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides4] PASSED [ 15%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides5] PASSED [ 17%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides6] PASSED [ 20%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides7] PASSED [ 22%]
+tests/test_config.py::test_rejects_out_of_range_fields[overrides8] PASSED [ 25%]
+tests/test_config.py::test_rejects_combined_density_over_one PASSED      [ 27%]
+tests/test_config.py::test_error_message_lists_every_offending_field PASSED [ 30%]
+tests/test_config.py::test_seed_reproducibility_across_instances PASSED  [ 32%]
+tests/test_config.py::test_to_dict_from_dict_round_trip PASSED           [ 35%]
+tests/test_controller.py::test_start_creates_engine_and_starts_the_timer PASSED [ 37%]
+tests/test_controller.py::test_pause_and_resume_toggle_the_timer_only PASSED [ 40%]
+tests/test_controller.py::test_step_once_advances_one_generation_without_running PASSED [ 42%]
+tests/test_controller.py::test_reset_drops_the_engine_and_stops_the_timer PASSED [ 45%]
+tests/test_controller.py::test_auto_pauses_and_emits_on_extinction PASSED [ 47%]
+tests/test_engine.py::TestPreyRules::test_prey_survives_below_death_threshold PASSED [ 50%]
+tests/test_engine.py::TestPreyRules::test_prey_dies_at_death_threshold PASSED [ 52%]
+tests/test_engine.py::TestPreyRules::test_prey_reproduces_when_rate_is_certain PASSED [ 55%]
+tests/test_engine.py::TestPredatorRules::test_predator_eats_adjacent_prey_and_resets_hunger PASSED [ 57%]
+tests/test_engine.py::TestPredatorRules::test_predator_starves_past_the_starvation_rate PASSED [ 60%]
+tests/test_engine.py::TestPredatorRules::test_two_predators_cannot_eat_the_same_prey PASSED [ 62%]
+tests/test_engine.py::TestToroidalBoundary::test_wraps_around_when_toroidal PASSED [ 65%]
+tests/test_engine.py::TestToroidalBoundary::test_does_not_wrap_when_fixed_boundary PASSED [ 67%]
+tests/test_engine.py::TestExtinctionAndReproducibility::test_is_extinct_true_when_either_species_hits_zero PASSED [ 70%]
+tests/test_engine.py::TestExtinctionAndReproducibility::test_same_seed_produces_identical_trajectories PASSED [ 72%]
+tests/test_heatmap_view.py::test_set_heatmap_renders_without_error PASSED [ 75%]
+tests/test_heatmap_view.py::test_clear_after_set_heatmap PASSED          [ 77%]
+tests/test_threshold_analyzer.py::test_param_range_values_inclusive PASSED [ 80%]
+tests/test_threshold_analyzer.py::test_param_range_single_value_when_start_equals_stop PASSED [ 82%]
+tests/test_threshold_analyzer.py::test_param_range_rejects_non_positive_step PASSED [ 85%]
+tests/test_threshold_analyzer.py::test_run_sweep_produces_full_heatmap_grid PASSED [ 87%]
+tests/test_threshold_analyzer.py::test_run_sweep_reports_progress PASSED [ 90%]
+tests/test_threshold_analyzer.py::test_cancel_mid_sweep_yields_partial_heatmap PASSED [ 92%]
+tests/test_threshold_analyzer.py::test_large_sweep_triggers_warning_callback PASSED [ 95%]
+tests/test_threshold_analyzer.py::test_small_sweep_does_not_trigger_warning_callback PASSED [ 97%]
+tests/test_threshold_analyzer.py::test_replicates_must_be_positive PASSED [100%]
+
+============================= 40 passed in 0.89s ==============================

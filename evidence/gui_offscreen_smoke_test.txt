@@ -1,0 +1,2 @@
+MainWindow and HeatmapView constructed successfully (offscreen platform, no visible display).
+MainWindow title: PPETS - Predator-Prey Extinction Threshold Simulator
