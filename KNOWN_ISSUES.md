@@ -1,0 +1,10 @@
+# Known Issues
+
+| ID | Issue | Severity | Status |
+| --- | --- | --- | --- |
+| KI-01 | Three deliverable `.docx` files (`PPETS_Final_Project_Report.docx`, two "Simulating Extinction..." HLD/SRS drafts) sit untracked in the code repo root instead of the course documents folder. Risk of a large binary report draft getting swept into a code commit, or of being silently lost (not git-tracked anywhere, no backup). | Medium | Open — flagged, not resolved this checkpoint; relocating files outside this task's scope needs the student's own sign-off. See RISK_LOG.md RL-01. |
+| KI-02 | `ThresholdAnalyzer.run_sweep()` is sequential, not the LLD §4.1 `multiprocessing.Pool`-parallelized version. Fine for the grid sizes used in tests so far; a realistic UC03 sweep (e.g. `experiments/sweep.py`'s 20x10x3 = 600 full engine runs) will be slow single-threaded. | Low (by design this sprint) | Open — planned next sprint. See RISK_LOG.md RL-02. |
+| KI-03 | `HeatmapView` is not wired into `MainWindow` — there is no UI control that triggers `ThresholdAnalyzer.run_sweep()` yet, so UC03 is not end-to-end testable through the GUI. | Medium | Open — next sprint. |
+| KI-04 | `PopulationStats.extinction_risk` is still the placeholder heuristic documented in `ppets/README.md`, not a real `ThresholdAnalyzer`-derived metric, even though `ThresholdAnalyzer` now exists. | Low | Open — the two haven't been wired together yet. |
+| KI-05 | `experiments/sweep.py` duplicates sweep logic that now also exists in `ThresholdAnalyzer._run_cell()`. Kept separate deliberately this checkpoint — the report script needs curve-tracing output `ThresholdAnalyzer` doesn't produce — but the duplication should collapse once `ThresholdAnalyzer` grows a comparable tracing option. | Low | Open, tracked. |
+| KI-06 | This checkpoint's GUI smoke test only verifies widget construction under `QT_QPA_PLATFORM=offscreen` (`evidence/gui_offscreen_smoke_test.txt`) — it does not exercise an actual on-screen run or user interaction, because the dev environment used has no attached display. | Low | Accepted limitation of this checkpoint's environment. |
