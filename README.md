@@ -13,7 +13,7 @@ requirement set frozen at Hard Stop 2 (FR01–FR16 / NFR01–NFR12).
 pip install -r requirements.txt
 python main.py          # headless CSV trace of the engine
 python run_ui.py         # PyQt6 GUI: configure, watch, pause/step/reset
-pytest -v                 # 40 tests
+pytest -v                 # 40 passed + 8 xfailed (known-defect reproducers)
 ```
 
 Reproduce this checkpoint's coverage and smoke-test evidence (see `evidence/`):
@@ -78,8 +78,24 @@ run_ui.py        GUI entry point
 - [RISK_LOG.md](RISK_LOG.md)
 - [SPRINT_REFLECTION.md](SPRINT_REFLECTION.md) — Hard Stop 3
 - [AI_USAGE_LOG.md](AI_USAGE_LOG.md)
+- [ENVIRONMENT.md](ENVIRONMENT.md) — what the evidence ran on, what is verified vs partial (RU-06)
+- [VALIDATION_MEMO.md](VALIDATION_MEMO.md) — technical memo interpreting the RU-06 early evidence
+- [validation/README.md](validation/README.md) — the repeatable validation suite
+- `requirements-lock.txt` — exact versions behind the evidence
 - [ppets/README.md](ppets/README.md) — the Engine/Controller/UI
   implementation notes from the previous pass (design deviations, etc.)
+
+## Current status (RU-06, 2026-10-10)
+
+| Works (checked, repeatable) | Partial / not yet |
+| --- | --- |
+| Engine, seeded determinism, CSV trace (`main.py`) | No "Run Sweep" control in the GUI (KI-03) |
+| GUI run loop: config -> controller -> grid/chart/stats | `HeatmapView` axes show indices, not values (DEF-05) |
+| `ThresholdAnalyzer.run_sweep()` (sequential) + `HeatmapView` render | Sweep is serial: ~12 min for the 600-run baseline (RL-02) |
+| 12-check validation suite, clean-venv reproduction | `extinction_risk` has no predictive skill (DEF-10) |
+| 8 documented defects with executable reproducers | 3-replicate cells are noise-limited (RL-06) |
+
+Run `python validation/run_validation.py` for the full report; interpretation in `VALIDATION_MEMO.md`.
 
 ## Tests
 
@@ -90,4 +106,6 @@ tests/
   test_controller.py          SimulationController state machine
   test_threshold_analyzer.py   ThresholdAnalyzer sweep/cancel/warning (new this checkpoint)
   test_heatmap_view.py         HeatmapView render smoke test (new this checkpoint)
+  test_known_defects.py        8 strict-xfail reproducers for defects found at RU-06
+validation/                    repeatable early-validation scripts (RU-06) -> evidence/validation/
 ```

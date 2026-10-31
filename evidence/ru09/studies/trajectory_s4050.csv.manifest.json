@@ -1,0 +1,49 @@
+{
+  "output": "trajectory_s4050.csv",
+  "output_sha256": "d491dc8da2f9cfe7",
+  "script": "validation/ru09_studies.py",
+  "command": "python validation/ru09_studies.py trajectory",
+  "generated_at": "2026-10-31 14:15:11 -0400",
+  "wall_seconds": 57.6,
+  "code": {
+    "git_commit": "19b0b7e",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "0c61dd14fdaad6a8"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "master_seed": 4050,
+    "sizes": [
+      20,
+      30,
+      50,
+      75
+    ],
+    "densities": [
+      0.2,
+      0.25,
+      0.3
+    ],
+    "reps": 30,
+    "generations": 70,
+    "protocol": {
+      "width": 30,
+      "height": 30,
+      "prey_density": 0.3,
+      "prey_repro_rate": 0.2,
+      "predator_repro_rate": 0.15,
+      "prey_death_threshold": 3,
+      "starvation_rate": 3,
+      "toroidal": true
+    },
+    "workers": 15,
+    "runs": 360,
+    "question": "Q4"
+  }
+}

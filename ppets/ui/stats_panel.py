@@ -2,6 +2,9 @@
 StatsPanel — LLD §2.4 (PopulationStats) rendered live, per UC02/TC4
 step 1: "generation count, prey count, predator count ... update each
 generation".
+
+The former "Extinction risk" row was removed at Hard Stop 4 (DEF-10): the
+heuristic behind it had no predictive skill.
 """
 
 from __future__ import annotations
@@ -20,22 +23,18 @@ class StatsPanel(QWidget):
         self.generation_label = QLabel("0")
         self.prey_label = QLabel("0")
         self.predator_label = QLabel("0")
-        self.extinction_risk_label = QLabel("0.0")
 
         layout = QFormLayout(self)
         layout.addRow("Generation", self.generation_label)
         layout.addRow("Prey count", self.prey_label)
         layout.addRow("Predator count", self.predator_label)
-        layout.addRow("Extinction risk", self.extinction_risk_label)
 
     def update_stats(self, stats: PopulationStats) -> None:
         self.generation_label.setText(str(stats.generation))
         self.prey_label.setText(str(stats.prey_count))
         self.predator_label.setText(str(stats.predator_count))
-        self.extinction_risk_label.setText(f"{stats.extinction_risk:.4f}")
 
     def clear(self) -> None:
         self.generation_label.setText("0")
         self.prey_label.setText("0")
         self.predator_label.setText("0")
-        self.extinction_risk_label.setText("0.0")

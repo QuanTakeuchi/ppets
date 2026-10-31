@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "generated_at": "2026-10-10 14:03:51 -0400",
+    "git_commit": "19b0b7e",
+    "git_tracked_tree_dirty": false,
+    "python": "3.14.4",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "all_ok": true,
+  "steps": [
+    {
+      "step": "create venv",
+      "ok": true,
+      "seconds": 10.1
+    },
+    {
+      "step": "pip install -r requirements.txt",
+      "ok": true,
+      "seconds": 39.1,
+      "detail": ""
+    },
+    {
+      "step": "pytest (fresh venv)",
+      "ok": true,
+      "seconds": 3.2,
+      "detail": "40 passed, 8 xfailed in 2.10s"
+    },
+    {
+      "step": "main.py output == evidence/main_smoke_test.txt",
+      "ok": true,
+      "detail": "52 lines"
+    },
+    {
+      "step": "determinism fingerprint, fresh venv == host interpreter",
+      "ok": true,
+      "detail": "4678dcd9cd116a1b vs 4678dcd9cd116a1b"
+    }
+  ],
+  "fresh_venv_pip_freeze": [
+    "colorama==0.4.6",
+    "coverage==7.16.2",
+    "iniconfig==2.3.1",
+    "numpy==2.5.3",
+    "packaging==26.3",
+    "pluggy==1.6.0",
+    "Pygments==2.21.0",
+    "PyQt6==6.11.0",
+    "PyQt6-Qt6==6.11.2",
+    "PyQt6_sip==13.13.0",
+    "pyqtgraph==0.14.0",
+    "pytest==9.1.1"
+  ]
+}

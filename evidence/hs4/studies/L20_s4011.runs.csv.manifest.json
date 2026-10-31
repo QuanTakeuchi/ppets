@@ -1,0 +1,49 @@
+{
+  "output": "L20_s4011.runs.csv",
+  "output_sha256": "a9541e67215b3625",
+  "script": "validation/hs4_studies.py",
+  "command": "python validation/hs4_studies.py ",
+  "generated_at": "2026-10-24 10:42:58 -0400",
+  "wall_seconds": 27.6,
+  "code": {
+    "git_commit": "19b0b7e",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "0c61dd14fdaad6a8"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "name": "L20_s4011",
+    "seed": 4011,
+    "size": 20,
+    "repro": 0.15,
+    "max_gen": 150,
+    "density": {
+      "start": 0.06,
+      "stop": 0.4,
+      "step": 0.02
+    },
+    "b_axis": null,
+    "reps": 30,
+    "experiment": "E5",
+    "base_config": {
+      "width": 20,
+      "height": 20,
+      "toroidal": true,
+      "prey_density": 0.3,
+      "predator_density": 0.1,
+      "prey_repro_rate": 0.2,
+      "predator_repro_rate": 0.15,
+      "prey_death_threshold": 3,
+      "starvation_rate": 3,
+      "seed": 4011
+    },
+    "workers": 15,
+    "runs": 540
+  }
+}

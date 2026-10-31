@@ -1,0 +1,6 @@
+workers,seconds,speedup,identical_results
+1,73.89,1.0,True
+2,45.5,1.62,True
+4,25.11,2.94,True
+8,15.55,4.75,True
+16,13.62,5.42,True

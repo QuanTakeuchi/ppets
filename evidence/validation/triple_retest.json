@@ -1,0 +1,94 @@
+{
+  "provenance": {
+    "generated_at": "2026-10-10 14:16:30 -0400",
+    "git_commit": "19b0b7e",
+    "git_tracked_tree_dirty": false,
+    "python": "3.14.4",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "cells": [
+    {
+      "predator_density": 0.02,
+      "predator_repro_rate": 0.02,
+      "p_hat_100": 0.0,
+      "triples": 33,
+      "triple_sd": 0.0,
+      "triple_min": 0.0,
+      "triple_max": 0.0,
+      "triples_off_by_more_than_0_25": 0
+    },
+    {
+      "predator_density": 0.12,
+      "predator_repro_rate": 0.06,
+      "p_hat_100": 0.0,
+      "triples": 33,
+      "triple_sd": 0.0,
+      "triple_min": 0.0,
+      "triple_max": 0.0,
+      "triples_off_by_more_than_0_25": 0
+    },
+    {
+      "predator_density": 0.16,
+      "predator_repro_rate": 0.14,
+      "p_hat_100": 0.02,
+      "triples": 33,
+      "triple_sd": 0.08,
+      "triple_min": 0.0,
+      "triple_max": 0.33,
+      "triples_off_by_more_than_0_25": 2
+    },
+    {
+      "predator_density": 0.18,
+      "predator_repro_rate": 0.2,
+      "p_hat_100": 0.17,
+      "triples": 33,
+      "triple_sd": 0.234,
+      "triple_min": 0.0,
+      "triple_max": 0.67,
+      "triples_off_by_more_than_0_25": 4
+    },
+    {
+      "predator_density": 0.22,
+      "predator_repro_rate": 0.2,
+      "p_hat_100": 0.36,
+      "triples": 33,
+      "triple_sd": 0.259,
+      "triple_min": 0.0,
+      "triple_max": 1.0,
+      "triples_off_by_more_than_0_25": 14
+    },
+    {
+      "predator_density": 0.24,
+      "predator_repro_rate": 0.12,
+      "p_hat_100": 0.44,
+      "triples": 33,
+      "triple_sd": 0.29,
+      "triple_min": 0.0,
+      "triple_max": 1.0,
+      "triples_off_by_more_than_0_25": 9
+    },
+    {
+      "predator_density": 0.3,
+      "predator_repro_rate": 0.1,
+      "p_hat_100": 0.78,
+      "triples": 33,
+      "triple_sd": 0.214,
+      "triple_min": 0.33,
+      "triple_max": 1.0,
+      "triples_off_by_more_than_0_25": 3
+    },
+    {
+      "predator_density": 0.34,
+      "predator_repro_rate": 0.16,
+      "p_hat_100": 0.93,
+      "triples": 33,
+      "triple_sd": 0.136,
+      "triple_min": 0.67,
+      "triple_max": 1.0,
+      "triples_off_by_more_than_0_25": 7
+    }
+  ],
+  "triples_total": 264,
+  "triples_off_by_more_than_0_25": 39,
+  "fraction_off": 0.148
+}

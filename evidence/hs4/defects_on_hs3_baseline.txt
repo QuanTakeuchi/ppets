@@ -1,0 +1,43 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt
+plugins: anyio-4.14.2
+collected 8 items
+
+tests\test_known_defects.py FFFFFFFF                                     [100%]
+
+================================== FAILURES ===================================
+E   assert False
+     +  where False = <built-in function isnan>(0.0)
+     +    where <built-in function isnan> = math.isnan
+C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt\tests\test_known_defects.py:55: assert False
+E   AssertionError: assert False is True
+     +  where False = HeatmapData(extinction_prob=[[0.0, 0.0], [0.0, 0.0], [0.0, 0.0]], prey_extinction_prob=[[0.0, 0.0], [0.0, 0.0], [0.0, ...ensity', param_b_name='predator_repro_rate', param_a_values=[0.1, 0.2, 0.3], param_b_values=[0.1, 0.2], complete=False).complete
+C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt\tests\test_known_defects.py:63: AssertionError: assert False is True
+E   Failed: DID NOT RAISE ValueError
+C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt\tests\test_known_defects.py:73: Failed: DID NOT RAISE ValueError
+E   assert [447952513, 1893716539, 946096397, 145037888, 950993050, 249273428] != [447952513, 1893716539, 946096397, 145037888, 950993050, 249273428]
+     +  where [447952513, 1893716539, 946096397, 145037888, 950993050, 249273428] = <function test_def04_master_seed_changes_replicate_seeds.<locals>.seeds_used at 0x00000260FFFAFE20>(1)
+     +  and   [447952513, 1893716539, 946096397, 145037888, 950993050, 249273428] = <function test_def04_master_seed_changes_replicate_seeds.<locals>.seeds_used at 0x00000260FFFAFE20>(999)
+C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt\tests\test_known_defects.py:97: assert [447952513, 1893716539, 946096397, 145037888, 950993050, 249273428] != [447952513, 1893716539, 946096397, 145037888, 950993050, 249273428]
+E   AssertionError: image spans 0..2.0 (indices), not 0.05..0.10
+    assert 2.0 <= (0.15 + 1e-09)
+C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt\tests\test_known_defects.py:110: AssertionError: image spans 0..2.0 (indices), not 0.05..0.10
+E   Failed: DID NOT RAISE ValueError
+C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt\tests\test_known_defects.py:125: Failed: DID NOT RAISE ValueError
+E   Failed: DID NOT RAISE ValueError
+C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt\tests\test_known_defects.py:133: Failed: DID NOT RAISE ValueError
+E   AssertionError: [0.0, 0.3, 0.6]
+    assert 0.6 <= (0.5 + 1e-09)
+     +  where 0.6 = max([0.0, 0.3, 0.6])
+C:\Users\rohit\AppData\Local\Temp\hs3wt_pychxzkn\wt\tests\test_known_defects.py:139: AssertionError: [0.0, 0.3, 0.6]
+=========================== short test summary info ===========================
+FAILED tests/test_known_defects.py::test_def01_cancelled_sweep_marks_unfinished_cells
+FAILED tests/test_known_defects.py::test_def02_sweep_can_be_rerun_after_cancel
+FAILED tests/test_known_defects.py::test_def03_invalid_axis_rejected_before_any_run
+FAILED tests/test_known_defects.py::test_def04_master_seed_changes_replicate_seeds
+FAILED tests/test_known_defects.py::test_def05_heatmap_axes_use_parameter_values
+FAILED tests/test_known_defects.py::test_def06_duplicate_axis_name_rejected
+FAILED tests/test_known_defects.py::test_def07_unknown_parameter_name_rejected_with_validation_error
+FAILED tests/test_known_defects.py::test_def08_param_range_never_exceeds_stop
+============================== 8 failed in 1.91s ==============================

@@ -1,0 +1,27 @@
+PPETS RU-06 validation — 12/12 checks passed
+commit 19b0b7e · Python 3.14.4 · 2026-10-10 14:21:37 -0400
+
+V01 [PASS] Config validation rejects bad input; dict round-trip is lossless  (0.02s)
+      6 invalid configs rejected; to_dict/from_dict round-trip equal
+V02 [PASS] Same seed -> identical history in one process (NFR02)  (2.83s)
+      3 runs x 100 generations, 30x30, seed 42 -> one signature 89d408d2cc2625b3
+V03 [PASS] Determinism holds across separate interpreters and PYTHONHASHSEED values  (4.75s)
+      4 fresh interpreters (PYTHONHASHSEED=0,1,12345,random) -> identical fingerprint 4678dcd9cd116a1b
+V04 [PASS] Different seeds give different trajectories (determinism is not a constant)  (1.49s)
+      5 seeds -> 5 distinct histories
+V05 [PASS] Grid invariants hold every generation (state codes, counts, hunger, eaten buffer)  (0.84s)
+      136 generations across 3 configs (toroidal, bounded, dense) — no invariant violated
+V06 [PASS] Headless CSV pipeline (main.py): schema, ranges, byte-identical to the Oct 3 evidence  (0.75s)
+      51 rows, schema+ranges ok; output byte-identical to evidence/main_smoke_test.txt (captured Oct 3)
+V07 [PASS] ThresholdAnalyzer output structure, probability bounds, progress and cancel contract  (5.21s)
+      5x3 matrix, 60 runs; bounds + species invariant + 1/replicates granularity + progress/cancel contract ok
+V08 [PASS] ThresholdAnalyzer agrees cell-for-cell with the standalone experiments/sweep.py path  (57.42s)
+      9 cells x 3 replicates identical. NOTE: both paths call the same engine, so this validates the analyzer's seeding/aggregation, not the engine itself.
+V09 [PASS] HeatmapView renders an analyzer-produced matrix (screenshot saved)  (31.45s)
+      [Qt platform: windows] image array (10, 5) equals HeatmapData matrix; screenshot heatmap_render.png (640x480, 95 sampled colours). Axis ticks are pixel indices, not parameter values — see DEF-05.
+V10 [PASS] MainWindow + controller integration drives engine, charts and stats  (0.44s)
+      [Qt platform: windows] 25 controller steps -> 25 generation_advanced signals; window screenshot gui_main_window.png
+V11 [PASS] Known-defect reproducers (strict xfail) still reproduce  (2.84s)
+      8 xfailed in 1.57s
+V12 [PASS] Negative control: unseeded runs diverge, so the V02/V03 equality tests can actually fail  (0.89s)
+      3 unseeded runs -> 3 distinct histories (determinism checks are discriminating)

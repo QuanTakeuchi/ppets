@@ -1,0 +1,48 @@
+{
+  "output": "L75_s4017.runs.csv",
+  "output_sha256": "6c6221d8be2953f4",
+  "script": "validation/ru09_studies.py",
+  "command": "python validation/ru09_studies.py L50_s4016 L75_s4014 L75_s4017 L100_s4015",
+  "generated_at": "2026-10-31 14:39:42 -0400",
+  "wall_seconds": 581.6,
+  "code": {
+    "git_commit": "19b0b7e",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "0c61dd14fdaad6a8"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "name": "L75_s4017",
+    "seed": 4017,
+    "size": 75,
+    "repro": 0.15,
+    "max_gen": 150,
+    "density": {
+      "start": 0.06,
+      "stop": 0.4,
+      "step": 0.02
+    },
+    "reps": 30,
+    "base_config": {
+      "width": 75,
+      "height": 75,
+      "toroidal": true,
+      "prey_density": 0.3,
+      "predator_density": 0.1,
+      "prey_repro_rate": 0.2,
+      "predator_repro_rate": 0.15,
+      "prey_death_threshold": 3,
+      "starvation_rate": 3,
+      "seed": 4017
+    },
+    "workers": 15,
+    "runs": 540,
+    "question": "Q1"
+  }
+}

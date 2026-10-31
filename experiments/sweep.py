@@ -119,9 +119,9 @@ def main():
                 break
         with open(os.path.join(OUT_DIR, fname), "w", newline="") as f:
             w = csv.writer(f)
-            w.writerow(["generation", "prey_count", "predator_count", "extinction_risk"])
+            w.writerow(["generation", "prey_count", "predator_count"])
             for s in engine.history:
-                w.writerow([s.generation, s.prey_count, s.predator_count, s.extinction_risk])
+                w.writerow([s.generation, s.prey_count, s.predator_count])
         return engine.generation
 
     # Pick illustrative parameter points based on the sweep results themselves.
