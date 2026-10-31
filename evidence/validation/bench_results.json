@@ -1,0 +1,128 @@
+{
+  "provenance": {
+    "generated_at": "2026-10-10 14:19:43 -0400",
+    "git_commit": "19b0b7e",
+    "git_tracked_tree_dirty": false,
+    "python": "3.14.4",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "cpu_count": 16,
+  "nfr01_budget_ms": 100.0,
+  "step_latency": [
+    {
+      "grid": 10,
+      "samples": 80,
+      "median_ms": 0.65,
+      "p95_ms": 1.65,
+      "max_ms": 2.26,
+      "within_nfr01_budget": true
+    },
+    {
+      "grid": 20,
+      "samples": 90,
+      "median_ms": 2.55,
+      "p95_ms": 4.49,
+      "max_ms": 5.52,
+      "within_nfr01_budget": true
+    },
+    {
+      "grid": 30,
+      "samples": 90,
+      "median_ms": 5.28,
+      "p95_ms": 8.32,
+      "max_ms": 9.07,
+      "within_nfr01_budget": true
+    },
+    {
+      "grid": 50,
+      "samples": 90,
+      "median_ms": 14.91,
+      "p95_ms": 21.69,
+      "max_ms": 25.67,
+      "within_nfr01_budget": true
+    },
+    {
+      "grid": 75,
+      "samples": 90,
+      "median_ms": 38.01,
+      "p95_ms": 51.42,
+      "max_ms": 62.52,
+      "within_nfr01_budget": true
+    },
+    {
+      "grid": 100,
+      "samples": 90,
+      "median_ms": 67.07,
+      "p95_ms": 109.14,
+      "max_ms": 123.47,
+      "within_nfr01_budget": false
+    }
+  ],
+  "serial_seconds_64_runs": 73.89,
+  "seconds_per_run_30x30_150gen": 1.15,
+  "parallel": [
+    {
+      "workers": 1,
+      "seconds": 73.89,
+      "speedup": 1.0,
+      "identical_results": true
+    },
+    {
+      "workers": 2,
+      "seconds": 45.5,
+      "speedup": 1.62,
+      "identical_results": true
+    },
+    {
+      "workers": 4,
+      "seconds": 25.11,
+      "speedup": 2.94,
+      "identical_results": true
+    },
+    {
+      "workers": 8,
+      "seconds": 15.55,
+      "speedup": 4.75,
+      "identical_results": true
+    },
+    {
+      "workers": 16,
+      "seconds": 13.62,
+      "speedup": 5.42,
+      "identical_results": true
+    }
+  ],
+  "best_speedup": {
+    "workers": 16,
+    "seconds": 13.62,
+    "speedup": 5.42,
+    "identical_results": true
+  },
+  "projections": [
+    {
+      "scenario": "sweep.py baseline (20x10 cells, 3 reps, 30x30)",
+      "runs": 600,
+      "serial_minutes": 11.5,
+      "parallel_minutes": 2.1
+    },
+    {
+      "scenario": "demo sweep (10x10 cells, 10 reps, 30x30)",
+      "runs": 1000,
+      "serial_minutes": 19.2,
+      "parallel_minutes": 3.6
+    },
+    {
+      "scenario": "uncertainty-aware (10x10 cells, 30 reps, 30x30)",
+      "runs": 3000,
+      "serial_minutes": 57.7,
+      "parallel_minutes": 10.7
+    },
+    {
+      "scenario": "full-size default grid (10x10 cells, 30 reps, 50x50)",
+      "runs": 3000,
+      "serial_minutes": 160.4,
+      "parallel_minutes": 29.6
+    }
+  ],
+  "caveat": "single machine, single day, wall-clock; per-run cost scaled by grid area for non-30x30 rows"
+}

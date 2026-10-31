@@ -1,0 +1,4 @@
+latency done; slope 0.94
+scaling done: [(1, 60.51), (2, 36.19), (4, 20.03), (8, 11.65), (12, 10.54), (15, 10.95)]
+pool startup: {'workers_1_seconds_median': 0.003, 'workers_15_seconds_median': 0.836}
+projection: {'runs': 3000, 'workers': 12, 'seconds_per_run': 0.11, 'projected_minutes': 5.5, 'serial_projected_minutes': 31.5, 'pass_': True, 'note': 'Job sits in the transition band (densities 0.20-0.34), where run lengths vary most.'}

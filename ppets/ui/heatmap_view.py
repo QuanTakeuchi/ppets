@@ -15,6 +15,7 @@ from typing import Optional
 
 import numpy as np
 import pyqtgraph as pg
+from PyQt6.QtCore import QRectF
 from PyQt6.QtWidgets import QVBoxLayout, QWidget
 
 from ..analysis import HeatmapData
@@ -42,11 +43,25 @@ class HeatmapView(QWidget):
         self._image_view.setImage(
             matrix,
             levels=(0.0, 1.0),
-            autoRange=True,
+            autoRange=False,
         )
+        # Place pixel (i, j) over its parameter values, so tick labels read in
+        # parameter units, not array indices (FR07, DEF-05). Each pixel is
+        # centred on its value; a single-value axis gets a unit-wide pixel.
+        x0, xw = self._extent(data.param_a_values)
+        y0, yw = self._extent(data.param_b_values)
+        self._image_view.getImageItem().setRect(QRectF(x0, y0, xw, yw))
+        self._image_view.autoRange()
         view = self._image_view.getView()
         view.setLabel("bottom", data.param_a_name)
         view.setLabel("left", data.param_b_name)
+
+    @staticmethod
+    def _extent(values: list[float]) -> tuple[float, float]:
+        if len(values) == 1:
+            return values[0] - 0.5, 1.0
+        step = (values[-1] - values[0]) / (len(values) - 1)
+        return values[0] - step / 2, step * len(values)
 
     def clear(self) -> None:
         self._image_view.clear()

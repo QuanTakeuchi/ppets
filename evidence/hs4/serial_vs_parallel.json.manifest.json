@@ -1,0 +1,26 @@
+{
+  "output": "serial_vs_parallel.json",
+  "output_sha256": "440fc4fd1c72b33c",
+  "script": "validation/hs4_correctness.py",
+  "command": "python validation/hs4_correctness.py ",
+  "generated_at": "2026-10-24 11:00:29 -0400",
+  "wall_seconds": 49.9,
+  "code": {
+    "git_commit": "19b0b7e",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "0c61dd14fdaad6a8"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "master_seed": 4051,
+    "levels": "0.16-0.36 step 0.04",
+    "replicates": 10,
+    "grid": 30
+  }
+}

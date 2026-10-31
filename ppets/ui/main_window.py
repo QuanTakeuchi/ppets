@@ -20,6 +20,13 @@ from .playback_controls import PlaybackControls
 from .stats_panel import StatsPanel
 
 
+SCOPE_STATEMENT = (
+    "PPETS is an educational, exploratory cellular-automaton model. Its outputs "
+    "describe this model under the chosen settings; they are not forecasts for "
+    "real predator-prey populations."
+)
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -38,6 +45,11 @@ class MainWindow(QMainWindow):
         self.banner_label.setStyleSheet("background-color: #fff3cd; color: #664d03; padding: 6px;")
         self.banner_label.hide()
 
+        # FR14: permanent scope statement, always visible.
+        self.scope_label = QLabel(SCOPE_STATEMENT)
+        self.scope_label.setWordWrap(True)
+        self.scope_label.setStyleSheet("color: #444; font-size: 11px; padding: 4px;")
+
         left_panel = QWidget()
         left_layout = QVBoxLayout(left_panel)
         left_layout.addWidget(self.config_panel)
@@ -50,6 +62,7 @@ class MainWindow(QMainWindow):
         right_layout.addWidget(self.grid_view, 3)
         right_layout.addWidget(self.chart_view, 2)
         right_layout.addWidget(self.stats_panel)
+        right_layout.addWidget(self.scope_label)
 
         splitter = QSplitter(Qt.Orientation.Horizontal)
         splitter.addWidget(left_panel)

@@ -1,0 +1,116 @@
+{
+  "step_latency": [
+    {
+      "size": 10,
+      "steps": 72,
+      "median_ms": 0.8376500336453319,
+      "p95_ms": 1.6636999789625406,
+      "max_ms": 7.081199903041124,
+      "within_nfr01": true
+    },
+    {
+      "size": 20,
+      "steps": 90,
+      "median_ms": 3.662850009277463,
+      "p95_ms": 8.006200077943504,
+      "max_ms": 11.022199993021786,
+      "within_nfr01": true
+    },
+    {
+      "size": 30,
+      "steps": 90,
+      "median_ms": 6.405299995094538,
+      "p95_ms": 8.865299983881414,
+      "max_ms": 9.730900055728853,
+      "within_nfr01": true
+    },
+    {
+      "size": 50,
+      "steps": 90,
+      "median_ms": 15.806999988853931,
+      "p95_ms": 24.143100017681718,
+      "max_ms": 28.06889999192208,
+      "within_nfr01": true
+    },
+    {
+      "size": 75,
+      "steps": 90,
+      "median_ms": 40.28735001338646,
+      "p95_ms": 62.01240001246333,
+      "max_ms": 70.68350003100932,
+      "within_nfr01": true
+    },
+    {
+      "size": 100,
+      "steps": 90,
+      "median_ms": 67.06749997101724,
+      "p95_ms": 105.14580004382879,
+      "max_ms": 135.76219999231398,
+      "within_nfr01": false
+    }
+  ],
+  "step_time_vs_cells_loglog_slope": 0.938931854258538,
+  "scaling": [
+    {
+      "workers": 1,
+      "runs": 96,
+      "wall_seconds": 60.51,
+      "identical_to_serial": true,
+      "speedup": 1.0,
+      "efficiency": 1.0
+    },
+    {
+      "workers": 2,
+      "runs": 96,
+      "wall_seconds": 36.19,
+      "identical_to_serial": true,
+      "speedup": 1.67,
+      "efficiency": 0.83
+    },
+    {
+      "workers": 4,
+      "runs": 96,
+      "wall_seconds": 20.03,
+      "identical_to_serial": true,
+      "speedup": 3.02,
+      "efficiency": 0.76
+    },
+    {
+      "workers": 8,
+      "runs": 96,
+      "wall_seconds": 11.65,
+      "identical_to_serial": true,
+      "speedup": 5.19,
+      "efficiency": 0.65
+    },
+    {
+      "workers": 12,
+      "runs": 96,
+      "wall_seconds": 10.54,
+      "identical_to_serial": true,
+      "speedup": 5.74,
+      "efficiency": 0.48
+    },
+    {
+      "workers": 15,
+      "runs": 96,
+      "wall_seconds": 10.95,
+      "identical_to_serial": true,
+      "speedup": 5.53,
+      "efficiency": 0.37
+    }
+  ],
+  "projection_3000": {
+    "runs": 3000,
+    "workers": 12,
+    "seconds_per_run": 0.11,
+    "projected_minutes": 5.5,
+    "serial_projected_minutes": 31.5,
+    "pass_": true,
+    "note": "Job sits in the transition band (densities 0.20-0.34), where run lengths vary most."
+  },
+  "pool_startup": {
+    "workers_1_seconds_median": 0.003,
+    "workers_15_seconds_median": 0.836
+  }
+}

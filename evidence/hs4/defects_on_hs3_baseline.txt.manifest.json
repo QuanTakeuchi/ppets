@@ -1,0 +1,25 @@
+{
+  "output": "defects_on_hs3_baseline.txt",
+  "output_sha256": "d8b9673809dcdb68",
+  "script": "validation/hs4_correctness.py",
+  "command": "python validation/hs4_correctness.py ",
+  "generated_at": "2026-10-24 10:59:39 -0400",
+  "wall_seconds": 3.8,
+  "code": {
+    "git_commit": "19b0b7e",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "0c61dd14fdaad6a8"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "code_under_test": "tag hs3-baseline",
+    "tests": "current tests/test_known_defects.py"
+  },
+  "exit_code": 1
+}

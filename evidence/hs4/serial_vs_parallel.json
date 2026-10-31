@@ -1,0 +1,48 @@
+{
+  "runs": 60,
+  "mismatching_runs": 0,
+  "identical": true,
+  "serial_seconds": 41.7,
+  "parallel_seconds": 8.2,
+  "workers": 15,
+  "extinction_prob_serial": [
+    [
+      0.1
+    ],
+    [
+      0.3
+    ],
+    [
+      0.6
+    ],
+    [
+      0.9
+    ],
+    [
+      0.8
+    ],
+    [
+      1.0
+    ]
+  ],
+  "extinction_prob_parallel": [
+    [
+      0.1
+    ],
+    [
+      0.3
+    ],
+    [
+      0.6
+    ],
+    [
+      0.9
+    ],
+    [
+      0.8
+    ],
+    [
+      1.0
+    ]
+  ]
+}

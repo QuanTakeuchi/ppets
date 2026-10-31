@@ -1,0 +1,68 @@
+{
+  "provenance": {
+    "generated_at": "2026-10-10 14:02:33 -0400",
+    "git_commit": "19b0b7e",
+    "git_tracked_tree_dirty": false,
+    "python": "3.14.4",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "machine": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "cpu_count": 16,
+    "python": "3.14.4",
+    "python_impl": "CPython",
+    "python_executable": "C:\\Python314\\python.exe"
+  },
+  "declared_requirements": [
+    "numpy",
+    "PyQt6",
+    "pyqtgraph",
+    "pytest",
+    "coverage"
+  ],
+  "requirements_pinned": false,
+  "installed_versions": {
+    "numpy": "2.5.1",
+    "PyQt6": "6.11.0",
+    "pyqtgraph": "0.14.0",
+    "pytest": "9.1.1",
+    "coverage": "7.16.2",
+    "matplotlib": "3.11.1"
+  },
+  "undeclared_but_used": [
+    "matplotlib"
+  ],
+  "filesystem": {
+    "repo_path": "C:\\Users\\rohit\\OneDrive\\Documents\\HU\\ResearchMethodology\\ppets_ca_engine_core",
+    "repo_path_length": 77,
+    "repo_under_onedrive": true,
+    "evidence_dir_writable": true,
+    "experiments_output_writable": true
+  },
+  "env_vars": {
+    "QT_QPA_PLATFORM": null,
+    "PYTHONHASHSEED": null,
+    "VIRTUAL_ENV": null
+  },
+  "in_virtualenv": false,
+  "git": {
+    "commit": "19b0b7e105537eb00c6109bcc6b6c40fe4171d92",
+    "branch": "main",
+    "tags_at_head": "hs3-baseline"
+  },
+  "qt_probes": [
+    {
+      "requested": "(default)",
+      "returncode": 0,
+      "stdout": "windows True",
+      "stderr": ""
+    },
+    {
+      "requested": "offscreen",
+      "returncode": 0,
+      "stdout": "offscreen True",
+      "stderr": ""
+    }
+  ]
+}

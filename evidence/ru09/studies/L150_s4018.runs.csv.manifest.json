@@ -1,0 +1,48 @@
+{
+  "output": "L150_s4018.runs.csv",
+  "output_sha256": "ee296d10e8290904",
+  "script": "validation/ru09_studies.py",
+  "command": "python validation/ru09_studies.py L150_s4018",
+  "generated_at": "2026-10-31 15:14:39 -0400",
+  "wall_seconds": 721.9,
+  "code": {
+    "git_commit": "19b0b7e",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "0c61dd14fdaad6a8"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "name": "L150_s4018",
+    "seed": 4018,
+    "size": 150,
+    "repro": 0.15,
+    "max_gen": 150,
+    "density": {
+      "start": 0.3,
+      "stop": 0.5,
+      "step": 0.02
+    },
+    "reps": 30,
+    "base_config": {
+      "width": 150,
+      "height": 150,
+      "toroidal": true,
+      "prey_density": 0.3,
+      "predator_density": 0.1,
+      "prey_repro_rate": 0.2,
+      "predator_repro_rate": 0.15,
+      "prey_death_threshold": 3,
+      "starvation_rate": 3,
+      "seed": 4018
+    },
+    "workers": 15,
+    "runs": 330,
+    "question": "Q7"
+  }
+}

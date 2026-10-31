@@ -1,0 +1,53 @@
+{
+  "output": "hs3design_s4041.runs.csv",
+  "output_sha256": "72a69b207a3bf8a1",
+  "script": "validation/hs4_studies.py",
+  "command": "python validation/hs4_studies.py ",
+  "generated_at": "2026-10-24 10:54:56 -0400",
+  "wall_seconds": 91.1,
+  "code": {
+    "git_commit": "19b0b7e",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "0c61dd14fdaad6a8"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "name": "hs3design_s4041",
+    "seed": 4041,
+    "size": 30,
+    "repro": 0.15,
+    "max_gen": 150,
+    "density": {
+      "start": 0.02,
+      "stop": 0.4,
+      "step": 0.02
+    },
+    "b_axis": {
+      "start": 0.02,
+      "stop": 0.2,
+      "step": 0.02
+    },
+    "reps": 3,
+    "experiment": "E8",
+    "base_config": {
+      "width": 30,
+      "height": 30,
+      "toroidal": true,
+      "prey_density": 0.3,
+      "predator_density": 0.1,
+      "prey_repro_rate": 0.2,
+      "predator_repro_rate": 0.15,
+      "prey_death_threshold": 3,
+      "starvation_rate": 3,
+      "seed": 4041
+    },
+    "workers": 15,
+    "runs": 600
+  }
+}

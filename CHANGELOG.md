@@ -4,6 +4,40 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 Versions correspond to this project's Hard Stop tags (`hsN-baseline`), not
 semantic-version releases.
 
+## [Unreleased — HS4 evidence review] — 2026-10-24
+
+Not yet committed or tagged. Proposed tag after student review: `hs4-evidence`.
+
+### Added
+- `ppets/analysis/estimates.py`: `wilson_interval` (FR11) and `fit_threshold`
+  (FR10: logistic d* with stratified-bootstrap and delta-method 95% intervals;
+  reports constant outcomes and (quasi-)separation).
+- `ThresholdAnalyzer(workers=...)`: multiprocessing Pool execution (LLD §4.1).
+- `HeatmapData`: per-cell `n_runs`, `n_extinct`, `ci_low`, `ci_high`,
+  `master_seed`, and `runs` (one `RunRecord` per replicate).
+- `MainWindow.scope_label`: permanent FR14 scope statement.
+- `tests/test_hs4_analysis.py`; `validation/hs4_*.py`; `evidence/hs4/`
+  (experiment plan written before the runs, studies, results, figures,
+  manifests).
+
+### Changed
+- **Seeding rule** (DEF-04/09): per-run seeds now come from
+  `SeedSequence(master, spawn_key=(i, j, rep))`. Every number reported before
+  HS4 was produced under the old `hash()` rule; E8 compares the two.
+- **CSV schema**: `PopulationStats.to_csv_row()` is now
+  `generation,prey_count,predator_count` (the `extinction_risk` column is gone),
+  so `main.py` output differs from the HS3 evidence by that column.
+- Sweep axes are validated at construction; `ParamRange.values()` floors.
+- `HeatmapView` axes are in parameter units.
+
+### Removed
+- `PopulationStats.extinction_risk` and the GUI "Extinction risk" row (DEF-10).
+
+### Fixed
+- DEF-01 to DEF-08 (reproducers now pass; markers removed). Two issues found
+  in the new code during HS4 (HS4-01, HS4-02) fixed before any result was
+  reported. See `KNOWN_ISSUES.md`.
+
 ## [hs3-baseline] — 2026-10-03
 
 ### Added
@@ -37,3 +71,32 @@ semantic-version releases.
 Initial commit: PPETS simulation engine, controller, UI, and tests
 (Modules 1–2 + Controller, 29 tests). See `ppets/README.md` for that
 pass's design deviations from the LLD as written.
+
+## [unreleased: hs3-validation] — 2026-10-10 (Hard Stop 3 / RU-06)
+
+No production code under `ppets/` was changed; this checkpoint adds validation
+tooling, evidence and documentation only.
+
+### Added
+- `validation/` — repeatable early-validation suite: `run_validation.py` (12
+  checks V01–V12), `pilot_study.py`, `triple_retest.py`, `bench_sweep.py`,
+  `env_snapshot.py`, `clean_restart.py`, `make_figures.py`.
+- `tests/test_known_defects.py` — 8 strict-`xfail` reproducers (DEF-01…DEF-08).
+  Suite is now 40 passed + 8 xfailed.
+- `evidence/validation/` — machine-readable reports, replicate-level CSVs, logs, screenshots, figures.
+- `requirements-lock.txt` — exact versions of the working set.
+- `ENVIRONMENT.md`, `VALIDATION_MEMO.md`.
+
+### Changed
+- `KNOWN_ISSUES.md`, `RISK_LOG.md`, `README.md`, `AI_USAGE_LOG.md` updated with RU-06 findings.
+
+## [unreleased: ru09-results] — 2026-10-31 (Week 9 / RU-09)
+
+No production code under `ppets/` changed (fingerprint `0c61dd14fdaad6a8`).
+
+### Added
+- `validation/ru09_studies.py`, `ru09_analyze.py`, `ru09_figures.py`; `evidence/ru09/` (plan written before the runs, studies at L = 50, 75, 100, 150, trajectory study, results, figures).
+- `tests/test_ru09_analysis.py`: link-function fits checked against a direct likelihood maximiser and the production estimator. Suite is now 90 passed.
+
+### Changed
+- `KNOWN_ISSUES.md`, `RISK_LOG.md`, `AI_USAGE_LOG.md`, `validation/README.md` updated with RU-09 findings.

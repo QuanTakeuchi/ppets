@@ -117,7 +117,9 @@ def test_large_sweep_triggers_warning_callback():
         param_a=param_a,
         param_b=param_b,
         replicates=10,
-        base_config=make_base_config(),
+        # prey_density=0 keeps every cell valid now that the analyzer checks
+        # prey + predator density <= 1 for each cell at construction (DEF-03).
+        base_config=make_base_config(prey_density=0.0),
         on_warning=warnings.append,
     )
 

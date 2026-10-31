@@ -1,0 +1,545 @@
+diff --git a/ppets/analysis/__init__.py b/ppets/analysis/__init__.py
+index d698022..330d029 100644
+--- a/ppets/analysis/__init__.py
++++ b/ppets/analysis/__init__.py
+@@ -1,7 +1,14 @@
+-from .threshold_analyzer import HeatmapData, ParamRange, ThresholdAnalyzer
++from .estimates import ThresholdFit, fit_threshold, fit_threshold_from_runs, wilson_interval
++from .threshold_analyzer import HeatmapData, ParamRange, RunRecord, ThresholdAnalyzer, replicate_seed
+ 
+ __all__ = [
+     "HeatmapData",
+     "ParamRange",
++    "RunRecord",
+     "ThresholdAnalyzer",
++    "ThresholdFit",
++    "fit_threshold",
++    "fit_threshold_from_runs",
++    "replicate_seed",
++    "wilson_interval",
+ ]
+diff --git a/ppets/analysis/threshold_analyzer.py b/ppets/analysis/threshold_analyzer.py
+index 2ed258e..dd35a1e 100644
+--- a/ppets/analysis/threshold_analyzer.py
++++ b/ppets/analysis/threshold_analyzer.py
+@@ -1,33 +1,57 @@
+ """
+ ThresholdAnalyzer / HeatmapData — LLD §4.1 (Module 3: Analysis)
+ 
+-Implementation-baseline skeleton only (Hard Stop 3). The LLD's runSweep()
+-pseudocode parallelizes jobs across a multiprocessing.Pool so the CPU-bound
+-engine loop isn't serialised behind the GIL; that optimization is deferred
+-to a later sprint (see KNOWN_ISSUES.md) until the sequential path below is
+-correctness-tested. Module 3 was flagged "not yet built" in the HS2 Design
+-Review (ppets/README.md); this is the first implementation pass.
+-
+-Each heatmap cell is itself the uncertainty-aware part of the "uncertainty-
+-aware threshold study": it's a Monte-Carlo estimate of extinction
+-probability over `replicates` seeded runs, not a single deterministic
+-outcome, so its sampling noise is a function of `replicates`.
++Hard Stop 4 hardening pass (M1/M2 of the RU-07 plan):
++
++  * every axis value is validated when the analyzer is constructed, so a bad
++    sweep fails before any run (DEF-03, DEF-06, DEF-07);
++  * per-run seeds come from numpy's SeedSequence keyed on a master seed and
++    the (cell, replicate) position, replacing the builtin hash() rule
++    (DEF-04, DEF-09). The master seed is base_config.seed, or fresh entropy
++    recorded on the result when that is None;
++  * runs can be spread across a multiprocessing.Pool (LLD §4.1); results are
++    identical for any worker count because seeds do not depend on scheduling;
++  * cells that were never computed are NaN, not 0.0, and cancel() no longer
++    poisons later sweeps (DEF-01, DEF-02);
++  * each cell carries its run and extinction counts plus a Wilson 95% score
++    interval (FR11), and every run is kept in `HeatmapData.runs` so a study
++    can be re-analysed (FR10 fitting, extinction-time distributions) without
++    re-simulating.
++
++Each heatmap cell is a Monte-Carlo estimate of extinction probability over
++`replicates` seeded runs, so its sampling noise is a function of
++`replicates`; the interval makes that visible.
+ """
+ 
+ from __future__ import annotations
+ 
+-from dataclasses import dataclass, replace
++import math
++import multiprocessing as mp
++from dataclasses import dataclass, field, fields, replace
+ from typing import Callable, Optional
+ 
++import numpy as np
++
+ from ..simulation import CellularAutomatonEngine, SimulationConfig
++from .estimates import wilson_interval
+ 
+ # LLD §4.1: "if len(jobs) * replicates > 10000: emitWarning(...)"
+ SWEEP_WARNING_THRESHOLD = 10_000
+ 
++# SimulationConfig fields a sweep axis may vary. `toroidal` (bool) and `seed`
++# (owned by the analyzer) are deliberately excluded.
++SWEEPABLE = (
++    "width", "height", "prey_density", "predator_density", "prey_repro_rate",
++    "predator_repro_rate", "prey_death_threshold", "starvation_rate",
++)
++_INT_FIELDS = {"width", "height", "prey_death_threshold", "starvation_rate"}
++
+ 
+ @dataclass(frozen=True)
+ class ParamRange:
+-    """One sweep axis: an inclusive [start, stop] range stepped by `step`."""
++    """One sweep axis: an inclusive [start, stop] range stepped by `step`.
++    Values never exceed `stop`; `stop` itself is included only when the step
++    divides the span (to within floating-point tolerance)."""
+ 
+     name: str
+     start: float
+@@ -39,16 +63,31 @@ class ParamRange:
+             raise ValueError(f"ParamRange.step must be > 0, got {self.step}")
+         if self.stop < self.start:
+             raise ValueError(f"ParamRange.stop ({self.stop}) must be >= start ({self.start})")
+-        n_steps = int(round((self.stop - self.start) / self.step))
++        n_steps = int(math.floor((self.stop - self.start) / self.step + 1e-9))
+         return [round(self.start + i * self.step, 10) for i in range(n_steps + 1)]
+ 
+ 
++@dataclass(frozen=True)
++class RunRecord:
++    """One simulated replicate, kept so results can be re-analysed."""
++
++    a_value: float
++    b_value: float
++    replicate: int
++    seed: int
++    extinct: bool
++    prey_extinct: bool
++    predator_extinct: bool
++    extinction_generation: Optional[int]
++    generations_run: int
++
++
+ @dataclass
+ class HeatmapData:
+     """LLD §4.1: "2D float matrix of extinction probability in [0,1] plus
+-    axis metadata." Extended here with the per-species breakdown
+-    `_experiment_sweep.py` (the standalone GRAD 695 report script) already
+-    computes by hand, so ThresholdAnalyzer can eventually replace it."""
++    axis metadata." Probability matrices hold NaN for cells that were not
++    computed (cancelled sweep). The count and interval fields are optional so
++    a HeatmapData can still be built by hand (e.g. in UI tests)."""
+ 
+     extinction_prob: list[list[float]]
+     prey_extinction_prob: list[list[float]]
+@@ -58,10 +97,43 @@ class HeatmapData:
+     param_a_values: list[float]
+     param_b_values: list[float]
+     complete: bool = True  # False when run_sweep() was cancelled mid-sweep (UC03 alt. flow)
++    n_runs: Optional[list[list[int]]] = None
++    n_extinct: Optional[list[list[int]]] = None
++    ci_low: Optional[list[list[float]]] = None
++    ci_high: Optional[list[list[float]]] = None
++    master_seed: Optional[int] = None
++    runs: list[RunRecord] = field(default_factory=list)
++
++
++def replicate_seed(master_seed: int, i: int, j: int, rep: int) -> int:
++    """Seed for replicate `rep` of cell (i, j). Independent of worker count and
++    execution order; different master seeds give independent streams."""
++    ss = np.random.SeedSequence(entropy=master_seed, spawn_key=(i, j, rep))
++    return int(ss.generate_state(1, dtype=np.uint32)[0])
++
++
++def _simulate(job: tuple) -> tuple:
++    """Run one replicate. Top-level so multiprocessing can pickle it."""
++    i, j, rep, seed, cfg_dict, max_generations = job
++    engine = CellularAutomatonEngine(SimulationConfig.from_dict({**cfg_dict, "seed": seed}))
++    ext_gen = None
++    if engine.history[0].is_extinct():
++        # A species can be absent from the start (density 0, or a low density
++        # on a small grid); that run is extinct at generation 0 and not stepped.
++        ext_gen = 0
++    else:
++        for _ in range(max_generations):
++            stats = engine.step()
++            if stats.is_extinct():
++                ext_gen = stats.generation
++                break
++    final = engine.history[-1]
++    return (i, j, rep, seed, final.is_extinct(), final.prey_count == 0,
++            final.predator_count == 0, ext_gen, final.generation)
+ 
+ 
+ class ThresholdAnalyzer:
+-    """LLD §4.1. Members here match the LLD class diagram's member table:
++    """LLD §4.1. Members match the LLD class diagram's member table:
+     paramRanges (param_a/param_b), replicates, results, run_sweep(),
+     get_heatmap()."""
+ 
+@@ -73,93 +145,146 @@ class ThresholdAnalyzer:
+         base_config: SimulationConfig,
+         max_generations: int = 150,
+         on_warning: Optional[Callable[[str], None]] = None,
++        workers: int = 1,
+     ) -> None:
+         if replicates < 1:
+             raise ValueError(f"replicates must be >= 1, got {replicates}")
+         if max_generations < 1:
+             raise ValueError(f"max_generations must be >= 1, got {max_generations}")
++        if workers < 1:
++            raise ValueError(f"workers must be >= 1, got {workers}")
++        for axis in (param_a, param_b):
++            if axis.name not in SWEEPABLE:
++                raise ValueError(
++                    f"Unknown or non-sweepable parameter {axis.name!r}; choose from {', '.join(SWEEPABLE)}"
++                )
++        if param_a.name == param_b.name:
++            raise ValueError(f"Both sweep axes vary {param_a.name!r}; choose two different parameters")
+ 
+         self.param_a = param_a
+         self.param_b = param_b
+         self.replicates = replicates
+         self.base_config = base_config
+         self.max_generations = max_generations
++        self.workers = workers
+         self.results: Optional[HeatmapData] = None
+         self._cancelled = False
++        self._a_values = param_a.values()
++        self._b_values = param_b.values()
++
++        # Validate every cell's configuration now, not mid-sweep (DEF-03).
++        bad = []
++        for a in self._a_values:
++            for b in self._b_values:
++                try:
++                    self._cell_config(a, b)
++                except ValueError as exc:
++                    bad.append(f"({param_a.name}={a}, {param_b.name}={b}): {exc}")
++        if bad:
++            raise ValueError(f"{len(bad)} sweep cell(s) are invalid, e.g. " + bad[0])
+ 
+-        n_jobs = len(param_a.values()) * len(param_b.values()) * replicates
++        n_jobs = len(self._a_values) * len(self._b_values) * replicates
+         if n_jobs > SWEEP_WARNING_THRESHOLD and on_warning is not None:
+             on_warning(
+                 f"Sweep may take a long time: {n_jobs} runs "
+-                f"({len(param_a.values())}x{len(param_b.values())} cells "
++                f"({len(self._a_values)}x{len(self._b_values)} cells "
+                 f"x {replicates} replicates)."
+             )
+ 
++    def _cell_config(self, a_val: float, b_val: float) -> SimulationConfig:
++        overrides = {}
++        for name, val in ((self.param_a.name, a_val), (self.param_b.name, b_val)):
++            overrides[name] = int(round(val)) if name in _INT_FIELDS else val
++        return replace(self.base_config, **overrides)
++
+     def cancel(self) -> None:
+-        """UC03 Alternate Flow: user cancels mid-sweep. get_heatmap() then
+-        returns a partial HeatmapData (complete=False) covering only the
+-        cells finished before cancellation."""
++        """UC03 Alternate Flow: user cancels mid-sweep. The result then has
++        complete=False and NaN in every cell not yet finished."""
+         self._cancelled = True
+ 
+     def run_sweep(self, on_progress: Optional[Callable[[float], None]] = None) -> HeatmapData:
+-        a_values = self.param_a.values()
+-        b_values = self.param_b.values()
+-        total_cells = len(a_values) * len(b_values)
+-
+-        ext = [[0.0] * len(b_values) for _ in a_values]
+-        prey_ext = [[0.0] * len(b_values) for _ in a_values]
+-        pred_ext = [[0.0] * len(b_values) for _ in a_values]
+-
+-        completed = 0
+-        complete = True
+-        for i, a_val in enumerate(a_values):
+-            if self._cancelled:
+-                complete = False
+-                break
+-            for j, b_val in enumerate(b_values):
+-                if self._cancelled:
+-                    complete = False
+-                    break
+-                ext[i][j], prey_ext[i][j], pred_ext[i][j] = self._run_cell(a_val, b_val)
+-                completed += 1
++        self._cancelled = False  # a previous cancel() must not affect this sweep (DEF-02)
++        a_values, b_values = self._a_values, self._b_values
++        na, nb, reps = len(a_values), len(b_values), self.replicates
++
++        master = self.base_config.seed
++        if master is None:
++            master = int(np.random.SeedSequence().generate_state(1, dtype=np.uint32)[0])
++
++        jobs = []
++        for i, a in enumerate(a_values):
++            for j, b in enumerate(b_values):
++                cfg = self._cell_config(a, b).to_dict()
++                for rep in range(reps):
++                    jobs.append((i, j, rep, replicate_seed(master, i, j, rep), cfg, self.max_generations))
++
++        done = np.zeros((na, nb), dtype=int)
++        counts = np.zeros((3, na, nb), dtype=int)  # extinct, prey, predator
++        runs: list[RunRecord] = []
++        cells_done = 0
++        total_cells = na * nb
++
++        def absorb(r: tuple) -> bool:
++            nonlocal cells_done
++            i, j, rep, seed, ext, prey0, pred0, ext_gen, gens = r
++            runs.append(RunRecord(a_values[i], b_values[j], rep, seed, ext, prey0, pred0, ext_gen, gens))
++            counts[:, i, j] += (ext, prey0, pred0)
++            done[i, j] += 1
++            if done[i, j] == reps:
++                cells_done += 1
+                 if on_progress is not None:
+-                    on_progress(completed / total_cells)
++                    on_progress(cells_done / total_cells)
++            return self._cancelled
++
++        if self.workers == 1:
++            for job in jobs:
++                if absorb(_simulate(job)):
++                    break
++        else:
++            # Jobs are ordered cell by cell, so cells finish roughly in order and
++            # a cancel leaves a clean prefix of completed cells.
++            with mp.get_context("spawn").Pool(self.workers) as pool:
++                for r in pool.imap(_simulate, jobs, chunksize=max(1, reps // 4)):
++                    if absorb(r):
++                        pool.terminate()
++                        break
++
++        self.results = self._assemble(done, counts, runs, master)
++        return self.results
++
++    def _assemble(self, done, counts, runs, master) -> HeatmapData:
++        reps = self.replicates
++        full = done == reps
++        n_ext = counts[0]
++
++        def prob(k):
++            return [[(k[i, j] / reps) if full[i, j] else math.nan for j in range(k.shape[1])]
++                    for i in range(k.shape[0])]
++
++        lo = [[math.nan] * full.shape[1] for _ in range(full.shape[0])]
++        hi = [[math.nan] * full.shape[1] for _ in range(full.shape[0])]
++        for i in range(full.shape[0]):
++            for j in range(full.shape[1]):
++                if full[i, j]:
++                    lo[i][j], hi[i][j] = wilson_interval(int(n_ext[i, j]), reps)
+ 
+-        self.results = HeatmapData(
+-            extinction_prob=ext,
+-            prey_extinction_prob=prey_ext,
+-            predator_extinction_prob=pred_ext,
++        runs.sort(key=lambda r: (r.a_value, r.b_value, r.replicate))
++        return HeatmapData(
++            extinction_prob=prob(counts[0]),
++            prey_extinction_prob=prob(counts[1]),
++            predator_extinction_prob=prob(counts[2]),
+             param_a_name=self.param_a.name,
+             param_b_name=self.param_b.name,
+-            param_a_values=a_values,
+-            param_b_values=b_values,
+-            complete=complete,
++            param_a_values=list(self._a_values),
++            param_b_values=list(self._b_values),
++            complete=bool(full.all()),
++            n_runs=[[int(x) if f else 0 for x, f in zip(r, fr)] for r, fr in zip(done, full)],
++            n_extinct=[[int(x) if f else 0 for x, f in zip(r, fr)] for r, fr in zip(n_ext, full)],
++            ci_low=lo,
++            ci_high=hi,
++            master_seed=master,
++            runs=[r for r in runs if full[self._a_values.index(r.a_value), self._b_values.index(r.b_value)]],
+         )
+-        return self.results
+ 
+     def get_heatmap(self) -> Optional[HeatmapData]:
+         return self.results
+-
+-    def _run_cell(self, a_val: float, b_val: float) -> tuple[float, float, float]:
+-        n_extinct = n_prey_extinct = n_pred_extinct = 0
+-        overrides = {self.param_a.name: a_val, self.param_b.name: b_val}
+-        for rep in range(self.replicates):
+-            seed = hash((a_val, b_val, rep)) % (2**31)
+-            cfg = replace(self.base_config, seed=seed, **overrides)
+-            engine = CellularAutomatonEngine(cfg)
+-            for _ in range(self.max_generations):
+-                stats = engine.step()
+-                if stats.is_extinct():
+-                    break
+-            final = engine.history[-1]
+-            if final.is_extinct():
+-                n_extinct += 1
+-                if final.prey_count == 0:
+-                    n_prey_extinct += 1
+-                if final.predator_count == 0:
+-                    n_pred_extinct += 1
+-        return (
+-            n_extinct / self.replicates,
+-            n_prey_extinct / self.replicates,
+-            n_pred_extinct / self.replicates,
+-        )
+diff --git a/ppets/simulation/stats.py b/ppets/simulation/stats.py
+index 97a2091..ed60d3c 100644
+--- a/ppets/simulation/stats.py
++++ b/ppets/simulation/stats.py
+@@ -2,12 +2,11 @@
+ PopulationStats — LLD §2 class diagram (Simulation Engine subsystem).
+ 
+ DEVIATION FLAG (see README "Design Deviations" #2):
+-`extinction_risk` is listed as a field but the LLD doesn't pin down its
+-formula — that derivation belongs to the Analysis subsystem's
+-ThresholdAnalyzer (LLD §6), which isn't in scope for this CA-core pass.
+-For now this is a simple, clearly-labeled placeholder heuristic so the
+-field exists and behaves sanely; swap in the real ThresholdAnalyzer
+-metric once that subsystem is built.
++the LLD lists an `extinction_risk` field. The placeholder heuristic that
++filled it was removed at Hard Stop 4 (DEF-10): it ranked eventual extinction
++no better than chance (AUC 0.479, n = 688). As HS2 decided, extinction
++probability is only reported where it is meaningful: across replicates of a
++sweep cell, with a Wilson interval (ThresholdAnalyzer, FR11).
+ """
+ 
+ from __future__ import annotations
+@@ -21,25 +20,12 @@ class PopulationStats:
+     prey_count: int
+     predator_count: int
+ 
+-    @property
+-    def extinction_risk(self) -> float:
+-        """
+-        Placeholder heuristic (NOT the final metric): 1.0 if either
+-        species is already gone, otherwise inverse of the smaller
+-        population's share of total, scaled to (0.0, 1.0).
+-        """
+-        if self.prey_count == 0 or self.predator_count == 0:
+-            return 1.0
+-        total = self.prey_count + self.predator_count
+-        smaller = min(self.prey_count, self.predator_count)
+-        return round(1.0 - (smaller / total) * 2, 4) if total else 1.0
+-
+     def is_extinct(self) -> bool:
+         return self.prey_count == 0 or self.predator_count == 0
+ 
+     def to_csv_row(self) -> str:
+-        return f"{self.generation},{self.prey_count},{self.predator_count},{self.extinction_risk}"
++        return f"{self.generation},{self.prey_count},{self.predator_count}"
+ 
+     @staticmethod
+     def csv_header() -> str:
+-        return "generation,prey_count,predator_count,extinction_risk"
++        return "generation,prey_count,predator_count"
+diff --git a/ppets/ui/heatmap_view.py b/ppets/ui/heatmap_view.py
+index c11cef7..82c6146 100644
+--- a/ppets/ui/heatmap_view.py
++++ b/ppets/ui/heatmap_view.py
+@@ -15,6 +15,7 @@ from typing import Optional
+ 
+ import numpy as np
+ import pyqtgraph as pg
++from PyQt6.QtCore import QRectF
+ from PyQt6.QtWidgets import QVBoxLayout, QWidget
+ 
+ from ..analysis import HeatmapData
+@@ -42,11 +43,25 @@ class HeatmapView(QWidget):
+         self._image_view.setImage(
+             matrix,
+             levels=(0.0, 1.0),
+-            autoRange=True,
++            autoRange=False,
+         )
++        # Place pixel (i, j) over its parameter values, so tick labels read in
++        # parameter units, not array indices (FR07, DEF-05). Each pixel is
++        # centred on its value; a single-value axis gets a unit-wide pixel.
++        x0, xw = self._extent(data.param_a_values)
++        y0, yw = self._extent(data.param_b_values)
++        self._image_view.getImageItem().setRect(QRectF(x0, y0, xw, yw))
++        self._image_view.autoRange()
+         view = self._image_view.getView()
+         view.setLabel("bottom", data.param_a_name)
+         view.setLabel("left", data.param_b_name)
+ 
++    @staticmethod
++    def _extent(values: list[float]) -> tuple[float, float]:
++        if len(values) == 1:
++            return values[0] - 0.5, 1.0
++        step = (values[-1] - values[0]) / (len(values) - 1)
++        return values[0] - step / 2, step * len(values)
++
+     def clear(self) -> None:
+         self._image_view.clear()
+diff --git a/ppets/ui/main_window.py b/ppets/ui/main_window.py
+index 016d910..3158567 100644
+--- a/ppets/ui/main_window.py
++++ b/ppets/ui/main_window.py
+@@ -20,6 +20,13 @@ from .playback_controls import PlaybackControls
+ from .stats_panel import StatsPanel
+ 
+ 
++SCOPE_STATEMENT = (
++    "PPETS is an educational, exploratory cellular-automaton model. Its outputs "
++    "describe this model under the chosen settings; they are not forecasts for "
++    "real predator-prey populations."
++)
++
++
+ class MainWindow(QMainWindow):
+     def __init__(self):
+         super().__init__()
+@@ -38,6 +45,11 @@ class MainWindow(QMainWindow):
+         self.banner_label.setStyleSheet("background-color: #fff3cd; color: #664d03; padding: 6px;")
+         self.banner_label.hide()
+ 
++        # FR14: permanent scope statement, always visible.
++        self.scope_label = QLabel(SCOPE_STATEMENT)
++        self.scope_label.setWordWrap(True)
++        self.scope_label.setStyleSheet("color: #444; font-size: 11px; padding: 4px;")
++
+         left_panel = QWidget()
+         left_layout = QVBoxLayout(left_panel)
+         left_layout.addWidget(self.config_panel)
+@@ -50,6 +62,7 @@ class MainWindow(QMainWindow):
+         right_layout.addWidget(self.grid_view, 3)
+         right_layout.addWidget(self.chart_view, 2)
+         right_layout.addWidget(self.stats_panel)
++        right_layout.addWidget(self.scope_label)
+ 
+         splitter = QSplitter(Qt.Orientation.Horizontal)
+         splitter.addWidget(left_panel)
+diff --git a/ppets/ui/stats_panel.py b/ppets/ui/stats_panel.py
+index 1152444..60243f1 100644
+--- a/ppets/ui/stats_panel.py
++++ b/ppets/ui/stats_panel.py
+@@ -2,6 +2,9 @@
+ StatsPanel — LLD §2.4 (PopulationStats) rendered live, per UC02/TC4
+ step 1: "generation count, prey count, predator count ... update each
+ generation".
++
++The former "Extinction risk" row was removed at Hard Stop 4 (DEF-10): the
++heuristic behind it had no predictive skill.
+ """
+ 
+ from __future__ import annotations
+@@ -20,22 +23,18 @@ class StatsPanel(QWidget):
+         self.generation_label = QLabel("0")
+         self.prey_label = QLabel("0")
+         self.predator_label = QLabel("0")
+-        self.extinction_risk_label = QLabel("0.0")
+ 
+         layout = QFormLayout(self)
+         layout.addRow("Generation", self.generation_label)
+         layout.addRow("Prey count", self.prey_label)
+         layout.addRow("Predator count", self.predator_label)
+-        layout.addRow("Extinction risk", self.extinction_risk_label)
+ 
+     def update_stats(self, stats: PopulationStats) -> None:
+         self.generation_label.setText(str(stats.generation))
+         self.prey_label.setText(str(stats.prey_count))
+         self.predator_label.setText(str(stats.predator_count))
+-        self.extinction_risk_label.setText(f"{stats.extinction_risk:.4f}")
+ 
+     def clear(self) -> None:
+         self.generation_label.setText("0")
+         self.prey_label.setText("0")
+         self.predator_label.setText("0")
+-        self.extinction_risk_label.setText("0.0")

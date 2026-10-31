@@ -1,0 +1,23 @@
+Name                                   Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------
+ppets\__init__.py                         10      2    80%   21-22
+ppets\analysis\__init__.py                 3      0   100%
+ppets\analysis\estimates.py              103      6    94%   65-66, 73, 82, 113, 129
+ppets\analysis\threshold_analyzer.py     164      3    98%   65, 153, 155
+ppets\controller.py                       68     10    85%   83-86, 90, 97, 102-105
+ppets\simulation\__init__.py               6      0   100%
+ppets\simulation\cell.py                  50      1    98%   47
+ppets\simulation\config.py                45      0   100%
+ppets\simulation\engine.py                35      1    97%   62
+ppets\simulation\grid.py                  53      0   100%
+ppets\simulation\stats.py                 14      2    86%   27, 31
+ppets\ui\__init__.py                       2      0   100%
+ppets\ui\chart_view.py                    37     10    73%   50-55, 58-62
+ppets\ui\config_panel.py                  99     15    85%   115, 118, 121, 124, 129, 135-139, 154-158
+ppets\ui\grid_view.py                     41     19    54%   47-73, 76-78, 81-82, 85-86
+ppets\ui\heatmap_view.py                  34      0   100%
+ppets\ui\main_window.py                  105     34    68%   93, 96-100, 103-104, 107-108, 111-114, 117-119, 122-128, 131-137, 140-145, 148-151
+ppets\ui\playback_controls.py             54      2    96%   76-77
+ppets\ui\stats_panel.py                   22      6    73%   33-35, 38-40
+--------------------------------------------------------------------
+TOTAL                                    945    111    88%

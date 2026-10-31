@@ -1,0 +1,22 @@
+One 30x30 run, 150 generations, sorted by own time
+
+         1486545 function calls in 1.894 seconds
+
+   Ordered by: internal time
+   List reduced from 36 to 12 due to restriction <12>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    71666    0.832    0.000    0.832    0.000 C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core\ppets\simulation\grid.py:68(<genexpr>)
+    14694    0.234    0.000    0.273    0.000 C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core\ppets\simulation\grid.py:73(random_empty_neighbor)
+    91717    0.159    0.000    0.227    0.000 C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core\ppets\simulation\grid.py:54(_neighbor_coords)
+      150    0.136    0.001    1.894    0.013 C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core\ppets\simulation\engine.py:41(step)
+    68994    0.133    0.000    1.464    0.000 C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core\ppets\simulation\cell.py:53(update)
+     9992    0.128    0.000    0.153    0.000 C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core\ppets\simulation\grid.py:70(prey_neighbor_coords)
+   733886    0.068    0.000    0.068    0.000 {method 'append' of 'list' objects}
+    67031    0.047    0.000    1.078    0.000 C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core\ppets\simulation\grid.py:67(count_neighbors)
+     9992    0.042    0.000    0.223    0.000 C:\Users\rohit\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core\ppets\simulation\cell.py:82(update)
+    67031    0.032    0.000    0.865    0.000 {built-in method builtins.sum}
+    78986    0.026    0.000    0.048    0.000 C:\Python314\Lib\enum.py:677(__call__)
+    78986    0.022    0.000    0.022    0.000 C:\Python314\Lib\enum.py:1146(__new__)
+
+
