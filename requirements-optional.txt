@@ -1,0 +1,3 @@
+# Only for regenerating the figures (validation/make_figures.py, ru09_figures.py,
+# hs4_analyze.py, hs4_benchmark.py). Not needed to run the app or the tests.
+matplotlib==3.11.1

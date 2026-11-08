@@ -1,0 +1,52 @@
+# HS5 manual pass 1, 2026-11-08: public repo (c8b6a88) cloned under a deep temp path, README quick start followed literally.
+# Home directory redacted to ~. Raw output, not edited.
+# Checkout path length in this pass: 142 characters (the venv path then exceeded Windows MAX_PATH = 260 for PyQt6 files).
+### [2026-11-08T10:53:04-05:00] git clone https://github.com/QuanTakeuchi/ppets.git
+exit 0
+c8b6a88 Merge branch 'ru09-results': HS4 and RU-09 evidence
+### [2026-11-08T10:53:12-05:00] python -m venv .venv
+exit 0
+Python 3.14.4
+### [2026-11-08T10:53:21-05:00] pip install -r requirements.txt (README quick start)
+ERROR: Could not install packages due to an OSError: [Errno 2] No such file or directory: '~\\AppData\\Local\\Temp\\claude\\C--Users-USER--claude-spares-spare-kzu9W3\\d9714f2d-7292-435c-8cb2-69a65e644dc3\\scratchpad\\pass1\\repo\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\qml\\QtQuick\\Controls\\FluentWinUI3\\dark\\images\\checkbox-indicator-checked-disabled.png'
+HINT: This error might have occurred since this system does not have Windows Long Path support enabled. You can find information on how to enable this at https://pip.pypa.io/warnings/enable-long-paths
+
+exit 1 (74s)
+### [2026-11-08T10:54:36-05:00] python main.py
+Traceback (most recent call last):
+  File "~\AppData\Local\Temp\claude\C--Users-USER--claude-spares-spare-kzu9W3\d9714f2d-7292-435c-8cb2-69a65e644dc3\scratchpad\pass1\repo\main.py", line 7, in <module>
+    from ppets.simulation import CellularAutomatonEngine, SimulationConfig, PopulationStats
+  File "~\AppData\Local\Temp\claude\C--Users-USER--claude-spares-spare-kzu9W3\d9714f2d-7292-435c-8cb2-69a65e644dc3\scratchpad\pass1\repo\ppets\__init__.py", line 24, in <module>
+    _qt_bin_dir = os.path.join(os.path.dirname(PyQt6.__file__), "Qt6", "bin")
+                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<frozen ntpath>", line 263, in dirname
+  File "<frozen ntpath>", line 227, in split
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+exit 1
+0a1,52
+> generation,prey_count,predator_count,extinction_risk
+> 0,274,88,0.5138
+> 1,236,96,0.4217
+> 2,204,110,0.2994
+### [2026-11-08T10:54:36-05:00] pytest -v (README quick start, bare pytest)
+/usr/bin/bash: line 22: .venv/Scripts/pytest: No such file or directory
+### [2026-11-08T10:54:36-05:00] python -m pytest -q
+~\AppData\Local\Temp\claude\C--Users-USER--claude-spares-spare-kzu9W3\d9714f2d-7292-435c-8cb2-69a65e644dc3\scratchpad\pass1\repo\.venv\Scripts\python.exe: No module named pytest
+(0s)
+### [2026-11-08T10:54:36-05:00] python validation/run_validation.py
+Traceback (most recent call last):
+  File "~\AppData\Local\Temp\claude\C--Users-USER--claude-spares-spare-kzu9W3\d9714f2d-7292-435c-8cb2-69a65e644dc3\scratchpad\pass1\repo\validation\run_validation.py", line 35, in <module>
+    from ppets.analysis import HeatmapData, ParamRange, ThresholdAnalyzer  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~\AppData\Local\Temp\claude\C--Users-USER--claude-spares-spare-kzu9W3\d9714f2d-7292-435c-8cb2-69a65e644dc3\scratchpad\pass1\repo\ppets\__init__.py", line 24, in <module>
+    _qt_bin_dir = os.path.join(os.path.dirname(PyQt6.__file__), "Qt6", "bin")
+                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<frozen ntpath>", line 263, in dirname
+  File "<frozen ntpath>", line 227, in split
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+exit 1 (1s)
+### [2026-11-08T10:54:37-05:00] python validation/ru09_studies.py --check-fingerprint
+Traceback (most recent call last):
+  File "~\AppData\Local\Temp\claude\C--Users-USER--claude-spares-spare-kzu9W3\d9714f2d-7292-435c-8cb2-69a65e644dc3\scratchpad\pass1\repo\validation\ru09_studies.py", line 19, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'

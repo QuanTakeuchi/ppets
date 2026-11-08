@@ -1,4 +1,6 @@
-# Exact versions that produced the RU-06 evidence (fresh venv, Windows 11, Python 3.14.4, 2026-10-10).
+# Exact versions that produced the RU-06 evidence (fresh venv, Windows 11, Python 3.14.4, 2026-10-10),
+# plus scipy 1.18.0, the version behind the HS4 and RU-09 analyses (added at HS5, FP-05).
+# Verified by validation/hs5_clean_run.py on 2026-11-08 (evidence/hs5/clean_run_py314.json).
 # requirements.txt stays unpinned on purpose (it states what the project needs);
 # install THIS file instead when you need to reproduce evidence/validation/ exactly:
 #     pip install -r requirements-lock.txt
@@ -16,3 +18,4 @@ PyQt6-Qt6==6.11.2
 PyQt6_sip==13.13.0
 pyqtgraph==0.14.0
 pytest==9.1.1
+scipy==1.18.0

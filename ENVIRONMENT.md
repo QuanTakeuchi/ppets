@@ -1,5 +1,32 @@
 # Environment Notes
 
+## Current state (HS5, 2026-11-08)
+
+| Item | Value |
+| --- | --- |
+| Reference machine | Windows 11 Home 10.0.26200, AMD Ryzen 9 8945HS (16 logical CPUs), 31 GB RAM; repository under OneDrive |
+| Python tested | 3.14.4 with `requirements-lock.txt`; 3.11.9 with `requirements.txt` (resolved numpy 2.4.6, PyQt6 6.12.0, scipy 1.17.1) |
+| Minimum Python | 3.11 (numpy 2.5 needs 3.12+, so 3.11 gets numpy 2.4; outputs were identical) |
+| Dependencies | `requirements.txt` (unpinned: numpy, PyQt6, pyqtgraph, scipy, pytest, coverage); `requirements-lock.txt` (exact); `requirements-optional.txt` (matplotlib, figures only) |
+| Preflight | `python check_env.py` |
+| Clean-room check | `python validation/hs5_clean_run.py` -> `evidence/hs5/clean_run_*.json` |
+| CI | `.github/workflows/ci.yml`: Windows + Ubuntu, 3.14 lock and 3.11 unpinned (not yet run) |
+| Network / services | `pip install` only; no API, credentials or `.env` |
+
+What changed since RU-06: scipy is required (tests and analysis), the
+`hash()` seed caveat (DEF-09) is closed by the HS4 `SeedSequence` rule, and
+determinism now holds across Python 3.11 and 3.14 as well as across
+`PYTHONHASHSEED` values. Friction found in the HS5 clean pass, including
+the Windows path-length limit: `evidence/hs5/REPRODUCIBILITY_NOTES.md`.
+
+Still unverified: Linux and macOS (until CI runs), a second physical
+machine, containers (Docker not installed), and a manual GUI click-through
+outside the recorded walkthrough.
+
+---
+
+## RU-06 record (2026-10-10, kept as written)
+
 What the current evidence was produced on, what the project assumes, and what
 has actually been checked. Source of truth: `evidence/validation/environment.json`
 (regenerate with `python validation/env_snapshot.py`).

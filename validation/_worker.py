@@ -58,7 +58,9 @@ def determinism_fingerprint() -> str:
         ParamRange("predator_density", 0.10, 0.20, 0.10),
         ParamRange("predator_repro_rate", 0.10, 0.20, 0.10),
         replicates=2,
-        base_config=SimulationConfig(width=15, height=15),
+        # A fixed master seed: since HS4 an unseeded sweep draws fresh entropy,
+        # which made this fingerprint differ between interpreters (HS5 FP-07).
+        base_config=SimulationConfig(width=15, height=15, seed=2026),
         max_generations=40,
     )
     res = ta.run_sweep()

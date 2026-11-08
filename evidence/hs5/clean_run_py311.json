@@ -1,0 +1,126 @@
+{
+  "script": "validation/hs5_clean_run.py",
+  "started": "2026-11-08 11:12:04 -0500",
+  "finished": "2026-11-08 11:14:42 -0500",
+  "source": "worktree",
+  "source_commit": "c8b6a88 Merge branch 'ru09-results': HS4 and RU-09 evidence",
+  "requirements": "requirements.txt",
+  "python_spec": "py:3.11",
+  "host": {
+    "python": "3.14.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "cpus": 16
+  },
+  "copy_path_length": 48,
+  "all_required_ok": true,
+  "steps": [
+    {
+      "step": "git clone (local repository, committed state)",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.7,
+      "detail": ""
+    },
+    {
+      "step": "overlay uncommitted working-tree files",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.0,
+      "detail": "38 files copied; RL-01 Word files excluded"
+    },
+    {
+      "step": "python -m venv .venv",
+      "ok": true,
+      "exit": 0,
+      "seconds": 14.2,
+      "detail": ""
+    },
+    {
+      "step": "pip install -r requirements.txt",
+      "ok": true,
+      "exit": 0,
+      "seconds": 49.4,
+      "detail": ""
+    },
+    {
+      "step": "python check_env.py",
+      "ok": true,
+      "exit": 0,
+      "seconds": 5.6,
+      "detail": "READY: 0 failed, 6 warnings"
+    },
+    {
+      "step": "python main.py",
+      "ok": true,
+      "exit": 0,
+      "seconds": 1.4,
+      "detail": "52 lines, identical to evidence/hs5/main_expected.txt"
+    },
+    {
+      "step": "python main.py --config configs/default.json",
+      "ok": true,
+      "exit": 0,
+      "seconds": 1.2,
+      "detail": "52 lines, identical to evidence/hs5/main_expected.txt"
+    },
+    {
+      "step": "python main.py --width 1 (must exit 2, no traceback)",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.5,
+      "detail": "main.py: error: Invalid SimulationConfig: width and height must both be >= 2"
+    },
+    {
+      "step": "evidence files match their manifests",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.6,
+      "detail": "24/24 evidence files match their manifests -> evidence/hs5/evidence_integrity.json"
+    },
+    {
+      "step": "python -m pytest -q",
+      "ok": true,
+      "exit": 0,
+      "seconds": 24.4,
+      "detail": "109 passed in 23.46s"
+    },
+    {
+      "step": "determinism fingerprint == host interpreter",
+      "ok": true,
+      "exit": 0,
+      "seconds": 2.4,
+      "detail": "f2e0d13df71e330c vs host f2e0d13df71e330c"
+    },
+    {
+      "step": "ru09_studies.py --check-fingerprint",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.5,
+      "detail": "0c61dd14fdaad6a8 matches",
+      "informational": true
+    },
+    {
+      "step": "regenerate published study hs4:L20_s4011 (540 runs)",
+      "ok": true,
+      "exit": 0,
+      "seconds": 51.4,
+      "detail": "sha256 a9541e67215b3625 reproduced"
+    }
+  ],
+  "venv_pip_freeze": [
+    "colorama==0.4.6",
+    "coverage==7.17.2",
+    "iniconfig==2.3.1",
+    "numpy==2.4.6",
+    "packaging==26.3",
+    "pluggy==1.7.0",
+    "Pygments==2.21.0",
+    "PyQt6==6.12.0",
+    "PyQt6-Qt6==6.12.0",
+    "PyQt6_sip==13.13.0",
+    "pyqtgraph==0.14.0",
+    "pytest==9.2.0",
+    "scipy==1.17.1"
+  ]
+}

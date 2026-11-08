@@ -123,3 +123,31 @@ D1, D3, D6 and D7; signing below.
 ## Student declaration
 
 Signature: ______________________________          Date: ______________
+
+
+---
+
+# AI Usage Log — Hard Stop 5 (Artifact Hardening and Reproducibility Check)
+
+Same principles as above. Full log, including AI outputs that were wrong or
+rejected: section 1 of `PPETS_HS5_Artifact_Hardening_Package.docx`.
+
+| Period | AI contribution | Verification | Appears in |
+| --- | --- | --- | --- |
+| Nov 8, 2026 | Claude Code (Claude Opus 5.5) audited the repository; ran the two manual clean passes from the public repository and logged the friction (FP-01 to FP-13) before fixing anything; wrote `check_env.py`, the `main.py` command line, `configs/default.json`, `tests/test_cli.py`, `validation/hs5_clean_run.py`, `validation/hs5_verify_evidence.py` and the CI workflow; updated `validation/run_validation.py` and `_worker.py`; rewrote `README.md`; wrote `RUNBOOK.md`, `evidence/README.md` and the HS5 notes; updated these logs; drafted the HS5 package. No `ppets/` code changed. | 109 tests pass; 12/12 validation checks; clean runs on Python 3.14 (lock) and 3.11 (unpinned); two published studies regenerated with matching hashes; `main.py` default output byte-identical before and after the CLI rewrite; `ru09_studies.py --check-fingerprint` matches. | Repository root, `validation/`, `tests/`, `evidence/hs5/`, HS5 package |
+
+Corrected AI errors this checkpoint: an edit script aborted midway, and the
+old validation suite then ran and overwrote committed RU-06 evidence
+(restored from git; this became FP-08); a "historical" banner was added to
+`ppets/README.md`, which would have changed the frozen fingerprint (reverted,
+fingerprint re-checked); a preflight warning claimed results "matched across
+the versions tested" for versions that had not been tested (reworded); a
+runtime estimate in the runbook was too high (2.5 h; the manifests sum to
+about 1.5 h).
+
+Not done by the AI: the walkthrough recording; choosing a licence (HS5-03);
+decision D-HS5-1; the commit, tag and push that start CI; signing below.
+
+## Student declaration
+
+Signature: ______________________________          Date: ______________

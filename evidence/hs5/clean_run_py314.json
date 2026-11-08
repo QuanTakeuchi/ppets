@@ -1,0 +1,140 @@
+{
+  "script": "validation/hs5_clean_run.py",
+  "started": "2026-11-08 11:07:23 -0500",
+  "finished": "2026-11-08 11:12:04 -0500",
+  "source": "worktree",
+  "source_commit": "c8b6a88 Merge branch 'ru09-results': HS4 and RU-09 evidence",
+  "requirements": "requirements-lock.txt",
+  "python_spec": "C:\\Python314\\python.exe",
+  "host": {
+    "python": "3.14.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "cpus": 16
+  },
+  "copy_path_length": 48,
+  "all_required_ok": true,
+  "steps": [
+    {
+      "step": "git clone (local repository, committed state)",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.8,
+      "detail": ""
+    },
+    {
+      "step": "overlay uncommitted working-tree files",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.0,
+      "detail": "26 files copied; RL-01 Word files excluded"
+    },
+    {
+      "step": "python -m venv .venv",
+      "ok": true,
+      "exit": 0,
+      "seconds": 8.0,
+      "detail": ""
+    },
+    {
+      "step": "pip install -r requirements-lock.txt",
+      "ok": true,
+      "exit": 0,
+      "seconds": 42.7,
+      "detail": ""
+    },
+    {
+      "step": "python check_env.py",
+      "ok": true,
+      "exit": 0,
+      "seconds": 2.3,
+      "detail": "READY: 0 failed, 1 warnings"
+    },
+    {
+      "step": "python main.py",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.9,
+      "detail": "52 lines, identical to evidence/hs5/main_expected.txt"
+    },
+    {
+      "step": "python main.py --config configs/default.json",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.7,
+      "detail": "52 lines, identical to evidence/hs5/main_expected.txt"
+    },
+    {
+      "step": "python main.py --width 1 (must exit 2, no traceback)",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.4,
+      "detail": "main.py: error: Invalid SimulationConfig: width and height must both be >= 2"
+    },
+    {
+      "step": "evidence files match their manifests",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.5,
+      "detail": "24/24 evidence files match their manifests -> evidence/hs5/evidence_integrity.json"
+    },
+    {
+      "step": "python -m pytest -q",
+      "ok": true,
+      "exit": 0,
+      "seconds": 16.5,
+      "detail": "109 passed in 15.38s"
+    },
+    {
+      "step": "determinism fingerprint == host interpreter",
+      "ok": true,
+      "exit": 0,
+      "seconds": 1.3,
+      "detail": "f2e0d13df71e330c vs host f2e0d13df71e330c"
+    },
+    {
+      "step": "ru09_studies.py --check-fingerprint",
+      "ok": true,
+      "exit": 0,
+      "seconds": 0.5,
+      "detail": "0c61dd14fdaad6a8 matches",
+      "informational": true
+    },
+    {
+      "step": "python validation/run_validation.py",
+      "ok": true,
+      "exit": 0,
+      "seconds": 114.0,
+      "detail": "commit c8b6a88 \u00b7 Python 3.14.4 \u00b7 2026-11-08 11:10:33 -0500"
+    },
+    {
+      "step": "regenerate published study hs4:L20_s4011 (540 runs)",
+      "ok": true,
+      "exit": 0,
+      "seconds": 24.4,
+      "detail": "sha256 a9541e67215b3625 reproduced"
+    },
+    {
+      "step": "regenerate published study ru09:trajectory (360 runs)",
+      "ok": true,
+      "exit": 0,
+      "seconds": 62.3,
+      "detail": "sha256 d491dc8da2f9cfe7 reproduced"
+    }
+  ],
+  "venv_pip_freeze": [
+    "colorama==0.4.6",
+    "coverage==7.16.2",
+    "iniconfig==2.3.1",
+    "numpy==2.5.3",
+    "packaging==26.3",
+    "pluggy==1.6.0",
+    "Pygments==2.21.0",
+    "PyQt6==6.11.0",
+    "PyQt6-Qt6==6.11.2",
+    "PyQt6_sip==13.13.0",
+    "pyqtgraph==0.14.0",
+    "pytest==9.1.1",
+    "scipy==1.18.0"
+  ]
+}
