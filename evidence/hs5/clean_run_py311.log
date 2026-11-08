@@ -1,0 +1,211 @@
+
+###2026-11-08 11:12:04  git clone (local repository, committed state)
+$ git clone -q --no-hardlinks ~\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core ~\AppData\Local\Temp\pp5_p5wl4ewp\r
+
+[exit 0]
+
+###2026-11-08 11:12:05  python -m venv .venv
+$ py -3.11 -m venv .venv
+
+[exit 0]
+
+###2026-11-08 11:12:19  pip install -r requirements.txt
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe -m pip install -q --disable-pip-version-check -r requirements.txt
+
+[exit 0]
+
+###2026-11-08 11:13:09  python check_env.py
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe check_env.py
+PASS  python            3.11.9 (~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe)
+PASS  virtualenv        ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv
+PASS  path length       48 characters
+WARN  numpy             2.4.6 (lock file has 2.5.3; fine for running PPETS, but install requirements-lock.txt for an exact reproduction of the evidence)
+WARN  PyQt6             6.12.0 (lock file has 6.11.0; fine for running PPETS, but install requirements-lock.txt for an exact reproduction of the evidence)
+PASS  pyqtgraph         0.14.0
+WARN  scipy             1.17.1 (lock file has 1.18.0; fine for running PPETS, but install requirements-lock.txt for an exact reproduction of the evidence)
+WARN  pytest            9.2.0 (lock file has 9.1.1; fine for running PPETS, but install requirements-lock.txt for an exact reproduction of the evidence)
+WARN  coverage          7.17.2 (lock file has 7.16.2; fine for running PPETS, but install requirements-lock.txt for an exact reproduction of the evidence)
+WARN  matplotlib        not installed (only needed for figures): pip install -r requirements-optional.txt
+PASS  Qt platform       windows
+PASS  repository files  ppets/, tests/, configs/, evidence/hs5/ present
+PASS  git               tags present: hs3-baseline, hs4-evidence
+
+READY: 0 failed, 6 warnings
+
+[exit 0]
+
+###2026-11-08 11:13:15  python main.py
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe main.py
+generation,prey_count,predator_count
+0,274,88
+1,236,96
+2,204,110
+3,181,125
+4,185,141
+5,175,131
+6,183,111
+7,192,92
+8,197,81
+9,205,67
+10,213,62
+11,220,66
+12,231,60
+13,234,55
+14,239,46
+15,258,39
+16,262,36
+17,287,33
+18,300,33
+19,306,36
+20,329,40
+21,341,44
+22,357,42
+23,366,42
+24,363,42
+25,380,38
+26,385,47
+27,411,41
+28,423,44
+29,435,47
+30,458,45
+31,468,48
+32,477,45
+33,496,51
+34,505,55
+35,510,65
+36,522,63
+37,535,64
+38,529,63
+39,531,57
+40,540,56
+41,543,58
+42,553,59
+43,571,58
+44,576,58
+45,585,60
+46,592,58
+47,594,58
+48,595,53
+49,599,54
+50,592,55
+
+[exit 0]
+
+###2026-11-08 11:13:16  python main.py --config configs/default.json
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe main.py --config configs/default.json
+generation,prey_count,predator_count
+0,274,88
+1,236,96
+2,204,110
+3,181,125
+4,185,141
+5,175,131
+6,183,111
+7,192,92
+8,197,81
+9,205,67
+10,213,62
+11,220,66
+12,231,60
+13,234,55
+14,239,46
+15,258,39
+16,262,36
+17,287,33
+18,300,33
+19,306,36
+20,329,40
+21,341,44
+22,357,42
+23,366,42
+24,363,42
+25,380,38
+26,385,47
+27,411,41
+28,423,44
+29,435,47
+30,458,45
+31,468,48
+32,477,45
+33,496,51
+34,505,55
+35,510,65
+36,522,63
+37,535,64
+38,529,63
+39,531,57
+40,540,56
+41,543,58
+42,553,59
+43,571,58
+44,576,58
+45,585,60
+46,592,58
+47,594,58
+48,595,53
+49,599,54
+50,592,55
+
+[exit 0]
+
+###2026-11-08 11:13:18  python main.py --width 1 (must exit 2, no traceback)
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe -c import subprocess,sys; p=subprocess.run([sys.executable,'main.py','--width','1'],capture_output=True,text=True); print(p.stderr.strip()); sys.exit(0 if p.returncode==2 and 'Traceback' not in p.stderr else 1)
+main.py: error: Invalid SimulationConfig: width and height must both be >= 2
+
+[exit 0]
+
+###2026-11-08 11:13:18  evidence files match their manifests
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe validation/hs5_verify_evidence.py
+PASS evidence/hs4/benchmark.json (as stored)
+PASS evidence/hs4/defects_on_hs3_baseline.txt (as stored)
+PASS evidence/hs4/hs4_results.json (as stored)
+PASS evidence/hs4/pytest_full.txt (as stored)
+PASS evidence/hs4/serial_vs_parallel.json (as stored)
+PASS evidence/hs4/studies/H300_s4031.runs.csv (as stored)
+PASS evidence/hs4/studies/hs3design_s4041.runs.csv (as stored)
+PASS evidence/hs4/studies/L20_s4011.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4001.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4002.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4003.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4004.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4005.runs.csv (as stored)
+PASS evidence/hs4/studies/L40_s4012.runs.csv (as stored)
+PASS evidence/hs4/studies/L50_s4013.runs.csv (as stored)
+PASS evidence/hs4/studies/r05_s4021.runs.csv (as stored)
+PASS evidence/hs4/studies/r30_s4022.runs.csv (as stored)
+PASS evidence/ru09/ru09_results.json (as stored)
+PASS evidence/ru09/studies/L100_s4015.runs.csv (as stored)
+PASS evidence/ru09/studies/L150_s4018.runs.csv (as stored)
+PASS evidence/ru09/studies/L50_s4016.runs.csv (as stored)
+PASS evidence/ru09/studies/L75_s4014.runs.csv (as stored)
+PASS evidence/ru09/studies/L75_s4017.runs.csv (as stored)
+PASS evidence/ru09/studies/trajectory_s4050.csv (as stored)
+24/24 evidence files match their manifests -> evidence/hs5/evidence_integrity.json
+
+[exit 0]
+
+###2026-11-08 11:13:19  python -m pytest -q
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider
+........................................................................ [ 66%]
+.....................................                                    [100%]
+109 passed in 23.46s
+
+[exit 0]
+
+###2026-11-08 11:13:44  determinism fingerprint == host interpreter
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe validation/_worker.py fingerprint
+f2e0d13df71e330c9938965c277a73a4dc1e8b2c64ddf360a83c452c893d2041
+
+[exit 0]
+
+###2026-11-08 11:13:47  ru09_studies.py --check-fingerprint
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe validation/ru09_studies.py --check-fingerprint
+0c61dd14fdaad6a8 matches
+
+[exit 0]
+
+###2026-11-08 11:13:47  regenerate published study hs4:L20_s4011 (540 runs)
+$ ~\AppData\Local\Temp\pp5_p5wl4ewp\r\.venv\Scripts\python.exe validation/hs4_studies.py L20_s4011
+L20_s4011: 540 runs in 51s
+
+[exit 0]

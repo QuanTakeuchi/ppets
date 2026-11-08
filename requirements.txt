@@ -1,5 +1,9 @@
+# What PPETS needs to run the app, the tests and the validation scripts.
+# Unpinned on purpose; for an exact reproduction of the evidence install
+# requirements-lock.txt instead. Python 3.11 or newer.
 numpy
 PyQt6
 pyqtgraph
+scipy        # tests/test_ru09_analysis.py and validation/*_analyze.py (undeclared before HS5, FP-05)
 pytest
 coverage

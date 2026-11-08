@@ -113,3 +113,30 @@ of `PPETS_RU09_Results_and_Limitations_Memo.docx`.
 | RU9-04 | The default density axis stops at 0.40, where P(extinct) is only 67% at L = 100. Larger grids need a wider axis. | Low | Open. Choose the axis per grid size. |
 
 HS4-03 checked: 0 extinct-at-start runs in 9,030 runs across all sweeps.
+
+---
+
+## Hard Stop 5 (artifact hardening and reproducibility, 2026-11-08)
+
+Evidence: `evidence/hs5/` (friction log: `REPRODUCIBILITY_NOTES.md`, FP-01 to FP-13).
+No `ppets/` code changed (fingerprint `0c61dd14fdaad6a8`).
+
+### Closed
+
+| ID | Resolution | Proof |
+| --- | --- | --- |
+| HS5-01 | `scipy` was imported by tests and analysis scripts but not declared, so a fresh install ran zero tests (FP-05). Added to `requirements.txt` and the lock file. | `clean_run_py314.json`, `clean_run_py311.json` |
+| HS5-02 | `validation/run_validation.py` failed 4/12 on `main` because V03, V06, V08 and V11 still encoded the HS3 contract (FP-06, FP-07), and it overwrote the committed RU-06 evidence (FP-08). Checks updated; output moved to `evidence/hs5/validation/`. | 12/12, `evidence/hs5/validation/validation_report.txt` |
+| KI-06 | Partly: the GUI is now exercised on the native platform by V09/V10 and in the walkthrough recording. | — |
+| DEF-12 | `requirements-lock.txt` now covers every import, including scipy; drift measured (FP-09). | `clean_run_py311.json` |
+
+### Open
+
+| ID | Issue | Severity | Status |
+| --- | --- | --- | --- |
+| HS5-03 | No licence file. The repository is public, but nobody may legally reuse the code. | Medium | Student decision (choose a licence, e.g. MIT, or state "all rights reserved"). |
+| HS5-04 | Six committed files from HS3 and HS4 contain the Windows user name in file paths: `evidence/pytest_output.txt`, `evidence/validation/pytest_full.txt`, `evidence/validation/environment.json`, `evidence/hs4/pytest_full.txt`, `evidence/hs4/benchmark_profile.txt`, `evidence/hs4/defects_on_hs3_baseline.txt`. New HS5 logs are redacted. | Low | Left as committed (they are already public, and history is not rewritten). |
+| HS5-05 | A half-installed PyQt6 makes `import ppets` crash with `TypeError` in `ppets/__init__.py`, even for headless use (FP-02). Detected by `check_env.py`. | Low | Code fix waits for decision D-HS5-1 (it changes the `ppets/` fingerprint). |
+| HS5-06 | Only Windows 11 has been run. The CI workflow adds Ubuntu but has not run yet. | Medium | Push to `main` to start CI; record the first run. |
+| HS5-07 | `SimulationConfig.validate()` checks ranges but not types (e.g. `width=30.5` reaches the grid). `main.py` now type-checks its input; direct library use does not. | Low | With the next `ppets/` change. |
+| HS5-08 | `ppets/README.md` and `VALIDATION_MEMO.md` describe older states (29 tests, `extinction_risk`). `VALIDATION_MEMO.md` now carries a "historical" banner. `ppets/README.md` cannot: any file under `ppets/` is part of the frozen fingerprint, so editing it would block `ru09_studies.py`. | Low | Update with the next `ppets/` change. |

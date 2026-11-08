@@ -4,9 +4,28 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 Versions correspond to this project's Hard Stop tags (`hsN-baseline`), not
 semantic-version releases.
 
+## [Unreleased — HS5 artifact hardening] — 2026-11-08
+
+No production code under `ppets/` changed (fingerprint `0c61dd14fdaad6a8`).
+Proposed tag after student review: `hs5-hardening`.
+
+### Added
+- `check_env.py`: preflight check (Python, path length, packages, PyQt6 integrity, Qt platform, repository files).
+- `main.py` command line: parameter flags, `--config` JSON, `--generations`, `--output`; exit status 2 with a message on bad input. Default output unchanged.
+- `configs/default.json`; `evidence/hs5/main_expected.txt` (current reference trace).
+- `tests/test_cli.py` (19 tests). Suite: 109 passed.
+- `validation/hs5_clean_run.py` (automated clean-room pass, optional study regeneration), `validation/hs5_verify_evidence.py` (manifest hashes).
+- `RUNBOOK.md`, `evidence/README.md`, `evidence/hs5/` (clean-run records, `REPRODUCIBILITY_NOTES.md`), `.github/workflows/ci.yml`, `requirements-optional.txt`.
+
+### Changed
+- `README.md` rewritten: prerequisites, setup, run commands with expected output, configuration, data, troubleshooting.
+- `requirements.txt` and `requirements-lock.txt`: scipy declared; matplotlib moved to `requirements-optional.txt`.
+- `validation/run_validation.py`: V03, V06, V08 and V11 updated to the HS4 contract; writes to `evidence/hs5/validation/`. `validation/_worker.py` fingerprint uses a fixed master seed.
+- `ENVIRONMENT.md`, `KNOWN_ISSUES.md`, `RISK_LOG.md`, `AI_USAGE_LOG.md`, `validation/README.md` updated.
+
 ## [Unreleased — HS4 evidence review] — 2026-10-24
 
-Not yet committed or tagged. Proposed tag after student review: `hs4-evidence`.
+Committed and tagged `hs4-evidence` (dd9ff6c) on 2026-10-31.
 
 ### Added
 - `ppets/analysis/estimates.py`: `wilson_interval` (FR11) and `fit_threshold`

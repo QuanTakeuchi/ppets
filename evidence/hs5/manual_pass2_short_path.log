@@ -1,0 +1,61 @@
+# HS5 manual pass 2, 2026-11-08: same commit cloned to a short path; README quick start plus validation/run_validation.py.
+# Home directory redacted to ~. Raw output, not edited.
+### [2026-11-08T10:55:39-05:00] git clone (public repo) into short path ~/AppData/Local/Temp/pp5
+c8b6a88 Merge branch 'ru09-results': HS4 and RU-09 evidence
+### [2026-11-08T10:55:40-05:00] venv + pip install -r requirements.txt
+exit 0 (33s)
+### [2026-11-08T10:56:20-05:00] python main.py vs evidence/main_smoke_test.txt
+exit 0
+1,52c1,52
+< generation,prey_count,predator_count
+< 0,274,88
+< 1,236,96
+### [2026-11-08T10:56:22-05:00] python -m pytest -q
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Python314\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_ru09_analysis.py:8: in <module>
+    from scipy.optimize import minimize
+E   ModuleNotFoundError: No module named 'scipy'
+=========================== short test summary info ===========================
+ERROR tests/test_ru09_analysis.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 1.26s
+(3s)
+### [2026-11-08T10:56:25-05:00] python validation/run_validation.py
+[PASS] V01 Config validation rejects bad input; dict round-trip is lossless (0.02s)
+[PASS] V02 Same seed -> identical history in one process (NFR02) (2.65s)
+[FAIL] V03 Determinism holds across separate interpreters and PYTHONHASHSEED values (4.64s)
+[PASS] V04 Different seeds give different trajectories (determinism is not a constant) (1.37s)
+[PASS] V05 Grid invariants hold every generation (state codes, counts, hunger, eaten buffer) (0.84s)
+[FAIL] V06 Headless CSV pipeline (main.py): schema, ranges, byte-identical to the Oct 3 evidence (0.69s)
+[PASS] V07 ThresholdAnalyzer output structure, probability bounds, progress and cancel contract (5.36s)
+[FAIL] V08 ThresholdAnalyzer agrees cell-for-cell with the standalone experiments/sweep.py path (5.73s)
+[PASS] V09 HeatmapView renders an analyzer-produced matrix (screenshot saved) (30.21s)
+[PASS] V10 MainWindow + controller integration drives engine, charts and stats (0.46s)
+[FAIL] V11 Known-defect reproducers (strict xfail) still reproduce (1.55s)
+[PASS] V12 Negative control: unseeded runs diverge, so the V02/V03 equality tests can actually fail (0.97s)
+PPETS RU-06 validation — 8/12 checks passed
+commit c8b6a88 · Python 3.14.4 · 2026-11-08 10:57:20 -0500
+exit 1 (55s)
+### [2026-11-08T10:57:20-05:00] python validation/ru09_studies.py --check-fingerprint
+0c61dd14fdaad6a8 matches
+### [2026-11-08T10:57:21-05:00] python validation/ru09_analyze.py (no scipy?)
+  File "~\AppData\Local\Temp\pp5\r\validation\ru09_analyze.py", line 19, in <module>
+    from scipy.stats import chi2, norm
+ModuleNotFoundError: No module named 'scipy'
+### [2026-11-08T10:57:21-05:00] pip freeze
+colorama==0.4.6
+coverage==7.17.2
+iniconfig==2.3.1
+numpy==2.5.4
+packaging==26.3
+pluggy==1.7.0
+Pygments==2.21.0
+PyQt6==6.12.0
+PyQt6-Qt6==6.12.0
+PyQt6_sip==13.13.0
+pyqtgraph==0.14.0
+pytest==9.2.0

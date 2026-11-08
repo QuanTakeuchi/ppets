@@ -1,0 +1,13 @@
+{
+  "width": 30,
+  "height": 30,
+  "toroidal": true,
+  "prey_density": 0.30,
+  "predator_density": 0.10,
+  "prey_repro_rate": 0.20,
+  "predator_repro_rate": 0.15,
+  "prey_death_threshold": 3,
+  "starvation_rate": 3,
+  "seed": 42,
+  "generations": 50
+}

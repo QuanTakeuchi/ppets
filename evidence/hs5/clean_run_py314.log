@@ -1,0 +1,236 @@
+
+###2026-11-08 11:07:23  git clone (local repository, committed state)
+$ git clone -q --no-hardlinks ~\OneDrive\Documents\HU\ResearchMethodology\ppets_ca_engine_core ~\AppData\Local\Temp\pp5_an6lsqyi\r
+
+[exit 0]
+
+###2026-11-08 11:07:24  python -m venv .venv
+$ C:\Python314\python.exe -m venv .venv
+
+[exit 0]
+
+###2026-11-08 11:07:32  pip install -r requirements-lock.txt
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe -m pip install -q --disable-pip-version-check -r requirements-lock.txt
+
+[exit 0]
+
+###2026-11-08 11:08:15  python check_env.py
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe check_env.py
+PASS  python            3.14.4 (~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe)
+PASS  virtualenv        ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv
+PASS  path length       48 characters
+PASS  numpy             2.5.3
+PASS  PyQt6             6.11.0
+PASS  pyqtgraph         0.14.0
+PASS  scipy             1.18.0
+PASS  pytest            9.1.1
+PASS  coverage          7.16.2
+WARN  matplotlib        not installed (only needed for figures): pip install -r requirements-optional.txt
+PASS  Qt platform       windows
+PASS  repository files  ppets/, tests/, configs/, evidence/hs5/ present
+PASS  git               tags present: hs3-baseline, hs4-evidence
+
+READY: 0 failed, 1 warnings
+
+[exit 0]
+
+###2026-11-08 11:08:18  python main.py
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe main.py
+generation,prey_count,predator_count
+0,274,88
+1,236,96
+2,204,110
+3,181,125
+4,185,141
+5,175,131
+6,183,111
+7,192,92
+8,197,81
+9,205,67
+10,213,62
+11,220,66
+12,231,60
+13,234,55
+14,239,46
+15,258,39
+16,262,36
+17,287,33
+18,300,33
+19,306,36
+20,329,40
+21,341,44
+22,357,42
+23,366,42
+24,363,42
+25,380,38
+26,385,47
+27,411,41
+28,423,44
+29,435,47
+30,458,45
+31,468,48
+32,477,45
+33,496,51
+34,505,55
+35,510,65
+36,522,63
+37,535,64
+38,529,63
+39,531,57
+40,540,56
+41,543,58
+42,553,59
+43,571,58
+44,576,58
+45,585,60
+46,592,58
+47,594,58
+48,595,53
+49,599,54
+50,592,55
+
+[exit 0]
+
+###2026-11-08 11:08:19  python main.py --config configs/default.json
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe main.py --config configs/default.json
+generation,prey_count,predator_count
+0,274,88
+1,236,96
+2,204,110
+3,181,125
+4,185,141
+5,175,131
+6,183,111
+7,192,92
+8,197,81
+9,205,67
+10,213,62
+11,220,66
+12,231,60
+13,234,55
+14,239,46
+15,258,39
+16,262,36
+17,287,33
+18,300,33
+19,306,36
+20,329,40
+21,341,44
+22,357,42
+23,366,42
+24,363,42
+25,380,38
+26,385,47
+27,411,41
+28,423,44
+29,435,47
+30,458,45
+31,468,48
+32,477,45
+33,496,51
+34,505,55
+35,510,65
+36,522,63
+37,535,64
+38,529,63
+39,531,57
+40,540,56
+41,543,58
+42,553,59
+43,571,58
+44,576,58
+45,585,60
+46,592,58
+47,594,58
+48,595,53
+49,599,54
+50,592,55
+
+[exit 0]
+
+###2026-11-08 11:08:19  python main.py --width 1 (must exit 2, no traceback)
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe -c import subprocess,sys; p=subprocess.run([sys.executable,'main.py','--width','1'],capture_output=True,text=True); print(p.stderr.strip()); sys.exit(0 if p.returncode==2 and 'Traceback' not in p.stderr else 1)
+main.py: error: Invalid SimulationConfig: width and height must both be >= 2
+
+[exit 0]
+
+###2026-11-08 11:08:20  evidence files match their manifests
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe validation/hs5_verify_evidence.py
+PASS evidence/hs4/benchmark.json (as stored)
+PASS evidence/hs4/defects_on_hs3_baseline.txt (as stored)
+PASS evidence/hs4/hs4_results.json (as stored)
+PASS evidence/hs4/pytest_full.txt (as stored)
+PASS evidence/hs4/serial_vs_parallel.json (as stored)
+PASS evidence/hs4/studies/H300_s4031.runs.csv (as stored)
+PASS evidence/hs4/studies/hs3design_s4041.runs.csv (as stored)
+PASS evidence/hs4/studies/L20_s4011.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4001.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4002.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4003.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4004.runs.csv (as stored)
+PASS evidence/hs4/studies/L30_s4005.runs.csv (as stored)
+PASS evidence/hs4/studies/L40_s4012.runs.csv (as stored)
+PASS evidence/hs4/studies/L50_s4013.runs.csv (as stored)
+PASS evidence/hs4/studies/r05_s4021.runs.csv (as stored)
+PASS evidence/hs4/studies/r30_s4022.runs.csv (as stored)
+PASS evidence/ru09/ru09_results.json (as stored)
+PASS evidence/ru09/studies/L100_s4015.runs.csv (as stored)
+PASS evidence/ru09/studies/L150_s4018.runs.csv (as stored)
+PASS evidence/ru09/studies/L50_s4016.runs.csv (as stored)
+PASS evidence/ru09/studies/L75_s4014.runs.csv (as stored)
+PASS evidence/ru09/studies/L75_s4017.runs.csv (as stored)
+PASS evidence/ru09/studies/trajectory_s4050.csv (as stored)
+24/24 evidence files match their manifests -> evidence/hs5/evidence_integrity.json
+
+[exit 0]
+
+###2026-11-08 11:08:20  python -m pytest -q
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider
+........................................................................ [ 66%]
+.....................................                                    [100%]
+109 passed in 15.38s
+
+[exit 0]
+
+###2026-11-08 11:08:38  determinism fingerprint == host interpreter
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe validation/_worker.py fingerprint
+f2e0d13df71e330c9938965c277a73a4dc1e8b2c64ddf360a83c452c893d2041
+
+[exit 0]
+
+###2026-11-08 11:08:39  ru09_studies.py --check-fingerprint
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe validation/ru09_studies.py --check-fingerprint
+0c61dd14fdaad6a8 matches
+
+[exit 0]
+
+###2026-11-08 11:08:40  python validation/run_validation.py
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe validation/run_validation.py
+[PASS] V01 Config validation rejects bad input; dict round-trip is lossless (0.02s)
+[PASS] V02 Same seed -> identical history in one process (NFR02) (2.78s)
+[PASS] V03 Determinism holds across separate interpreters and PYTHONHASHSEED values (5.21s)
+[PASS] V04 Different seeds give different trajectories (determinism is not a constant) (1.51s)
+[PASS] V05 Grid invariants hold every generation (state codes, counts, hunger, eaten buffer) (0.79s)
+[PASS] V06 Headless CSV pipeline (main.py): schema, ranges, byte-identical to the committed reference (0.71s)
+[PASS] V07 ThresholdAnalyzer output structure, probability bounds, progress and cancel contract (5.41s)
+[PASS] V08 ThresholdAnalyzer agrees run-for-run with the standalone experiments/sweep.py path (65.1s)
+[PASS] V09 HeatmapView renders an analyzer-produced matrix (screenshot saved) (28.85s)
+[PASS] V10 MainWindow + controller integration drives engine, charts and stats (0.49s)
+[PASS] V11 Former defect reproducers DEF-01..08 pass (regression guard since HS4) (1.53s)
+[PASS] V12 Negative control: unseeded runs diverge, so the V02/V03 equality tests can actually fail (0.99s)
+PPETS validation suite — 12/12 checks passed
+commit c8b6a88 · Python 3.14.4 · 2026-11-08 11:10:33 -0500
+
+[exit 0]
+
+###2026-11-08 11:10:34  regenerate published study hs4:L20_s4011 (540 runs)
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe validation/hs4_studies.py L20_s4011
+L20_s4011: 540 runs in 24s
+
+[exit 0]
+
+###2026-11-08 11:10:58  regenerate published study ru09:trajectory (360 runs)
+$ ~\AppData\Local\Temp\pp5_an6lsqyi\r\.venv\Scripts\python.exe validation/ru09_studies.py trajectory
+trajectory: 360 runs in 62s
+
+[exit 0]

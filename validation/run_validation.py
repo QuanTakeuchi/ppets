@@ -1,4 +1,7 @@
-"""RU-06 early-validation suite: one repeatable command, one JSON/text report.
+"""PPETS validation suite: one repeatable command, one JSON/text report.
+Written for RU-06 (HS3); checks V03, V06, V08 and V11 updated at HS5 to the
+HS4 contract (SeedSequence seeds, 3-column CSV, fixed defects). The RU-06
+results stay in evidence/validation/; this version writes to evidence/hs5/validation/.
 
     python validation/run_validation.py
 
@@ -7,8 +10,8 @@ records pass/fail plus the measured detail. Failures are reported, never
 swallowed; the process exits non-zero if any check fails so a CI job or a
 supervisor re-run cannot misread a red result as green.
 
-Output: evidence/validation/validation_report.{json,txt}, plus
-evidence/validation/heatmap_render.png and gui_main_window.png (Qt
+Output: evidence/hs5/validation/validation_report.{json,txt}, plus
+heatmap_render.png and gui_main_window.png in the same folder (Qt
 screenshots, see V09/V10).
 """
 
@@ -30,12 +33,18 @@ if sys.platform != "win32" and sys.platform != "darwin" and not (
 ):
     os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from _common import EVIDENCE, REPO, history_signature, provenance, sha256_of, write_json  # noqa: E402
+from _common import REPO, history_signature, provenance, sha256_of, write_json  # noqa: E402
 
 from ppets.analysis import HeatmapData, ParamRange, ThresholdAnalyzer  # noqa: E402
+from ppets.analysis.threshold_analyzer import replicate_seed  # noqa: E402
 from ppets.simulation import CellularAutomatonEngine, SimulationConfig  # noqa: E402
 
 RESULTS: list[dict] = []
+# Kept apart from evidence/validation/ so a re-run never overwrites the RU-06 record.
+EVIDENCE = REPO / "evidence" / "hs5" / "validation"
+EVIDENCE.mkdir(parents=True, exist_ok=True)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 def check(check_id: str, name: str):
@@ -148,20 +157,19 @@ def _():
 
 
 # --------------------------------------------------------------------------- V06
-@check("V06", "Headless CSV pipeline (main.py): schema, ranges, byte-identical to the Oct 3 evidence")
+@check("V06", "Headless CSV pipeline (main.py): schema, ranges, byte-identical to the committed reference")
 def _():
     out = subprocess.run([sys.executable, "main.py"], cwd=REPO, capture_output=True, text=True, check=True).stdout
     rows = list(csv.reader(io.StringIO(out)))
-    assert rows[0] == ["generation", "prey_count", "predator_count", "extinction_risk"], rows[0]
-    body = [r for r in rows[1:] if len(r) == 4]
+    assert rows[0] == ["generation", "prey_count", "predator_count"], rows[0]
+    body = [r for r in rows[1:] if len(r) == 3]
     gens = [int(r[0]) for r in body]
     assert gens == list(range(len(body))), "generations not contiguous from 0"
     assert all(int(r[1]) >= 0 and int(r[2]) >= 0 for r in body)
-    assert all(0.0 <= float(r[3]) <= 1.0 for r in body)
-    ref = (REPO / "evidence" / "main_smoke_test.txt").read_text(encoding="utf-8").replace("\r\n", "\n")
-    same = ref.strip() == out.replace("\r\n", "\n").strip()
-    assert same, "main.py output differs from evidence/main_smoke_test.txt captured Oct 3"
-    return f"{len(body)} rows, schema+ranges ok; output byte-identical to evidence/main_smoke_test.txt (captured Oct 3)"
+    ref = (REPO / "evidence" / "hs5" / "main_expected.txt").read_text(encoding="utf-8").replace("\r\n", "\n")
+    same = ref == out.replace("\r\n", "\n")
+    assert same, "main.py output differs from evidence/hs5/main_expected.txt"
+    return f"{len(body)} rows, schema+ranges ok; output byte-identical to evidence/hs5/main_expected.txt"
 
 
 # --------------------------------------------------------------------------- V07
@@ -197,7 +205,7 @@ def _():
 
 
 # --------------------------------------------------------------------------- V08
-@check("V08", "ThresholdAnalyzer agrees cell-for-cell with the standalone experiments/sweep.py path")
+@check("V08", "ThresholdAnalyzer agrees run-for-run with the standalone experiments/sweep.py path")
 def _():
     spec = importlib.util.spec_from_file_location("sweep_script", REPO / "experiments" / "sweep.py")
     sweep = importlib.util.module_from_spec(spec)
@@ -205,23 +213,26 @@ def _():
     pds = ParamRange("predator_density", 0.06, 0.36, 0.15).values()        # 0.06, 0.21, 0.36
     prs = ParamRange("predator_repro_rate", 0.04, 0.20, 0.08).values()     # 0.04, 0.12, 0.20
     reps = 3
+    master = 2026
     ta = ThresholdAnalyzer(
         ParamRange("predator_density", pds[0], pds[-1], 0.15),
         ParamRange("predator_repro_rate", prs[0], prs[-1], 0.08),
-        replicates=reps, base_config=SimulationConfig(**sweep.BASE), max_generations=sweep.MAX_GEN,
+        replicates=reps, base_config=SimulationConfig(**sweep.BASE, seed=master), max_generations=sweep.MAX_GEN,
     )
+    res = ta.run_sweep()
+    assert res.master_seed == master
     mismatches, compared = [], 0
-    for pd in pds:
-        for pr in prs:
-            theirs = [sweep.run_one(pd, pr, hash((pd, pr, r)) % (2**31))[0] for r in range(reps)]
-            ours = ta._run_cell(pd, pr)
+    for i, pd in enumerate(pds):
+        for j, pr in enumerate(prs):
+            # Since HS4 the analyzer seeds each run from SeedSequence(master, (i, j, rep)).
+            theirs = [sweep.run_one(pd, pr, replicate_seed(master, i, j, r))[0] for r in range(reps)]
             exp_ext = sum(o != "coexistence" for o in theirs) / reps
             compared += 1
-            if abs(ours[0] - exp_ext) > 1e-12:
-                mismatches.append((pd, pr, ours[0], exp_ext))
+            if abs(res.extinction_prob[i][j] - exp_ext) > 1e-12:
+                mismatches.append((pd, pr, res.extinction_prob[i][j], exp_ext))
     assert not mismatches, mismatches
-    return (f"{compared} cells x {reps} replicates identical. NOTE: both paths call the same engine, so this "
-            "validates the analyzer's seeding/aggregation, not the engine itself.")
+    return (f"{compared} cells x {reps} replicates identical (master seed {master}). NOTE: both paths call the same "
+            "engine, so this validates the analyzer's seeding/aggregation, not the engine itself.")
 
 
 # --------------------------------------------------------------------------- V09
@@ -254,7 +265,7 @@ def _():
     assert len(colours) > 5, "screenshot looks blank"
     return (f"[Qt platform: {app.platformName()}] image array {shown.shape} equals HeatmapData matrix; screenshot {png.name} "
             f"({img.width()}x{img.height()}, {len(colours)} sampled colours). "
-            "Axis ticks are pixel indices, not parameter values — see DEF-05.")
+            "Axes are placed in parameter units since the DEF-05 fix (HS4).")
 
 
 # --------------------------------------------------------------------------- V10
@@ -283,7 +294,7 @@ def _():
 
 
 # --------------------------------------------------------------------------- V11
-@check("V11", "Known-defect reproducers (strict xfail) still reproduce")
+@check("V11", "Former defect reproducers DEF-01..08 pass (regression guard since HS4)")
 def _():
     p = subprocess.run(
         [sys.executable, "-m", "pytest", "tests/test_known_defects.py", "-q", "-p", "no:cacheprovider"],
@@ -291,7 +302,7 @@ def _():
     )
     tail = [ln for ln in p.stdout.strip().splitlines() if ln.strip()][-1]
     assert p.returncode == 0, p.stdout[-800:]
-    assert "xfailed" in tail and "failed" not in tail.replace("xfailed", ""), tail
+    assert "passed" in tail and "failed" not in tail and "xfail" not in tail and "xpass" not in tail, tail
     return tail
 
 
@@ -312,7 +323,7 @@ def main() -> int:
     passed = sum(r["passed"] for r in RESULTS)
     report = {"provenance": provenance(), "summary": {"passed": passed, "total": len(RESULTS)}, "checks": RESULTS}
     write_json(EVIDENCE / "validation_report.json", report)
-    lines = [f"PPETS RU-06 validation — {passed}/{len(RESULTS)} checks passed",
+    lines = [f"PPETS validation suite — {passed}/{len(RESULTS)} checks passed",
              f"commit {report['provenance']['git_commit']} · Python {report['provenance']['python']} · "
              f"{report['provenance']['generated_at']}", ""]
     for r in RESULTS:

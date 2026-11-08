@@ -1,0 +1,198 @@
+{
+  "all_ok": true,
+  "checked": 24,
+  "files": [
+    {
+      "file": "evidence/hs4/benchmark.json",
+      "ok": true,
+      "how": "as stored",
+      "expected": "69ad0e9526be5a87",
+      "script": "validation/hs4_benchmark.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/defects_on_hs3_baseline.txt",
+      "ok": true,
+      "how": "as stored",
+      "expected": "d8b9673809dcdb68",
+      "script": "validation/hs4_correctness.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/hs4_results.json",
+      "ok": true,
+      "how": "as stored",
+      "expected": "6ea53400cc26c312",
+      "script": "validation/hs4_analyze.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/pytest_full.txt",
+      "ok": true,
+      "how": "as stored",
+      "expected": "127f35e014aa0d9e",
+      "script": "validation/hs4_correctness.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/serial_vs_parallel.json",
+      "ok": true,
+      "how": "as stored",
+      "expected": "440fc4fd1c72b33c",
+      "script": "validation/hs4_correctness.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/H300_s4031.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "f94db1b98e839be4",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/hs3design_s4041.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "72a69b207a3bf8a1",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/L20_s4011.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "a9541e67215b3625",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/L30_s4001.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "180cbf82645c6166",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/L30_s4002.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "495d7e1dfdff8160",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/L30_s4003.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "fc8fcedf2d733a6c",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/L30_s4004.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "46e2d5907da1d23c",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/L30_s4005.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "596d2834fb158153",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/L40_s4012.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "761c457b5018ba52",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/L50_s4013.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "931dd7484ef5abed",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/r05_s4021.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "debf1c0db73e2f15",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/hs4/studies/r30_s4022.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "d0df20420f1a1a6c",
+      "script": "validation/hs4_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/ru09/ru09_results.json",
+      "ok": true,
+      "how": "as stored",
+      "expected": "4ffe58bc120d382c",
+      "script": "validation/ru09_analyze.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/ru09/studies/L100_s4015.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "0ea789810f3688f8",
+      "script": "validation/ru09_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/ru09/studies/L150_s4018.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "ee296d10e8290904",
+      "script": "validation/ru09_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/ru09/studies/L50_s4016.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "bdb60585fd222e64",
+      "script": "validation/ru09_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/ru09/studies/L75_s4014.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "f8e32dd99ed6f4c0",
+      "script": "validation/ru09_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/ru09/studies/L75_s4017.runs.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "6c6221d8be2953f4",
+      "script": "validation/ru09_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    },
+    {
+      "file": "evidence/ru09/studies/trajectory_s4050.csv",
+      "ok": true,
+      "how": "as stored",
+      "expected": "d491dc8da2f9cfe7",
+      "script": "validation/ru09_studies.py",
+      "ppets_fingerprint": "0c61dd14fdaad6a8"
+    }
+  ]
+}

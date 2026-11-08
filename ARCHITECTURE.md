@@ -1,5 +1,10 @@
 # Architecture Notes
 
+> **Status update (HS5, 2026-11-08).** Module 3 is no longer a skeleton: since HS4
+> `ThresholdAnalyzer` runs on a process pool with `SeedSequence` seeds and per-cell
+> Wilson intervals, and `estimates.py` fits d\*. The GUI still has no Run-Sweep control (KI-03).
+> Execution paths and configuration: [RUNBOOK.md](RUNBOOK.md).
+
 ## Module map (per `PPETS_LLD.docx`)
 
 | Module | LLD section | Status | Code |

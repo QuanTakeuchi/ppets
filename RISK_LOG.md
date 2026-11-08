@@ -61,3 +61,20 @@ Evidence: `evidence/ru09/ru09_results.json`.
 - **RL-12 (estimator misspecification) — quantified, not closed.** Log-log meets the HS4 D3 rule; cloglog is the worst fit, so the HS4 B3 proposal is withdrawn. The application still uses logistic.
 - **RL-13 (finite-size dependence) — confirmed, still High.** d\* rises through L = 150 (0.384, log-log); the D1 trigger was not met; the 1/L fit failed; a prospective scaling prediction was refuted.
 - **RL-14 (uncommitted evidence) — closed.** HS4 and RU-09 work committed by file name on branch `ru09-results` and tagged `hs4-evidence`; `python validation/ru09_studies.py --check-fingerprint` confirms the tag holds the evidenced `ppets/` code. Merged to `main` and pushed 2026-10-31. The repository is public, and some pytest and profile logs under `evidence/` show the Windows user name in file paths; manifests do not.
+
+---
+
+## Reviewed at Hard Stop 5 (2026-11-08)
+
+Evidence: `evidence/hs5/REPRODUCIBILITY_NOTES.md`.
+
+- **RL-05 (no CI) — mitigated, not closed.** `.github/workflows/ci.yml` runs the preflight check, the reference run, the evidence check and the test suite on Windows and Ubuntu. It closes when the first run is green.
+- **RL-09 (single-machine evidence) — reduced.** Two interpreters (3.14.4, 3.11.9) and two dependency sets (lock file; unpinned, with numpy 2.4.6) give the same determinism fingerprint and test results. Still one machine and one OS.
+- **RL-01 (Word files in the repo root)** — unchanged; `hs5_clean_run.py` excludes them explicitly.
+
+New rows:
+
+| ID | Risk | Severity | Mitigation | Owner | Status |
+| --- | --- | --- | --- | --- | --- |
+| RL-15 | **Silent dependency drift.** In four weeks, a fresh unpinned install moved numpy, PyQt6, pytest and coverage, and a newly needed package (scipy) was never declared. Results stayed identical, but a future release could change them without any test failing. | Medium | Lock file is the documented reproduction path; `check_env.py` reports differences; CI runs both the lock file and the unpinned set. | Student | Open, monitored |
+| RL-16 | **Stale checks read as regressions.** Four RU-06 checks failed on current code because they encoded an older contract, and one (V03) looked like a determinism failure. A reviewer re-running them would have drawn the wrong conclusion. | Medium | Each later contract change updates or retires the checks that encode it; the suite now runs in CI. | Student | Mitigated |
