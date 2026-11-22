@@ -1,0 +1,6249 @@
+{
+  "generated_by": "validation/hs6_analyze.py",
+  "plan": "evidence/hs6/ANALYSIS_PLAN.md",
+  "F1": {
+    "30": {
+      "spatial_studies": [
+        "L30_s4001",
+        "L30_s4002",
+        "L30_s4003",
+        "L30_s4004",
+        "L30_s4005"
+      ],
+      "well_mixed_studies": [
+        "WM30_s4001",
+        "WM30_s4002",
+        "WMlow30_s4061"
+      ],
+      "spatial_runs": 2700,
+      "well_mixed_runs": 1380,
+      "spatial": {
+        "loglog": {
+          "status": "ok",
+          "d_star": 0.24051933707836035,
+          "ci": [
+            0.23639993853136232,
+            0.24472056726339786
+          ],
+          "boot_valid": 1000,
+          "slope": 19.937426365538332
+        },
+        "model_free": {
+          "status": "ok",
+          "d_star": 0.2361290322580645,
+          "ci": [
+            0.23053415026114907,
+            0.245526369168357
+          ],
+          "boot_valid": 1000,
+          "slope": null
+        },
+        "logit": {
+          "status": "ok",
+          "d_star": 0.25020733781989934,
+          "ci": [
+            0.24599334447425594,
+            0.2544094553803192
+          ],
+          "boot_valid": 1000,
+          "slope": 29.506206925787723
+        }
+      },
+      "well_mixed": {
+        "loglog": {
+          "status": "not_converged",
+          "d_star": null,
+          "ci": null,
+          "boot_valid": 0,
+          "slope": null
+        },
+        "model_free": {
+          "status": "no_crossing",
+          "d_star": null,
+          "ci": null,
+          "boot_valid": 0,
+          "slope": null
+        },
+        "logit": {
+          "status": "not_converged",
+          "d_star": null,
+          "ci": null,
+          "boot_valid": 0,
+          "slope": null
+        }
+      },
+      "well_mixed_levels": [
+        {
+          "density": 0.002,
+          "n": 30,
+          "extinct": 29,
+          "p": 0.9666666666666667,
+          "wilson": [
+            0.8332960900859082,
+            0.9940914096183874
+          ]
+        },
+        {
+          "density": 0.004,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.006,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.008,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.01,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.012,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.014,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.016,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.018,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.02,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.06,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.08,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.1,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.12,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.14,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.16,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.18,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.2,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.22,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.24,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.26,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.28,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.3,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.32,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.34,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.36,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.38,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        },
+        {
+          "density": 0.4,
+          "n": 60,
+          "extinct": 60,
+          "p": 1.0,
+          "wilson": [
+            0.93982814785791,
+            0.9999999999999998
+          ]
+        }
+      ],
+      "well_mixed_all_extinct": false,
+      "well_mixed_no_crossing": true,
+      "well_mixed_survivors": 1,
+      "well_mixed_min_p": 0.9666666666666667,
+      "well_mixed_extinct_at_generation_0": 5,
+      "well_mixed_all_extinct_excluding_generation_0": false,
+      "well_mixed_lowest_density": 0.002,
+      "well_mixed_max_extinction_generation": 150,
+      "well_mixed_median_extinction_generation": 5.0,
+      "well_mixed_prey_first": 1355,
+      "well_mixed_predator_first": 24,
+      "difference_loglog": {
+        "kind": "lower bound",
+        "value": 0.23851933707836034,
+        "ci_low_bound": 0.23439993853136232,
+        "text": "d*_spatial - d*_well_mixed > 0.239"
+      },
+      "difference_model_free": {
+        "kind": "lower bound",
+        "value": 0.2341290322580645,
+        "ci_low_bound": 0.22853415026114907,
+        "text": "d*_spatial - d*_well_mixed > 0.234"
+      },
+      "paired": {
+        "pairs": 1080,
+        "spatial_survived": 604,
+        "of_those_well_mixed_extinct": 604,
+        "spatial_extinct_well_mixed_survived": 0
+      }
+    },
+    "75": {
+      "spatial_studies": [
+        "L75_s4014",
+        "L75_s4017"
+      ],
+      "well_mixed_studies": [
+        "WM75_s4014",
+        "WMlow75_s4062"
+      ],
+      "spatial_runs": 1080,
+      "well_mixed_runs": 840,
+      "spatial": {
+        "loglog": {
+          "status": "ok",
+          "d_star": 0.3255677730623628,
+          "ci": [
+            0.3187419384351092,
+            0.3326129049221686
+          ],
+          "boot_valid": 1000,
+          "slope": 20.75021349566472
+        },
+        "model_free": {
+          "status": "ok",
+          "d_star": 0.33066666666666666,
+          "ci": [
+            0.32130000000000003,
+            0.34002777777777776
+          ],
+          "boot_valid": 1000,
+          "slope": null
+        },
+        "logit": {
+          "status": "ok",
+          "d_star": 0.3322283518602998,
+          "ci": [
+            0.32567007381486246,
+            0.33876061013702125
+          ],
+          "boot_valid": 1000,
+          "slope": 34.42728096162945
+        }
+      },
+      "well_mixed": {
+        "loglog": {
+          "status": "ok",
+          "d_star": -0.001612030144318583,
+          "ci": [
+            -0.010455755358918324,
+            -8.75856464329592e-06
+          ],
+          "boot_valid": 615,
+          "slope": 925.8408262192636
+        },
+        "model_free": {
+          "status": "no_crossing",
+          "d_star": null,
+          "ci": null,
+          "boot_valid": 0,
+          "slope": null
+        },
+        "logit": {
+          "status": "ok",
+          "d_star": -0.0019508975267968816,
+          "ci": [
+            -0.011389577305559517,
+            -0.00018896927040087485
+          ],
+          "boot_valid": 615,
+          "slope": 934.4116895395932
+        }
+      },
+      "well_mixed_levels": [
+        {
+          "density": 0.001,
+          "n": 30,
+          "extinct": 28,
+          "p": 0.9333333333333333,
+          "wilson": [
+            0.7867654163738308,
+            0.9815229762087295
+          ]
+        },
+        {
+          "density": 0.002,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.003,
+          "n": 30,
+          "extinct": 29,
+          "p": 0.9666666666666667,
+          "wilson": [
+            0.8332960900859082,
+            0.9940914096183874
+          ]
+        },
+        {
+          "density": 0.004,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.005,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.006,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.007,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.008,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.009,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.01,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.06,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.08,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.1,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.12,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.14,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.16,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.18,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.2,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.22,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.24,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.26,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.28,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.3,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.32,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.34,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.36,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.38,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        {
+          "density": 0.4,
+          "n": 30,
+          "extinct": 30,
+          "p": 1.0,
+          "wilson": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        }
+      ],
+      "well_mixed_all_extinct": false,
+      "well_mixed_no_crossing": true,
+      "well_mixed_survivors": 3,
+      "well_mixed_min_p": 0.9333333333333333,
+      "well_mixed_extinct_at_generation_0": 0,
+      "well_mixed_all_extinct_excluding_generation_0": false,
+      "well_mixed_lowest_density": 0.001,
+      "well_mixed_max_extinction_generation": 149,
+      "well_mixed_median_extinction_generation": 8.0,
+      "well_mixed_prey_first": 783,
+      "well_mixed_predator_first": 54,
+      "difference_loglog": {
+        "kind": "lower bound",
+        "value": 0.3245677730623628,
+        "ci_low_bound": 0.3177419384351092,
+        "text": "d*_spatial - d*_well_mixed > 0.325"
+      },
+      "difference_model_free": {
+        "kind": "lower bound",
+        "value": 0.32966666666666666,
+        "ci_low_bound": 0.32030000000000003,
+        "text": "d*_spatial - d*_well_mixed > 0.330"
+      },
+      "paired": {
+        "pairs": 540,
+        "spatial_survived": 415,
+        "of_those_well_mixed_extinct": 415,
+        "spatial_extinct_well_mixed_survived": 0
+      }
+    }
+  },
+  "F3": {
+    "groups": {
+      "L20": {
+        "runs": 540,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 303,
+          "predator_first": 224,
+          "prey_first": 79,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": 0.195,
+        "prey_first_reaches_half_at": 0.3711111111111111,
+        "max_p_predator_first": 0.8666666666666667,
+        "max_p_prey_first": 0.7333333333333333,
+        "levels": [
+          {
+            "density": 0.06,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 30,
+            "extinct": 1,
+            "predator_first": 1,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.03333333333333333,
+            "ci_extinct": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 30,
+            "extinct": 4,
+            "predator_first": 4,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.13333333333333333,
+            "ci_extinct": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_predator_first": 0.13333333333333333,
+            "ci_predator_first": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 30,
+            "extinct": 8,
+            "predator_first": 8,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.26666666666666666,
+            "ci_extinct": [
+              0.14182663319596317,
+              0.4444796169518888
+            ],
+            "p_predator_first": 0.26666666666666666,
+            "ci_predator_first": [
+              0.14182663319596317,
+              0.4444796169518888
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 30,
+            "extinct": 12,
+            "predator_first": 12,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.4,
+            "ci_extinct": [
+              0.24590628116801852,
+              0.5767963974667752
+            ],
+            "p_predator_first": 0.4,
+            "ci_predator_first": [
+              0.24590628116801852,
+              0.5767963974667752
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 30,
+            "extinct": 16,
+            "predator_first": 16,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.5333333333333333,
+            "ci_extinct": [
+              0.36142299619873297,
+              0.6976761109230025
+            ],
+            "p_predator_first": 0.5333333333333333,
+            "ci_predator_first": [
+              0.36142299619873297,
+              0.6976761109230025
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 30,
+            "extinct": 20,
+            "predator_first": 20,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.6666666666666666,
+            "ci_extinct": [
+              0.4878005164454384,
+              0.8076950191632386
+            ],
+            "p_predator_first": 0.6666666666666666,
+            "ci_predator_first": [
+              0.4878005164454384,
+              0.8076950191632386
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 30,
+            "extinct": 20,
+            "predator_first": 20,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.6666666666666666,
+            "ci_extinct": [
+              0.4878005164454384,
+              0.8076950191632386
+            ],
+            "p_predator_first": 0.6666666666666666,
+            "ci_predator_first": [
+              0.4878005164454384,
+              0.8076950191632386
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 30,
+            "extinct": 22,
+            "predator_first": 22,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7333333333333333,
+            "ci_extinct": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_predator_first": 0.7333333333333333,
+            "ci_predator_first": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 30,
+            "extinct": 27,
+            "predator_first": 22,
+            "prey_first": 5,
+            "both": 0,
+            "p_extinct": 0.9,
+            "ci_extinct": [
+              0.7437891742081593,
+              0.9654001112526658
+            ],
+            "p_predator_first": 0.7333333333333333,
+            "ci_predator_first": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_prey_first": 0.16666666666666666,
+            "ci_prey_first": [
+              0.0733654237184855,
+              0.3356435050641603
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 30,
+            "extinct": 26,
+            "predator_first": 19,
+            "prey_first": 7,
+            "both": 0,
+            "p_extinct": 0.8666666666666667,
+            "ci_extinct": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_predator_first": 0.6333333333333333,
+            "ci_predator_first": [
+              0.4551356365479487,
+              0.7812607919389929
+            ],
+            "p_prey_first": 0.23333333333333334,
+            "ci_prey_first": [
+              0.11792388144489496,
+              0.40928326158122164
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 30,
+            "extinct": 29,
+            "predator_first": 26,
+            "prey_first": 3,
+            "both": 0,
+            "p_extinct": 0.9666666666666667,
+            "ci_extinct": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_predator_first": 0.8666666666666667,
+            "ci_predator_first": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_prey_first": 0.1,
+            "ci_prey_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 30,
+            "extinct": 29,
+            "predator_first": 16,
+            "prey_first": 13,
+            "both": 0,
+            "p_extinct": 0.9666666666666667,
+            "ci_extinct": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_predator_first": 0.5333333333333333,
+            "ci_predator_first": [
+              0.36142299619873297,
+              0.6976761109230025
+            ],
+            "p_prey_first": 0.43333333333333335,
+            "ci_prey_first": [
+              0.2737748557646652,
+              0.6080269299918639
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 30,
+            "extinct": 29,
+            "predator_first": 17,
+            "prey_first": 12,
+            "both": 0,
+            "p_extinct": 0.9666666666666667,
+            "ci_extinct": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_predator_first": 0.5666666666666667,
+            "ci_predator_first": [
+              0.3919730700081361,
+              0.7262251442353347
+            ],
+            "p_prey_first": 0.4,
+            "ci_prey_first": [
+              0.24590628116801852,
+              0.5767963974667752
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 13,
+            "prey_first": 17,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.43333333333333335,
+            "ci_predator_first": [
+              0.2737748557646652,
+              0.6080269299918639
+            ],
+            "p_prey_first": 0.5666666666666667,
+            "ci_prey_first": [
+              0.3919730700081361,
+              0.7262251442353347
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 8,
+            "prey_first": 22,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.26666666666666666,
+            "ci_predator_first": [
+              0.14182663319596317,
+              0.4444796169518888
+            ],
+            "p_prey_first": 0.7333333333333333,
+            "ci_prey_first": [
+              0.555520383048111,
+              0.8581733668040368
+            ]
+          }
+        ]
+      },
+      "L30": {
+        "runs": 2700,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 1200,
+          "predator_first": 1013,
+          "prey_first": 187,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": 0.2361290322580645,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 0.8333333333333334,
+        "max_p_prey_first": 0.4533333333333333,
+        "levels": [
+          {
+            "density": 0.06,
+            "n": 150,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 150,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 150,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 150,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 150,
+            "extinct": 1,
+            "predator_first": 1,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.006666666666666667,
+            "ci_extinct": [
+              0.0011778013350174366,
+              0.03679283977481815
+            ],
+            "p_predator_first": 0.006666666666666667,
+            "ci_predator_first": [
+              0.0011778013350174366,
+              0.03679283977481815
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 150,
+            "extinct": 5,
+            "predator_first": 5,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.03333333333333333,
+            "ci_extinct": [
+              0.01432043189809255,
+              0.07565179617877894
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.01432043189809255,
+              0.07565179617877894
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 150,
+            "extinct": 16,
+            "predator_first": 16,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.10666666666666667,
+            "ci_extinct": [
+              0.06673036965207342,
+              0.16624622258414684
+            ],
+            "p_predator_first": 0.10666666666666667,
+            "ci_predator_first": [
+              0.06673036965207342,
+              0.16624622258414684
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 150,
+            "extinct": 30,
+            "predator_first": 30,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.2,
+            "ci_extinct": [
+              0.14384081582284963,
+              0.27114133079799635
+            ],
+            "p_predator_first": 0.2,
+            "ci_predator_first": [
+              0.14384081582284963,
+              0.27114133079799635
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 150,
+            "extinct": 50,
+            "predator_first": 50,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.3333333333333333,
+            "ci_extinct": [
+              0.262887648323876,
+              0.41210243313214945
+            ],
+            "p_predator_first": 0.3333333333333333,
+            "ci_predator_first": [
+              0.262887648323876,
+              0.41210243313214945
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 150,
+            "extinct": 81,
+            "predator_first": 81,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.54,
+            "ci_extinct": [
+              0.4602382146466695,
+              0.6177641658038844
+            ],
+            "p_predator_first": 0.54,
+            "ci_predator_first": [
+              0.4602382146466695,
+              0.6177641658038844
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 150,
+            "extinct": 92,
+            "predator_first": 92,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.6133333333333333,
+            "ci_extinct": [
+              0.5334979124018292,
+              0.6875088322080735
+            ],
+            "p_predator_first": 0.6133333333333333,
+            "ci_predator_first": [
+              0.5334979124018292,
+              0.6875088322080735
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              1.734723475976807e-18,
+              0.0249702443680766
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 150,
+            "extinct": 107,
+            "predator_first": 106,
+            "prey_first": 1,
+            "both": 0,
+            "p_extinct": 0.7133333333333334,
+            "ci_extinct": [
+              0.6363508226083401,
+              0.7796618731279474
+            ],
+            "p_predator_first": 0.7066666666666667,
+            "ci_predator_first": [
+              0.6293765082407161,
+              0.7736357907538123
+            ],
+            "p_prey_first": 0.006666666666666667,
+            "ci_prey_first": [
+              0.0011778013350174366,
+              0.03679283977481815
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 150,
+            "extinct": 116,
+            "predator_first": 114,
+            "prey_first": 2,
+            "both": 0,
+            "p_extinct": 0.7733333333333333,
+            "ci_extinct": [
+              0.6999980606806022,
+              0.8330182057315159
+            ],
+            "p_predator_first": 0.76,
+            "ci_predator_first": [
+              0.6857086062445535,
+              0.8213068666840467
+            ],
+            "p_prey_first": 0.013333333333333334,
+            "ci_prey_first": [
+              0.0036641291512270503,
+              0.04730690870036751
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 150,
+            "extinct": 133,
+            "predator_first": 125,
+            "prey_first": 8,
+            "both": 0,
+            "p_extinct": 0.8866666666666667,
+            "ci_extinct": [
+              0.825997250162395,
+              0.928025760859626
+            ],
+            "p_predator_first": 0.8333333333333334,
+            "ci_predator_first": [
+              0.7655341358309921,
+              0.884485701256957
+            ],
+            "p_prey_first": 0.05333333333333334,
+            "ci_prey_first": [
+              0.027269539920193826,
+              0.1017038783819546
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 150,
+            "extinct": 138,
+            "predator_first": 115,
+            "prey_first": 23,
+            "both": 0,
+            "p_extinct": 0.92,
+            "ci_extinct": [
+              0.8653786362494686,
+              0.953646358481347
+            ],
+            "p_predator_first": 0.7666666666666667,
+            "ci_predator_first": [
+              0.6928421847843321,
+              0.827173684886027
+            ],
+            "p_prey_first": 0.15333333333333332,
+            "ci_prey_first": [
+              0.10439953770520066,
+              0.2195798317233324
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 150,
+            "extinct": 141,
+            "predator_first": 108,
+            "prey_first": 33,
+            "both": 0,
+            "p_extinct": 0.94,
+            "ci_extinct": [
+              0.8899102291652979,
+              0.9681159557907947
+            ],
+            "p_predator_first": 0.72,
+            "ci_predator_first": [
+              0.643343498954437,
+              0.7856695935236092
+            ],
+            "p_prey_first": 0.22,
+            "ci_prey_first": [
+              0.16116023701753923,
+              0.29282309982858373
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 150,
+            "extinct": 144,
+            "predator_first": 92,
+            "prey_first": 52,
+            "both": 0,
+            "p_extinct": 0.96,
+            "ci_extinct": [
+              0.915486535783444,
+              0.9815408393979256
+            ],
+            "p_predator_first": 0.6133333333333333,
+            "ci_predator_first": [
+              0.5334979124018292,
+              0.6875088322080735
+            ],
+            "p_prey_first": 0.3466666666666667,
+            "ci_prey_first": [
+              0.2751950896082086,
+              0.4257957853313349
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 150,
+            "extinct": 146,
+            "predator_first": 78,
+            "prey_first": 68,
+            "both": 0,
+            "p_extinct": 0.9733333333333334,
+            "ci_extinct": [
+              0.9334461094878556,
+              0.989582059177032
+            ],
+            "p_predator_first": 0.52,
+            "ci_predator_first": [
+              0.4405523690431856,
+              0.5984488211820913
+            ],
+            "p_prey_first": 0.4533333333333333,
+            "ci_prey_first": [
+              0.375824986079277,
+              0.5331722367284102
+            ]
+          }
+        ]
+      },
+      "L40": {
+        "runs": 540,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 202,
+          "predator_first": 191,
+          "prey_first": 11,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": 0.26666666666666666,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 0.9333333333333333,
+        "max_p_prey_first": 0.2,
+        "levels": [
+          {
+            "density": 0.06,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 30,
+            "extinct": 3,
+            "predator_first": 3,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.1,
+            "ci_extinct": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_predator_first": 0.1,
+            "ci_predator_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 30,
+            "extinct": 5,
+            "predator_first": 5,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.16666666666666666,
+            "ci_extinct": [
+              0.0733654237184855,
+              0.3356435050641603
+            ],
+            "p_predator_first": 0.16666666666666666,
+            "ci_predator_first": [
+              0.0733654237184855,
+              0.3356435050641603
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 30,
+            "extinct": 12,
+            "predator_first": 12,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.4,
+            "ci_extinct": [
+              0.24590628116801852,
+              0.5767963974667752
+            ],
+            "p_predator_first": 0.4,
+            "ci_predator_first": [
+              0.24590628116801852,
+              0.5767963974667752
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 30,
+            "extinct": 21,
+            "predator_first": 21,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7,
+            "ci_extinct": [
+              0.5212421254128504,
+              0.8333525173175619
+            ],
+            "p_predator_first": 0.7,
+            "ci_predator_first": [
+              0.5212421254128504,
+              0.8333525173175619
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 30,
+            "extinct": 22,
+            "predator_first": 22,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7333333333333333,
+            "ci_extinct": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_predator_first": 0.7333333333333333,
+            "ci_predator_first": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 30,
+            "extinct": 26,
+            "predator_first": 25,
+            "prey_first": 1,
+            "both": 0,
+            "p_extinct": 0.8666666666666667,
+            "ci_extinct": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_predator_first": 0.8333333333333334,
+            "ci_predator_first": [
+              0.6643564949358398,
+              0.9266345762815145
+            ],
+            "p_prey_first": 0.03333333333333333,
+            "ci_prey_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 30,
+            "extinct": 27,
+            "predator_first": 26,
+            "prey_first": 1,
+            "both": 0,
+            "p_extinct": 0.9,
+            "ci_extinct": [
+              0.7437891742081593,
+              0.9654001112526658
+            ],
+            "p_predator_first": 0.8666666666666667,
+            "ci_predator_first": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_prey_first": 0.03333333333333333,
+            "ci_prey_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 30,
+            "extinct": 26,
+            "predator_first": 25,
+            "prey_first": 1,
+            "both": 0,
+            "p_extinct": 0.8666666666666667,
+            "ci_extinct": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_predator_first": 0.8333333333333334,
+            "ci_predator_first": [
+              0.6643564949358398,
+              0.9266345762815145
+            ],
+            "p_prey_first": 0.03333333333333333,
+            "ci_prey_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 28,
+            "prey_first": 2,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.9333333333333333,
+            "ci_predator_first": [
+              0.7867654163738308,
+              0.9815229762087295
+            ],
+            "p_prey_first": 0.06666666666666667,
+            "ci_prey_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 24,
+            "prey_first": 6,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.8,
+            "ci_predator_first": [
+              0.6269430358685175,
+              0.9049489282271013
+            ],
+            "p_prey_first": 0.2,
+            "ci_prey_first": [
+              0.0950510717728987,
+              0.3730569641314825
+            ]
+          }
+        ]
+      },
+      "L50": {
+        "runs": 1080,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 367,
+          "predator_first": 356,
+          "prey_first": 11,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": 0.2733333333333334,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 0.8666666666666667,
+        "max_p_prey_first": 0.13333333333333333,
+        "levels": [
+          {
+            "density": 0.06,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 60,
+            "extinct": 1,
+            "predator_first": 1,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.016666666666666666,
+            "ci_extinct": [
+              0.0029481597947862495,
+              0.08855129727590061
+            ],
+            "p_predator_first": 0.016666666666666666,
+            "ci_predator_first": [
+              0.0029481597947862495,
+              0.08855129727590061
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 60,
+            "extinct": 4,
+            "predator_first": 4,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.06666666666666667,
+            "ci_extinct": [
+              0.026228698724506214,
+              0.1592535731319717
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.026228698724506214,
+              0.1592535731319717
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 60,
+            "extinct": 9,
+            "predator_first": 9,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.15,
+            "ci_extinct": [
+              0.08097440580167739,
+              0.2611458906977855
+            ],
+            "p_predator_first": 0.15,
+            "ci_predator_first": [
+              0.08097440580167739,
+              0.2611458906977855
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 60,
+            "extinct": 22,
+            "predator_first": 22,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.36666666666666664,
+            "ci_extinct": [
+              0.25620916687225426,
+              0.49316999369896963
+            ],
+            "p_predator_first": 0.36666666666666664,
+            "ci_predator_first": [
+              0.25620916687225426,
+              0.49316999369896963
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 60,
+            "extinct": 34,
+            "predator_first": 34,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.5666666666666667,
+            "ci_extinct": [
+              0.44103438776125564,
+              0.6842760319531324
+            ],
+            "p_predator_first": 0.5666666666666667,
+            "ci_predator_first": [
+              0.44103438776125564,
+              0.6842760319531324
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 60,
+            "extinct": 42,
+            "predator_first": 42,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7,
+            "ci_extinct": [
+              0.5749129205308552,
+              0.8010183386123089
+            ],
+            "p_predator_first": 0.7,
+            "ci_predator_first": [
+              0.5749129205308552,
+              0.8010183386123089
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 60,
+            "extinct": 43,
+            "predator_first": 43,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7166666666666667,
+            "ci_extinct": [
+              0.5923271483560882,
+              0.8149317157156729
+            ],
+            "p_predator_first": 0.7166666666666667,
+            "ci_predator_first": [
+              0.5923271483560882,
+              0.8149317157156729
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 60,
+            "extinct": 48,
+            "predator_first": 48,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.8,
+            "ci_extinct": [
+              0.6821819419437211,
+              0.8817149467710251
+            ],
+            "p_predator_first": 0.8,
+            "ci_predator_first": [
+              0.6821819419437211,
+              0.8817149467710251
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 60,
+            "extinct": 54,
+            "predator_first": 52,
+            "prey_first": 2,
+            "both": 0,
+            "p_extinct": 0.9,
+            "ci_extinct": [
+              0.7985053527602123,
+              0.9533571655261158
+            ],
+            "p_predator_first": 0.8666666666666667,
+            "ci_predator_first": [
+              0.7583484032350039,
+              0.9308589051941303
+            ],
+            "p_prey_first": 0.03333333333333333,
+            "ci_prey_first": [
+              0.009189319256197877,
+              0.113637742743086
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 60,
+            "extinct": 53,
+            "predator_first": 52,
+            "prey_first": 1,
+            "both": 0,
+            "p_extinct": 0.8833333333333333,
+            "ci_extinct": [
+              0.7782121197582914,
+              0.9423227935994396
+            ],
+            "p_predator_first": 0.8666666666666667,
+            "ci_predator_first": [
+              0.7583484032350039,
+              0.9308589051941303
+            ],
+            "p_prey_first": 0.016666666666666666,
+            "ci_prey_first": [
+              0.0029481597947862495,
+              0.08855129727590061
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 60,
+            "extinct": 57,
+            "predator_first": 49,
+            "prey_first": 8,
+            "both": 0,
+            "p_extinct": 0.95,
+            "ci_extinct": [
+              0.8629948352365147,
+              0.9828504978356043
+            ],
+            "p_predator_first": 0.8166666666666667,
+            "ci_predator_first": [
+              0.7008024625353194,
+              0.8944220311080237
+            ],
+            "p_prey_first": 0.13333333333333333,
+            "ci_prey_first": [
+              0.06914109480586972,
+              0.24165159676499615
+            ]
+          }
+        ]
+      },
+      "L75": {
+        "runs": 1080,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 239,
+          "predator_first": 239,
+          "prey_first": 0,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": 0.33066666666666666,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 0.9,
+        "max_p_prey_first": 0.0,
+        "levels": [
+          {
+            "density": 0.06,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 60,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 60,
+            "extinct": 1,
+            "predator_first": 1,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.016666666666666666,
+            "ci_extinct": [
+              0.0029481597947862495,
+              0.08855129727590061
+            ],
+            "p_predator_first": 0.016666666666666666,
+            "ci_predator_first": [
+              0.0029481597947862495,
+              0.08855129727590061
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 60,
+            "extinct": 4,
+            "predator_first": 4,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.06666666666666667,
+            "ci_extinct": [
+              0.026228698724506214,
+              0.1592535731319717
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.026228698724506214,
+              0.1592535731319717
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 60,
+            "extinct": 13,
+            "predator_first": 13,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.21666666666666667,
+            "ci_extinct": [
+              0.13123044048190308,
+              0.33620027573194783
+            ],
+            "p_predator_first": 0.21666666666666667,
+            "ci_predator_first": [
+              0.13123044048190308,
+              0.33620027573194783
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 60,
+            "extinct": 19,
+            "predator_first": 19,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.31666666666666665,
+            "ci_extinct": [
+              0.21305867552366523,
+              0.44233767026176773
+            ],
+            "p_predator_first": 0.31666666666666665,
+            "ci_predator_first": [
+              0.21305867552366523,
+              0.44233767026176773
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 60,
+            "extinct": 22,
+            "predator_first": 22,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.36666666666666664,
+            "ci_extinct": [
+              0.25620916687225426,
+              0.49316999369896963
+            ],
+            "p_predator_first": 0.36666666666666664,
+            "ci_predator_first": [
+              0.25620916687225426,
+              0.49316999369896963
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 60,
+            "extinct": 37,
+            "predator_first": 37,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.6166666666666667,
+            "ci_extinct": [
+              0.49017595824099924,
+              0.7291172762591798
+            ],
+            "p_predator_first": 0.6166666666666667,
+            "ci_predator_first": [
+              0.49017595824099924,
+              0.7291172762591798
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 60,
+            "extinct": 39,
+            "predator_first": 39,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.65,
+            "ci_extinct": [
+              0.5236261884175486,
+              0.7583222559398244
+            ],
+            "p_predator_first": 0.65,
+            "ci_predator_first": [
+              0.5236261884175486,
+              0.7583222559398244
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 60,
+            "extinct": 50,
+            "predator_first": 50,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.8333333333333334,
+            "ci_extinct": [
+              0.7196838683638547,
+              0.9068682302080855
+            ],
+            "p_predator_first": 0.8333333333333334,
+            "ci_predator_first": [
+              0.7196838683638547,
+              0.9068682302080855
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 60,
+            "extinct": 54,
+            "predator_first": 54,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.9,
+            "ci_extinct": [
+              0.7985053527602123,
+              0.9533571655261158
+            ],
+            "p_predator_first": 0.9,
+            "ci_predator_first": [
+              0.7985053527602123,
+              0.9533571655261158
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.06017185214208986
+            ]
+          }
+        ]
+      },
+      "L100": {
+        "runs": 540,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 76,
+          "predator_first": 76,
+          "prey_first": 0,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": 0.368,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 0.7333333333333333,
+        "max_p_prey_first": 0.0,
+        "levels": [
+          {
+            "density": 0.06,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 30,
+            "extinct": 4,
+            "predator_first": 4,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.13333333333333333,
+            "ci_extinct": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_predator_first": 0.13333333333333333,
+            "ci_predator_first": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 30,
+            "extinct": 9,
+            "predator_first": 9,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.3,
+            "ci_extinct": [
+              0.16664748268243793,
+              0.47875787458714947
+            ],
+            "p_predator_first": 0.3,
+            "ci_predator_first": [
+              0.16664748268243793,
+              0.47875787458714947
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 30,
+            "extinct": 10,
+            "predator_first": 10,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.3333333333333333,
+            "ci_extinct": [
+              0.19230498083676134,
+              0.5121994835545616
+            ],
+            "p_predator_first": 0.3333333333333333,
+            "ci_predator_first": [
+              0.19230498083676134,
+              0.5121994835545616
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 30,
+            "extinct": 11,
+            "predator_first": 11,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.36666666666666664,
+            "ci_extinct": [
+              0.21873920806100708,
+              0.5448643634520511
+            ],
+            "p_predator_first": 0.36666666666666664,
+            "ci_predator_first": [
+              0.21873920806100708,
+              0.5448643634520511
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 30,
+            "extinct": 22,
+            "predator_first": 22,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7333333333333333,
+            "ci_extinct": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_predator_first": 0.7333333333333333,
+            "ci_predator_first": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 30,
+            "extinct": 20,
+            "predator_first": 20,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.6666666666666666,
+            "ci_extinct": [
+              0.4878005164454384,
+              0.8076950191632386
+            ],
+            "p_predator_first": 0.6666666666666666,
+            "ci_predator_first": [
+              0.4878005164454384,
+              0.8076950191632386
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          }
+        ]
+      },
+      "L150": {
+        "runs": 330,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 178,
+          "predator_first": 175,
+          "prey_first": 3,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": 0.375,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 0.9666666666666667,
+        "max_p_prey_first": 0.1,
+        "levels": [
+          {
+            "density": 0.3,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 30,
+            "extinct": 3,
+            "predator_first": 3,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.1,
+            "ci_extinct": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_predator_first": 0.1,
+            "ci_predator_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 30,
+            "extinct": 2,
+            "predator_first": 2,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.06666666666666667,
+            "ci_extinct": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 30,
+            "extinct": 6,
+            "predator_first": 6,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.2,
+            "ci_extinct": [
+              0.0950510717728987,
+              0.3730569641314825
+            ],
+            "p_predator_first": 0.2,
+            "ci_predator_first": [
+              0.0950510717728987,
+              0.3730569641314825
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 30,
+            "extinct": 18,
+            "predator_first": 18,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.6,
+            "ci_extinct": [
+              0.42320360253322475,
+              0.7540937188319815
+            ],
+            "p_predator_first": 0.6,
+            "ci_predator_first": [
+              0.42320360253322475,
+              0.7540937188319815
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 30,
+            "extinct": 18,
+            "predator_first": 18,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.6,
+            "ci_extinct": [
+              0.42320360253322475,
+              0.7540937188319815
+            ],
+            "p_predator_first": 0.6,
+            "ci_predator_first": [
+              0.42320360253322475,
+              0.7540937188319815
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.42,
+            "n": 30,
+            "extinct": 21,
+            "predator_first": 21,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7,
+            "ci_extinct": [
+              0.5212421254128504,
+              0.8333525173175619
+            ],
+            "p_predator_first": 0.7,
+            "ci_predator_first": [
+              0.5212421254128504,
+              0.8333525173175619
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.44,
+            "n": 30,
+            "extinct": 29,
+            "predator_first": 29,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.9666666666666667,
+            "ci_extinct": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_predator_first": 0.9666666666666667,
+            "ci_predator_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.46,
+            "n": 30,
+            "extinct": 26,
+            "predator_first": 26,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.8666666666666667,
+            "ci_extinct": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_predator_first": 0.8666666666666667,
+            "ci_predator_first": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.48,
+            "n": 30,
+            "extinct": 27,
+            "predator_first": 27,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.9,
+            "ci_extinct": [
+              0.7437891742081593,
+              0.9654001112526658
+            ],
+            "p_predator_first": 0.9,
+            "ci_predator_first": [
+              0.7437891742081593,
+              0.9654001112526658
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.5,
+            "n": 30,
+            "extinct": 28,
+            "predator_first": 25,
+            "prey_first": 3,
+            "both": 0,
+            "p_extinct": 0.9333333333333333,
+            "ci_extinct": [
+              0.7867654163738308,
+              0.9815229762087295
+            ],
+            "p_predator_first": 0.8333333333333334,
+            "ci_predator_first": [
+              0.6643564949358398,
+              0.9266345762815145
+            ],
+            "p_prey_first": 0.1,
+            "ci_prey_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ]
+          }
+        ]
+      },
+      "repro 0.05": {
+        "runs": 540,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 227,
+          "predator_first": 221,
+          "prey_first": 6,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": 0.24,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 1.0,
+        "max_p_prey_first": 0.13333333333333333,
+        "levels": [
+          {
+            "density": 0.06,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 30,
+            "extinct": 0,
+            "predator_first": 0,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.0,
+            "ci_extinct": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 30,
+            "extinct": 1,
+            "predator_first": 1,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.03333333333333333,
+            "ci_extinct": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 30,
+            "extinct": 3,
+            "predator_first": 3,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.1,
+            "ci_extinct": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_predator_first": 0.1,
+            "ci_predator_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 30,
+            "extinct": 3,
+            "predator_first": 3,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.1,
+            "ci_extinct": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_predator_first": 0.1,
+            "ci_predator_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 30,
+            "extinct": 3,
+            "predator_first": 3,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.1,
+            "ci_extinct": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_predator_first": 0.1,
+            "ci_predator_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 30,
+            "extinct": 15,
+            "predator_first": 15,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.5,
+            "ci_extinct": [
+              0.33154125640533766,
+              0.6684587435946623
+            ],
+            "p_predator_first": 0.5,
+            "ci_predator_first": [
+              0.33154125640533766,
+              0.6684587435946623
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 30,
+            "extinct": 17,
+            "predator_first": 17,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.5666666666666667,
+            "ci_extinct": [
+              0.3919730700081361,
+              0.7262251442353347
+            ],
+            "p_predator_first": 0.5666666666666667,
+            "ci_predator_first": [
+              0.3919730700081361,
+              0.7262251442353347
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 30,
+            "extinct": 22,
+            "predator_first": 22,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7333333333333333,
+            "ci_extinct": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_predator_first": 0.7333333333333333,
+            "ci_predator_first": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 30,
+            "extinct": 21,
+            "predator_first": 21,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.7,
+            "ci_extinct": [
+              0.5212421254128504,
+              0.8333525173175619
+            ],
+            "p_predator_first": 0.7,
+            "ci_predator_first": [
+              0.5212421254128504,
+              0.8333525173175619
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 30,
+            "extinct": 25,
+            "predator_first": 25,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.8333333333333334,
+            "ci_extinct": [
+              0.6643564949358398,
+              0.9266345762815145
+            ],
+            "p_predator_first": 0.8333333333333334,
+            "ci_predator_first": [
+              0.6643564949358398,
+              0.9266345762815145
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 30,
+            "extinct": 29,
+            "predator_first": 29,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 0.9666666666666667,
+            "ci_extinct": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_predator_first": 0.9666666666666667,
+            "ci_predator_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 30,
+            "prey_first": 0,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 1.0,
+            "ci_predator_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_prey_first": 0.0,
+            "ci_prey_first": [
+              0.0,
+              0.11351339317396876
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 30,
+            "extinct": 28,
+            "predator_first": 26,
+            "prey_first": 2,
+            "both": 0,
+            "p_extinct": 0.9333333333333333,
+            "ci_extinct": [
+              0.7867654163738308,
+              0.9815229762087295
+            ],
+            "p_predator_first": 0.8666666666666667,
+            "ci_predator_first": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_prey_first": 0.06666666666666667,
+            "ci_prey_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 26,
+            "prey_first": 4,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.8666666666666667,
+            "ci_predator_first": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_prey_first": 0.13333333333333333,
+            "ci_prey_first": [
+              0.053096554840547455,
+              0.296813266820363
+            ]
+          }
+        ]
+      },
+      "repro 0.30": {
+        "runs": 540,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 346,
+          "predator_first": 44,
+          "prey_first": 302,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": null,
+        "prey_first_reaches_half_at": 0.2057142857142857,
+        "max_p_predator_first": 0.16666666666666666,
+        "max_p_prey_first": 1.0,
+        "levels": [
+          {
+            "density": 0.06,
+            "n": 30,
+            "extinct": 4,
+            "predator_first": 1,
+            "prey_first": 3,
+            "both": 0,
+            "p_extinct": 0.13333333333333333,
+            "ci_extinct": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.1,
+            "ci_prey_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 30,
+            "extinct": 5,
+            "predator_first": 4,
+            "prey_first": 1,
+            "both": 0,
+            "p_extinct": 0.16666666666666666,
+            "ci_extinct": [
+              0.0733654237184855,
+              0.3356435050641603
+            ],
+            "p_predator_first": 0.13333333333333333,
+            "ci_predator_first": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_prey_first": 0.03333333333333333,
+            "ci_prey_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 30,
+            "extinct": 7,
+            "predator_first": 4,
+            "prey_first": 3,
+            "both": 0,
+            "p_extinct": 0.23333333333333334,
+            "ci_extinct": [
+              0.11792388144489496,
+              0.40928326158122164
+            ],
+            "p_predator_first": 0.13333333333333333,
+            "ci_predator_first": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_prey_first": 0.1,
+            "ci_prey_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 30,
+            "extinct": 11,
+            "predator_first": 3,
+            "prey_first": 8,
+            "both": 0,
+            "p_extinct": 0.36666666666666664,
+            "ci_extinct": [
+              0.21873920806100708,
+              0.5448643634520511
+            ],
+            "p_predator_first": 0.1,
+            "ci_predator_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_prey_first": 0.26666666666666666,
+            "ci_prey_first": [
+              0.14182663319596317,
+              0.4444796169518888
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 30,
+            "extinct": 6,
+            "predator_first": 3,
+            "prey_first": 3,
+            "both": 0,
+            "p_extinct": 0.2,
+            "ci_extinct": [
+              0.0950510717728987,
+              0.3730569641314825
+            ],
+            "p_predator_first": 0.1,
+            "ci_predator_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_prey_first": 0.1,
+            "ci_prey_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 30,
+            "extinct": 12,
+            "predator_first": 4,
+            "prey_first": 8,
+            "both": 0,
+            "p_extinct": 0.4,
+            "ci_extinct": [
+              0.24590628116801852,
+              0.5767963974667752
+            ],
+            "p_predator_first": 0.13333333333333333,
+            "ci_predator_first": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_prey_first": 0.26666666666666666,
+            "ci_prey_first": [
+              0.14182663319596317,
+              0.4444796169518888
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 30,
+            "extinct": 14,
+            "predator_first": 5,
+            "prey_first": 9,
+            "both": 0,
+            "p_extinct": 0.4666666666666667,
+            "ci_extinct": [
+              0.30232388907699753,
+              0.638577003801267
+            ],
+            "p_predator_first": 0.16666666666666666,
+            "ci_predator_first": [
+              0.0733654237184855,
+              0.3356435050641603
+            ],
+            "p_prey_first": 0.3,
+            "ci_prey_first": [
+              0.16664748268243793,
+              0.47875787458714947
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 30,
+            "extinct": 18,
+            "predator_first": 5,
+            "prey_first": 13,
+            "both": 0,
+            "p_extinct": 0.6,
+            "ci_extinct": [
+              0.42320360253322475,
+              0.7540937188319815
+            ],
+            "p_predator_first": 0.16666666666666666,
+            "ci_predator_first": [
+              0.0733654237184855,
+              0.3356435050641603
+            ],
+            "p_prey_first": 0.43333333333333335,
+            "ci_prey_first": [
+              0.2737748557646652,
+              0.6080269299918639
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 30,
+            "extinct": 24,
+            "predator_first": 3,
+            "prey_first": 21,
+            "both": 0,
+            "p_extinct": 0.8,
+            "ci_extinct": [
+              0.6269430358685175,
+              0.9049489282271013
+            ],
+            "p_predator_first": 0.1,
+            "ci_predator_first": [
+              0.03459988874733419,
+              0.25621082579184085
+            ],
+            "p_prey_first": 0.7,
+            "ci_prey_first": [
+              0.5212421254128504,
+              0.8333525173175619
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 30,
+            "extinct": 22,
+            "predator_first": 2,
+            "prey_first": 20,
+            "both": 0,
+            "p_extinct": 0.7333333333333333,
+            "ci_extinct": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.6666666666666666,
+            "ci_prey_first": [
+              0.4878005164454384,
+              0.8076950191632386
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 30,
+            "extinct": 23,
+            "predator_first": 4,
+            "prey_first": 19,
+            "both": 0,
+            "p_extinct": 0.7666666666666667,
+            "ci_extinct": [
+              0.5907167384187784,
+              0.8820761185551049
+            ],
+            "p_predator_first": 0.13333333333333333,
+            "ci_predator_first": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_prey_first": 0.6333333333333333,
+            "ci_prey_first": [
+              0.4551356365479487,
+              0.7812607919389929
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 30,
+            "extinct": 28,
+            "predator_first": 1,
+            "prey_first": 27,
+            "both": 0,
+            "p_extinct": 0.9333333333333333,
+            "ci_extinct": [
+              0.7867654163738308,
+              0.9815229762087295
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9,
+            "ci_prey_first": [
+              0.7437891742081593,
+              0.9654001112526658
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 30,
+            "extinct": 26,
+            "predator_first": 2,
+            "prey_first": 24,
+            "both": 0,
+            "p_extinct": 0.8666666666666667,
+            "ci_extinct": [
+              0.703186733179637,
+              0.9469034451594526
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.8,
+            "ci_prey_first": [
+              0.6269430358685175,
+              0.9049489282271013
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 30,
+            "extinct": 27,
+            "predator_first": 1,
+            "prey_first": 26,
+            "both": 0,
+            "p_extinct": 0.9,
+            "ci_extinct": [
+              0.7437891742081593,
+              0.9654001112526658
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.8666666666666667,
+            "ci_prey_first": [
+              0.703186733179637,
+              0.9469034451594526
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 30,
+            "extinct": 29,
+            "predator_first": 0,
+            "prey_first": 29,
+            "both": 0,
+            "p_extinct": 0.9666666666666667,
+            "ci_extinct": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 0.9666666666666667,
+            "ci_prey_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 2,
+            "prey_first": 28,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.9333333333333333,
+            "ci_prey_first": [
+              0.7867654163738308,
+              0.9815229762087295
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          }
+        ]
+      },
+      "well-mixed L30": {
+        "runs": 1380,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 1379,
+          "predator_first": 24,
+          "prey_first": 1355,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": null,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 0.16666666666666666,
+        "max_p_prey_first": 1.0,
+        "levels": [
+          {
+            "density": 0.002,
+            "n": 30,
+            "extinct": 29,
+            "predator_first": 5,
+            "prey_first": 24,
+            "both": 0,
+            "p_extinct": 0.9666666666666667,
+            "ci_extinct": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_predator_first": 0.16666666666666666,
+            "ci_predator_first": [
+              0.0733654237184855,
+              0.3356435050641603
+            ],
+            "p_prey_first": 0.8,
+            "ci_prey_first": [
+              0.6269430358685175,
+              0.9049489282271013
+            ]
+          },
+          {
+            "density": 0.004,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.006,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.008,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.01,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.012,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.014,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.016,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 1,
+            "prey_first": 29,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9666666666666667,
+            "ci_prey_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ]
+          },
+          {
+            "density": 0.018,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.02,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 1,
+            "prey_first": 29,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9666666666666667,
+            "ci_prey_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ]
+          },
+          {
+            "density": 0.06,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 10,
+            "prey_first": 50,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.16666666666666666,
+            "ci_predator_first": [
+              0.0931317697919145,
+              0.2803161316361453
+            ],
+            "p_prey_first": 0.8333333333333334,
+            "ci_prey_first": [
+              0.7196838683638547,
+              0.9068682302080855
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 4,
+            "prey_first": 56,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.026228698724506214,
+              0.1592535731319717
+            ],
+            "p_prey_first": 0.9333333333333333,
+            "ci_prey_first": [
+              0.8407464268680283,
+              0.9737713012754938
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 2,
+            "prey_first": 58,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.009189319256197877,
+              0.113637742743086
+            ],
+            "p_prey_first": 0.9666666666666667,
+            "ci_prey_first": [
+              0.886362257256914,
+              0.9908106807438021
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 1,
+            "prey_first": 59,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.016666666666666666,
+            "ci_predator_first": [
+              0.0029481597947862495,
+              0.08855129727590061
+            ],
+            "p_prey_first": 0.9833333333333333,
+            "ci_prey_first": [
+              0.9114487027240993,
+              0.9970518402052136
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 60,
+            "extinct": 60,
+            "predator_first": 0,
+            "prey_first": 60,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.93982814785791,
+              0.9999999999999998
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.06017185214208986
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.93982814785791,
+              0.9999999999999998
+            ]
+          }
+        ]
+      },
+      "well-mixed L75": {
+        "runs": 840,
+        "sums_ok": true,
+        "totals": {
+          "extinct": 837,
+          "predator_first": 54,
+          "prey_first": 783,
+          "both": 0
+        },
+        "predator_first_reaches_half_at": null,
+        "prey_first_reaches_half_at": null,
+        "max_p_predator_first": 0.5666666666666667,
+        "max_p_prey_first": 1.0,
+        "levels": [
+          {
+            "density": 0.001,
+            "n": 30,
+            "extinct": 28,
+            "predator_first": 1,
+            "prey_first": 27,
+            "both": 0,
+            "p_extinct": 0.9333333333333333,
+            "ci_extinct": [
+              0.7867654163738308,
+              0.9815229762087295
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9,
+            "ci_prey_first": [
+              0.7437891742081593,
+              0.9654001112526658
+            ]
+          },
+          {
+            "density": 0.002,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 2,
+            "prey_first": 28,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.9333333333333333,
+            "ci_prey_first": [
+              0.7867654163738308,
+              0.9815229762087295
+            ]
+          },
+          {
+            "density": 0.003,
+            "n": 30,
+            "extinct": 29,
+            "predator_first": 1,
+            "prey_first": 28,
+            "both": 0,
+            "p_extinct": 0.9666666666666667,
+            "ci_extinct": [
+              0.8332960900859082,
+              0.9940914096183874
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9333333333333333,
+            "ci_prey_first": [
+              0.7867654163738308,
+              0.9815229762087295
+            ]
+          },
+          {
+            "density": 0.004,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 2,
+            "prey_first": 28,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.9333333333333333,
+            "ci_prey_first": [
+              0.7867654163738308,
+              0.9815229762087295
+            ]
+          },
+          {
+            "density": 0.005,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 2,
+            "prey_first": 28,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.9333333333333333,
+            "ci_prey_first": [
+              0.7867654163738308,
+              0.9815229762087295
+            ]
+          },
+          {
+            "density": 0.006,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 1,
+            "prey_first": 29,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9666666666666667,
+            "ci_prey_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ]
+          },
+          {
+            "density": 0.007,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 2,
+            "prey_first": 28,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.9333333333333333,
+            "ci_prey_first": [
+              0.7867654163738308,
+              0.9815229762087295
+            ]
+          },
+          {
+            "density": 0.008,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 1,
+            "prey_first": 29,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9666666666666667,
+            "ci_prey_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ]
+          },
+          {
+            "density": 0.009,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 1,
+            "prey_first": 29,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9666666666666667,
+            "ci_prey_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ]
+          },
+          {
+            "density": 0.01,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 2,
+            "prey_first": 28,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.06666666666666667,
+            "ci_predator_first": [
+              0.018477023791270378,
+              0.2132345836261692
+            ],
+            "p_prey_first": 0.9333333333333333,
+            "ci_prey_first": [
+              0.7867654163738308,
+              0.9815229762087295
+            ]
+          },
+          {
+            "density": 0.06,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 17,
+            "prey_first": 13,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.5666666666666667,
+            "ci_predator_first": [
+              0.3919730700081361,
+              0.7262251442353347
+            ],
+            "p_prey_first": 0.43333333333333335,
+            "ci_prey_first": [
+              0.2737748557646652,
+              0.6080269299918639
+            ]
+          },
+          {
+            "density": 0.08,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 10,
+            "prey_first": 20,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.3333333333333333,
+            "ci_predator_first": [
+              0.19230498083676134,
+              0.5121994835545616
+            ],
+            "p_prey_first": 0.6666666666666666,
+            "ci_prey_first": [
+              0.4878005164454384,
+              0.8076950191632386
+            ]
+          },
+          {
+            "density": 0.1,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 7,
+            "prey_first": 23,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.23333333333333334,
+            "ci_predator_first": [
+              0.11792388144489496,
+              0.40928326158122164
+            ],
+            "p_prey_first": 0.7666666666666667,
+            "ci_prey_first": [
+              0.5907167384187784,
+              0.8820761185551049
+            ]
+          },
+          {
+            "density": 0.12,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 4,
+            "prey_first": 26,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.13333333333333333,
+            "ci_predator_first": [
+              0.053096554840547455,
+              0.296813266820363
+            ],
+            "p_prey_first": 0.8666666666666667,
+            "ci_prey_first": [
+              0.703186733179637,
+              0.9469034451594526
+            ]
+          },
+          {
+            "density": 0.14,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 1,
+            "prey_first": 29,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.03333333333333333,
+            "ci_predator_first": [
+              0.005908590381612455,
+              0.16670390991409173
+            ],
+            "p_prey_first": 0.9666666666666667,
+            "ci_prey_first": [
+              0.8332960900859082,
+              0.9940914096183874
+            ]
+          },
+          {
+            "density": 0.16,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.18,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.2,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.22,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.24,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.26,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.28,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.3,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.32,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.34,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.36,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.38,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          {
+            "density": 0.4,
+            "n": 30,
+            "extinct": 30,
+            "predator_first": 0,
+            "prey_first": 30,
+            "both": 0,
+            "p_extinct": 1.0,
+            "ci_extinct": [
+              0.8864866068260312,
+              0.9999999999999999
+            ],
+            "p_predator_first": 0.0,
+            "ci_predator_first": [
+              0.0,
+              0.11351339317396876
+            ],
+            "p_prey_first": 1.0,
+            "ci_prey_first": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          }
+        ]
+      }
+    },
+    "all_sums_ok": true
+  },
+  "F4": {
+    "repro 0.05": {
+      "runs": 540,
+      "loglog": {
+        "status": "ok",
+        "d_star": 0.24911131542319398,
+        "ci": [
+          0.24057309479057262,
+          0.2577010368854753
+        ],
+        "boot_valid": 1000,
+        "slope": 21.322607438969488
+      },
+      "model_free": {
+        "status": "ok",
+        "d_star": 0.24,
+        "ci": [
+          0.235,
+          0.2657172619047619
+        ],
+        "boot_valid": 1000,
+        "slope": null
+      },
+      "logit": {
+        "status": "ok",
+        "d_star": 0.2588221594414999,
+        "ci": [
+          0.25069996445805265,
+          0.2675436366507945
+        ],
+        "boot_valid": 1000,
+        "slope": 33.58273956207033
+      }
+    },
+    "repro 0.15 (L30 pooled)": {
+      "runs": 2700,
+      "loglog": {
+        "status": "ok",
+        "d_star": 0.24051933707836035,
+        "ci": [
+          0.23639993853136232,
+          0.24472056726339786
+        ],
+        "boot_valid": 1000,
+        "slope": 19.937426365538332
+      },
+      "model_free": {
+        "status": "ok",
+        "d_star": 0.2361290322580645,
+        "ci": [
+          0.23053415026114907,
+          0.245526369168357
+        ],
+        "boot_valid": 1000,
+        "slope": null
+      },
+      "logit": {
+        "status": "ok",
+        "d_star": 0.25020733781989934,
+        "ci": [
+          0.24599334447425594,
+          0.2544094553803192
+        ],
+        "boot_valid": 1000,
+        "slope": 29.506206925787723
+      }
+    },
+    "repro 0.30": {
+      "runs": 540,
+      "loglog": {
+        "status": "ok",
+        "d_star": 0.16292875538900928,
+        "ci": [
+          0.15017475463990537,
+          0.17526909831091853
+        ],
+        "boot_valid": 1000,
+        "slope": 13.047270272431755
+      },
+      "model_free": {
+        "status": "ok",
+        "d_star": 0.185,
+        "ci": [
+          0.15726948051948053,
+          0.20381105990783413
+        ],
+        "boot_valid": 1000,
+        "slope": null
+      },
+      "logit": {
+        "status": "ok",
+        "d_star": 0.17495114846699464,
+        "ci": [
+          0.16068258884384862,
+          0.18792724130099342
+        ],
+        "boot_valid": 1000,
+        "slope": 18.514533447156563
+      }
+    }
+  },
+  "F2b": {
+    "studies": {
+      "L30_s4001": {
+        "loglog": {
+          "d_star": 0.24360702420625782,
+          "ci": [
+            0.2349682094103244,
+            0.2521802429299688
+          ],
+          "others_pooled": 0.23976776625737514,
+          "covers": true
+        },
+        "model_free": {
+          "d_star": 0.252,
+          "ci": [
+            0.21919727272727274,
+            0.2651888888888889
+          ],
+          "others_pooled": 0.23419354838709677,
+          "covers": true
+        }
+      },
+      "L30_s4002": {
+        "loglog": {
+          "d_star": 0.24146575674854417,
+          "ci": [
+            0.2329291794871538,
+            0.2495825804895547
+          ],
+          "others_pooled": 0.24034875200685776,
+          "covers": true
+        },
+        "model_free": {
+          "d_star": 0.23777777777777778,
+          "ci": [
+            0.23,
+            0.2509141414141414
+          ],
+          "others_pooled": 0.23545454545454544,
+          "covers": true
+        }
+      },
+      "L30_s4003": {
+        "loglog": {
+          "d_star": 0.24266125435093697,
+          "ci": [
+            0.233120557316943,
+            0.25208125509041773
+          ],
+          "others_pooled": 0.24001578674612722,
+          "covers": true
+        },
+        "model_free": {
+          "d_star": 0.24,
+          "ci": [
+            0.22,
+            0.27203333333333335
+          ],
+          "others_pooled": 0.23555555555555555,
+          "covers": true
+        }
+      },
+      "L30_s4004": {
+        "loglog": {
+          "d_star": 0.2371638438623881,
+          "ci": [
+            0.22816362024421596,
+            0.24688861179064464
+          ],
+          "others_pooled": 0.24136586637447802,
+          "covers": true
+        },
+        "model_free": {
+          "d_star": 0.23,
+          "ci": [
+            0.224,
+            0.23714285714285713
+          ],
+          "others_pooled": 0.24,
+          "covers": false
+        }
+      },
+      "L30_s4005": {
+        "loglog": {
+          "d_star": 0.2381629507147064,
+          "ci": [
+            0.22945338690212028,
+            0.24749349244377103
+          ],
+          "others_pooled": 0.24112465616015236,
+          "covers": true
+        },
+        "model_free": {
+          "d_star": 0.23454545454545453,
+          "ci": [
+            0.2175,
+            0.2663678107606679
+          ],
+          "others_pooled": 0.23679999999999998,
+          "covers": true
+        }
+      }
+    },
+    "covered": {
+      "loglog": 5,
+      "model_free": 4
+    }
+  },
+  "F2": {
+    "truths": {
+      "fitted logit": {
+        "true_d_star": 0.25020733781989934,
+        "by_replicates": {
+          "30": {
+            "loglog": {
+              "valid": 200,
+              "coverage": 0.35,
+              "coverage_wilson": [
+                0.28728824127358077,
+                0.4183653566395992
+              ],
+              "bias": -0.011245300143840231,
+              "rmse": 0.012379355099847777,
+              "half_width": 0.00927195461950906
+            },
+            "logit": {
+              "valid": 200,
+              "coverage": 0.93,
+              "coverage_wilson": [
+                0.8859451911438936,
+                0.9578478281716571
+              ],
+              "bias": 0.00015142605447648894,
+              "rmse": 0.0049567106834758935,
+              "half_width": 0.00891225049446994
+            },
+            "model_free": {
+              "valid": 200,
+              "coverage": 0.93,
+              "coverage_wilson": [
+                0.8859451911438936,
+                0.9578478281716571
+              ],
+              "bias": 7.650209828219401e-05,
+              "rmse": 0.009019032254325567,
+              "half_width": 0.01628800597620562
+            }
+          },
+          "150": {
+            "loglog": {
+              "valid": 200,
+              "coverage": 0.0,
+              "coverage_wilson": [
+                1.734723475976807e-18,
+                0.018845326377266575
+              ],
+              "bias": -0.011759458550951452,
+              "rmse": 0.011950658636223159,
+              "half_width": 0.004227700063477244
+            },
+            "logit": {
+              "valid": 200,
+              "coverage": 0.945,
+              "coverage_wilson": [
+                0.9042130012276914,
+                0.9690146582965411
+              ],
+              "bias": -0.00023810902393520128,
+              "rmse": 0.002061293357346343,
+              "half_width": 0.004058361959981343
+            },
+            "model_free": {
+              "valid": 200,
+              "coverage": 0.945,
+              "coverage_wilson": [
+                0.9042130012276914,
+                0.9690146582965411
+              ],
+              "bias": -0.0001064166931692978,
+              "rmse": 0.004389215637413945,
+              "half_width": 0.008732355110623985
+            }
+          }
+        }
+      },
+      "fitted cloglog": {
+        "true_d_star": 0.2637522265952731,
+        "by_replicates": {
+          "30": {
+            "loglog": {
+              "valid": 200,
+              "coverage": 0.01,
+              "coverage_wilson": [
+                0.0027466581335444384,
+                0.0357217617161768
+              ],
+              "bias": -0.023227550352438064,
+              "rmse": 0.02387903640593573,
+              "half_width": 0.010692960481075762
+            },
+            "logit": {
+              "valid": 200,
+              "coverage": 0.47,
+              "coverage_wilson": [
+                0.40204754873265425,
+                0.5390831708499817
+              ],
+              "bias": -0.010418722466662589,
+              "rmse": 0.011626372870802886,
+              "half_width": 0.01000846956071443
+            },
+            "model_free": {
+              "valid": 200,
+              "coverage": 0.985,
+              "coverage_wilson": [
+                0.9568342712073097,
+                0.9948857622067417
+              ],
+              "bias": -0.0009338873698270245,
+              "rmse": 0.010825671647294442,
+              "half_width": 0.020349802519429458
+            }
+          },
+          "150": {
+            "loglog": {
+              "valid": 200,
+              "coverage": 0.0,
+              "coverage_wilson": [
+                1.734723475976807e-18,
+                0.018845326377266575
+              ],
+              "bias": -0.023662741764344797,
+              "rmse": 0.023784283045533473,
+              "half_width": 0.0048300145201452885
+            },
+            "logit": {
+              "valid": 200,
+              "coverage": 0.0,
+              "coverage_wilson": [
+                1.734723475976807e-18,
+                0.018845326377266575
+              ],
+              "bias": -0.010735191095684049,
+              "rmse": 0.01096703151562268,
+              "half_width": 0.004530296332860753
+            },
+            "model_free": {
+              "valid": 200,
+              "coverage": 0.95,
+              "coverage_wilson": [
+                0.9104218518612239,
+                0.972617354399236
+              ],
+              "bias": -0.0004038772471240959,
+              "rmse": 0.005235752654188837,
+              "half_width": 0.010292594070659952
+            }
+          }
+        }
+      },
+      "isotonic (no shape)": {
+        "true_d_star": 0.2361290322580645,
+        "by_replicates": {
+          "30": {
+            "loglog": {
+              "valid": 200,
+              "coverage": 0.805,
+              "coverage_wilson": [
+                0.7445595562538726,
+                0.8539447946559949
+              ],
+              "bias": 0.004385460930747792,
+              "rmse": 0.006665144982001444,
+              "half_width": 0.008851818915445162
+            },
+            "logit": {
+              "valid": 200,
+              "coverage": 0.185,
+              "coverage_wilson": [
+                0.13730192800616042,
+                0.2445706276115175
+              ],
+              "bias": 0.013985364857630717,
+              "rmse": 0.014882003745102875,
+              "half_width": 0.008934296816170879
+            },
+            "model_free": {
+              "valid": 200,
+              "coverage": 0.93,
+              "coverage_wilson": [
+                0.8859451911438936,
+                0.9578478281716571
+              ],
+              "bias": 0.0031247724110518016,
+              "rmse": 0.010298675757409259,
+              "half_width": 0.017404447320460363
+            }
+          },
+          "150": {
+            "loglog": {
+              "valid": 200,
+              "coverage": 0.455,
+              "coverage_wilson": [
+                0.387482193098835,
+                0.524213886275119
+              ],
+              "bias": 0.004409719520995142,
+              "rmse": 0.004864030075397018,
+              "half_width": 0.004006456576802579
+            },
+            "logit": {
+              "valid": 200,
+              "coverage": 0.0,
+              "coverage_wilson": [
+                1.734723475976807e-18,
+                0.018845326377266575
+              ],
+              "bias": 0.014082525427864562,
+              "rmse": 0.014234190182031066,
+              "half_width": 0.004079759350224663
+            },
+            "model_free": {
+              "valid": 200,
+              "coverage": 0.98,
+              "coverage_wilson": [
+                0.9497129130941735,
+                0.9921955735836505
+              ],
+              "bias": 0.00037019228465742793,
+              "rmse": 0.0034833107186417914,
+              "half_width": 0.00759859405950904
+            }
+          }
+        }
+      }
+    },
+    "simulations_per_cell": 200,
+    "bootstrap_per_simulation": 200,
+    "rule": "log-log robust if coverage >= 0.90 under the isotonic truth at both replicate counts",
+    "loglog_robust": false,
+    "note": "Under the isotonic truth the true d* is defined by linear interpolation, the same rule the model-free estimator uses, which favours that estimator."
+  }
+}

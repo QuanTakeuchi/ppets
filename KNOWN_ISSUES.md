@@ -137,6 +137,33 @@ No `ppets/` code changed (fingerprint `0c61dd14fdaad6a8`).
 | HS5-03 | No licence file. The repository is public, but nobody may legally reuse the code. | Medium | Student decision (choose a licence, e.g. MIT, or state "all rights reserved"). |
 | HS5-04 | Six committed files from HS3 and HS4 contain the Windows user name in file paths: `evidence/pytest_output.txt`, `evidence/validation/pytest_full.txt`, `evidence/validation/environment.json`, `evidence/hs4/pytest_full.txt`, `evidence/hs4/benchmark_profile.txt`, `evidence/hs4/defects_on_hs3_baseline.txt`. New HS5 logs are redacted. | Low | Left as committed (they are already public, and history is not rewritten). |
 | HS5-05 | A half-installed PyQt6 makes `import ppets` crash with `TypeError` in `ppets/__init__.py`, even for headless use (FP-02). Detected by `check_env.py`. | Low | Code fix waits for decision D-HS5-1 (it changes the `ppets/` fingerprint). |
-| HS5-06 | Only Windows 11 has been run. The CI workflow adds Ubuntu but has not run yet. | Medium | Push to `main` to start CI; record the first run. |
+| HS5-06 | Only Windows 11 had been run. | Medium | **Closed 2026-11-08:** first CI run green on Ubuntu (3.14 lock, 3.11 unpinned) and Windows (https://github.com/QuanTakeuchi/ppets/actions/runs/42508719825). On Ubuntu the evidence files match their manifests only after line-ending normalisation (they were hashed as CRLF on Windows), which `hs5_verify_evidence.py` handles. macOS remains untested. |
 | HS5-07 | `SimulationConfig.validate()` checks ranges but not types (e.g. `width=30.5` reaches the grid). `main.py` now type-checks its input; direct library use does not. | Low | With the next `ppets/` change. |
 | HS5-08 | `ppets/README.md` and `VALIDATION_MEMO.md` describe older states (29 tests, `extinction_risk`). `VALIDATION_MEMO.md` now carries a "historical" banner. `ppets/README.md` cannot: any file under `ppets/` is part of the frozen fingerprint, so editing it would block `ru09_studies.py`. | Low | Update with the next `ppets/` change. |
+
+---
+
+## Hard Stop 6 / RU-12 (results freeze, 2026-11-21)
+
+Evidence: `evidence/hs6/` (plan, results and manifests). `ppets/` changed
+for the first time since HS4; F0 shows the spatial model's output is unchanged.
+
+### Closed
+
+| ID | Resolution | Proof |
+| --- | --- | --- |
+| RU9-01 | Production estimator was logistic only and biased. `estimate_threshold` returns model-free, log-log and logistic d*. | `tests/test_hs6_final.py` (published values reproduced exactly) |
+| HS5-05 | Half-installed PyQt6 no longer breaks `import ppets`. | `test_half_installed_pyqt6_does_not_break_import` (fails on the old code) |
+| HS5-07 | `SimulationConfig.validate()` checks types. | `test_config_rejects_wrong_types` |
+| FR12 gap | Well-mixed mode built. | `test_well_mixed_*`; `evidence/hs6/hs6_results.json` F1 |
+
+### New
+
+| ID | Issue | Severity | Status |
+| --- | --- | --- | --- |
+| HS6-01 | `DEFAULT_METHOD` is log-log, but the F2 stress test (pre-set rule) found log-log intervals unreliable when the true curve is not log-log; the report leads with model-free. A caller who reads only the default gets log-log. | Medium | Decision D-HS6-1 (student/supervisor). `estimate_threshold` returns both. |
+| HS6-02 | CI has not run on the HS6 code (not pushed). | Medium | Closes on the first green run after push. |
+| HS6-03 | Well-mixed mode is one mean-field variant (8 random partners per generation, partner sets not symmetric). No intermediate interaction range. | Low | Documented (report Section 8.2, LIM-6). |
+| HS6-04 | No GUI control for `mixing`; well-mixed runs come from scripts or the API only. | Low | Part of LIM-7 / KI-03. |
+| HS5-08 (still open) | `ppets/README.md` still describes the pre-HS4 state. Editing it changes the `ppets/` fingerprint that every HS6 manifest records (`6bb0a813947cbfa0`), so it waits until the HS6 tag exists. | Low | Update in the first commit after `hs6-results-freeze`. |
+| HS6-05 | `validation/ru09_studies.py` refuses to run on the HS6 code (fingerprint guard). Regenerating RU-09 studies needs the `hs4-evidence` tag; F0 shows the HS6 code gives identical spatial output. | Low | By design. |

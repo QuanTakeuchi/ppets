@@ -21,7 +21,7 @@ reports belongs to one grid size, boundary mode and parameter setting (see
 | Need | Version / detail |
 | --- | --- |
 | Python | 3.11 or newer. Tested: 3.14.4 (lock file) and 3.11.9 (`requirements.txt`), Windows 11. |
-| OS | Windows 11 tested. Linux and macOS are expected to work but are untested here; the CI workflow adds Ubuntu once it has run. |
+| OS | Windows 11 and Ubuntu (CI, Python 3.11 and 3.14) tested. macOS expected to work, untested. |
 | Hardware | Any 64-bit machine with 2 GB free RAM. The test suite runs in under 1 minute. The full studies used 16 logical CPUs (see RUNBOOK). |
 | Disk | About 400 MB for the virtual environment (mostly PyQt6). |
 | Network | Only for `pip install`. PPETS calls no external service and needs no account, API key or `.env` file. |

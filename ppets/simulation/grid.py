@@ -4,7 +4,10 @@ Grid — LLD §3 (Grid Internal Structure)
 Backing store is a 2D NumPy array of int8 state codes (0=empty,
 1=prey, 2=predator), as specified. Boundary handling supports both
 toroidal (wrap-around, modulo arithmetic) and fixed (clamped) modes
-per SimulationConfig.toroidal. Updates go through double-buffering:
+per SimulationConfig.toroidal. With SimulationConfig.mixing == "well_mixed"
+(FR12 baseline) the 8 Moore neighbours are replaced by 8 distinct partner
+cells drawn uniformly from the rest of the grid, once per cell per
+generation, so the rules are unchanged and only partner choice differs. Updates go through double-buffering:
 callers compute into a fresh "write" array, then call swap_from().
 """
 
@@ -37,6 +40,10 @@ class Grid:
         # Reset each generation; marks prey cells already claimed by a
         # predator this step (see cell.py docstring for why this exists).
         self.eaten = np.zeros((self.height, self.width), dtype=bool)
+        # Well-mixed mode only: partners drawn this generation, keyed by (x, y),
+        # so one cell's death check and reproduction use the same partner set,
+        # as they share one neighbourhood in the spatial model.
+        self._partners: dict = {}
 
     def randomize(self) -> None:
         """Seed initial population per config densities (LLD §2)."""
@@ -51,7 +58,32 @@ class Grid:
         self.state[(draw >= prey_cut) & (draw < pred_cut)] = CellState.PREDATOR
         self.hunger[:] = 0
 
+    def _well_mixed_partners(self, x: int, y: int) -> List[Tuple[int, int]]:
+        key = (x, y)
+        found = self._partners.get(key)
+        if found is not None:
+            return found
+        n_cells = self.width * self.height
+        k = min(len(_MOORE_OFFSETS), n_cells - 1)
+        own = y * self.width + x
+        rng = self.config.rng
+        chosen: list = []
+        seen = {own}
+        while len(chosen) < k:
+            # Draw from the other n_cells - 1 cells, skipping the cell itself.
+            idx = int(rng.integers(n_cells - 1))
+            if idx >= own:
+                idx += 1
+            if idx not in seen:
+                seen.add(idx)
+                chosen.append(idx)
+        found = [(i % self.width, i // self.width) for i in chosen]
+        self._partners[key] = found
+        return found
+
     def _neighbor_coords(self, x: int, y: int) -> List[Tuple[int, int]]:
+        if self.config.mixing == "well_mixed":
+            return self._well_mixed_partners(x, y)
         coords = []
         for dx, dy in _MOORE_OFFSETS:
             nx, ny = x + dx, y + dy
@@ -88,6 +120,7 @@ class Grid:
     def swap_from(self, write: np.ndarray) -> None:
         self.state = write
         self.eaten[:] = False
+        self._partners.clear()
 
     def counts(self) -> Tuple[int, int]:
         prey = int(np.count_nonzero(self.state == CellState.PREY))

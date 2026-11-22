@@ -1,0 +1,30 @@
+{
+  "question": "F0",
+  "rule": "byte-identical to the published CSV",
+  "studies": [
+    {
+      "study": "L20_s4011",
+      "runs": 540,
+      "manifest_sha256": "a9541e67215b3625",
+      "committed_file_sha256": "a9541e67215b3625",
+      "regenerated_sha256": "a9541e67215b3625",
+      "identical": true,
+      "wall_seconds": 20.7
+    },
+    {
+      "study": "L30_s4001",
+      "runs": 540,
+      "manifest_sha256": "180cbf82645c6166",
+      "committed_file_sha256": "180cbf82645c6166",
+      "regenerated_sha256": "180cbf82645c6166",
+      "identical": true,
+      "wall_seconds": 60.0
+    }
+  ],
+  "passed": true,
+  "code": {
+    "git_commit": "a0bdac4",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "93ee0dd3e614fe55"
+  }
+}

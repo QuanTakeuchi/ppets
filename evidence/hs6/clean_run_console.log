@@ -1,0 +1,14 @@
+PASS git clone (local repository, committed state) (0.8 s) 
+PASS overlay uncommitted working-tree files (45 files)
+PASS python -m venv .venv (8.0 s) 
+PASS pip install -r requirements-lock.txt (43.9 s) 
+PASS python check_env.py (1.9 s) READY: 0 failed, 1 warnings
+PASS python main.py (0.9 s) 52 lines, identical to evidence/hs5/main_expected.txt
+PASS python main.py --config configs/default.json (0.6 s) 52 lines, identical to evidence/hs5/main_expected.txt
+PASS python main.py --width 1 (must exit 2, no traceback) (0.3 s) main.py: error: Invalid SimulationConfig: width and height must both be >= 2
+PASS evidence files match their manifests (0.5 s) 31/31 evidence files match their manifests -> evidence/hs5/evidence_integrity.json
+PASS python -m pytest -q (16.9 s) 135 passed in 16.08s
+PASS determinism fingerprint == host interpreter (1.1 s) f2e0d13df71e330c vs host f2e0d13df71e330c
+INFO ru09_studies.py --check-fingerprint (0.3 s) 6bb0a813947cbfa0 differs from 0c61dd14fdaad6a8
+PASS regenerate published study hs4:L20_s4011 (540 runs) (21.5 s) sha256 a9541e67215b3625 reproduced
+ALL REQUIRED STEPS PASSED -> evidence/hs5/clean_run_hs6_py314.json

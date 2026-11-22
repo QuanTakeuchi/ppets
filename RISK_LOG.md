@@ -68,8 +68,8 @@ Evidence: `evidence/ru09/ru09_results.json`.
 
 Evidence: `evidence/hs5/REPRODUCIBILITY_NOTES.md`.
 
-- **RL-05 (no CI) — mitigated, not closed.** `.github/workflows/ci.yml` runs the preflight check, the reference run, the evidence check and the test suite on Windows and Ubuntu. It closes when the first run is green.
-- **RL-09 (single-machine evidence) — reduced.** Two interpreters (3.14.4, 3.11.9) and two dependency sets (lock file; unpinned, with numpy 2.4.6) give the same determinism fingerprint and test results. Still one machine and one OS.
+- **RL-05 (no CI) — closed 2026-11-08.** `.github/workflows/ci.yml` runs the preflight check, the reference run, the evidence check and the test suite on Windows and Ubuntu. First run on `a0bdac4` (tag `hs5-hardening`): all three jobs green, 109 passed and 24/24 evidence files in each (https://github.com/QuanTakeuchi/ppets/actions/runs/42508719825).
+- **RL-09 (single-machine evidence) — reduced.** Two interpreters (3.14.4, 3.11.9) and two dependency sets (lock file; unpinned, with numpy 2.4.6) give the same determinism fingerprint and test results. First CI run (2026-11-08) adds Ubuntu with Python 3.14 (lock) and 3.11 (unpinned): same 109 tests, same reference output, and evidence intact. Timings are still from one machine.
 - **RL-01 (Word files in the repo root)** — unchanged; `hs5_clean_run.py` excludes them explicitly.
 
 New rows:
@@ -78,3 +78,12 @@ New rows:
 | --- | --- | --- | --- | --- | --- |
 | RL-15 | **Silent dependency drift.** In four weeks, a fresh unpinned install moved numpy, PyQt6, pytest and coverage, and a newly needed package (scipy) was never declared. Results stayed identical, but a future release could change them without any test failing. | Medium | Lock file is the documented reproduction path; `check_env.py` reports differences; CI runs both the lock file and the unpinned set. | Student | Open, monitored |
 | RL-16 | **Stale checks read as regressions.** Four RU-06 checks failed on current code because they encoded an older contract, and one (V03) looked like a determinism failure. A reviewer re-running them would have drawn the wrong conclusion. | Medium | Each later contract change updates or retires the checks that encode it; the suite now runs in CI. | Student | Mitigated |
+
+## Hard Stop 6 (2026-11-21)
+
+Evidence: `evidence/hs6/`.
+
+- **RL-09 (single-machine evidence) — reduced further.** The HS6 code passed a clean-environment run (`evidence/hs6/clean_run_hs6_py314.json`); still one machine, and CI has not run on it yet (HS6-02).
+- **RL-15 (new): estimator default disagrees with the reported headline.** Likelihood medium, impact medium: a user of the package could quote the log-log d*, which the F2 test found unreliable under a wrong curve. Mitigation: `estimate_threshold` returns model-free beside it; README and report say so. Trigger: decision D-HS6-1.
+- **RL-16 (new): change to frozen code after evidence was produced.** Likelihood low, impact high. Mitigation: F0 byte-identical regeneration of two published studies; regression tests on the published estimates; the RU-09 fingerprint guard still protects the old scripts.
+- **RL-01 (Word files in the repository root)** — unchanged.

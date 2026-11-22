@@ -12,6 +12,7 @@ Regenerate with the script named in the file's manifest, or in the table.
 | `hs4/` | HS4 / RU-08, Oct 24 (tag `hs4-evidence`) | `validation/hs4_*.py` | Current for HS4 claims. Every result file has a `.manifest.json` |
 | `ru09/` | RU-09, Oct 31 | `validation/ru09_*.py` | Current results (d\* by grid size). Manifests as above |
 | `hs5/` | HS5, Nov 8 | `validation/hs5_clean_run.py`, `hs5_verify_evidence.py`, `run_validation.py` (updated) | Reproducibility pass: `REPRODUCIBILITY_NOTES.md` |
+| `hs6/` | HS6 / RU-12, Nov 21 | `validation/hs6_*.py`; pytest, `run_validation.py --out`, `hs5_verify_evidence.py --out`, `hs5_clean_run.py` | Final tests and well-mixed studies. Plan and deviations: `hs6/ANALYSIS_PLAN.md`. Produced on the HS6 code (new `ppets/` fingerprint) |
 
 Check that nothing was altered: `python validation/hs5_verify_evidence.py`
 compares every file that has a manifest against the SHA-256 recorded when it
