@@ -4,6 +4,26 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 Versions correspond to this project's Hard Stop tags (`hsN-baseline`), not
 semantic-version releases.
 
+## [Unreleased — HS6 results freeze] — 2026-11-21
+
+`ppets/` changed (one bundle, decision D-HS5-1): fingerprint
+`0c61dd14fdaad6a8` -> `6bb0a813947cbfa0` (as computed by
+`ru09_studies.py --check-fingerprint`, which now refuses to run by design).
+Spatial output unchanged: two published studies regenerate byte for byte
+(`evidence/hs6/f0_regeneration.json`). Proposed tag: `hs6-results-freeze`.
+
+### Added
+- `SimulationConfig.mixing` (`"spatial"` default, `"well_mixed"`): FR12 well-mixed baseline; partners drawn in `Grid._well_mixed_partners`.
+- `ppets.analysis.estimate_threshold` (model-free, log-log, logistic, cloglog; shared bootstrap), `pathway_table`, `fit_link`, `model_free_d_star`, `pava`, `group_counts`; `DEFAULT_METHOD = "loglog"`. Moved from `validation/ru09_analyze.py`; reproduces the RU-09 values exactly.
+- `tests/test_hs6_final.py` (26 tests). Suite: 135 passed.
+- `validation/hs6_studies.py`, `hs6_analyze.py`, `hs6_figures.py`, `hs6_demo.py`, `hs6_redact.py`; `evidence/hs6/` (plan, five well-mixed studies, results, F0, test, validation, integrity and clean-run records).
+
+### Changed
+- `SimulationConfig.validate()` checks types (HS5-07).
+- `ppets/__init__.py` skips the Qt DLL fix for a half-installed PyQt6 (HS5-05 / FP-02).
+- `validation/run_validation.py` and `hs5_verify_evidence.py` take `--out`, so a re-run does not overwrite the HS5 record.
+- `ppets/README.md` deliberately not edited: it is inside the fingerprint (HS5-08 stays open until after the tag).
+
 ## [Unreleased — HS5 artifact hardening] — 2026-11-08
 
 No production code under `ppets/` changed (fingerprint `0c61dd14fdaad6a8`).

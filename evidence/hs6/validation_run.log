@@ -1,0 +1,14 @@
+[PASS] V01 Config validation rejects bad input; dict round-trip is lossless (0.02s)
+[PASS] V02 Same seed -> identical history in one process (NFR02) (2.07s)
+[PASS] V03 Determinism holds across separate interpreters and PYTHONHASHSEED values (3.96s)
+[PASS] V04 Different seeds give different trajectories (determinism is not a constant) (1.17s)
+[PASS] V05 Grid invariants hold every generation (state codes, counts, hunger, eaten buffer) (0.77s)
+[PASS] V06 Headless CSV pipeline (main.py): schema, ranges, byte-identical to the committed reference (0.63s)
+[PASS] V07 ThresholdAnalyzer output structure, probability bounds, progress and cancel contract (4.04s)
+[PASS] V08 ThresholdAnalyzer agrees run-for-run with the standalone experiments/sweep.py path (53.2s)
+[PASS] V09 HeatmapView renders an analyzer-produced matrix (screenshot saved) (23.0s)
+[PASS] V10 MainWindow + controller integration drives engine, charts and stats (0.22s)
+[PASS] V11 Former defect reproducers DEF-01..08 pass (regression guard since HS4) (1.86s)
+[PASS] V12 Negative control: unseeded runs diverge, so the V02/V03 equality tests can actually fail (0.74s)
+PPETS validation suite — 12/12 checks passed
+commit a0bdac4 · Python 3.14.4 · 2026-11-21 22:02:57 -0500

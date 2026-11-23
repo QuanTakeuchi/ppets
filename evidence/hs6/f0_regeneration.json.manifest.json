@@ -1,0 +1,27 @@
+{
+  "output": "f0_regeneration.json",
+  "output_sha256": "b6136281c5fb1348",
+  "script": "validation/hs6_studies.py",
+  "command": "python validation/hs6_studies.py ",
+  "generated_at": "2026-11-21 21:50:36 -0500",
+  "wall_seconds": 80.7,
+  "code": {
+    "git_commit": "a0bdac4",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "93ee0dd3e614fe55"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "regenerated": [
+      "L20_s4011",
+      "L30_s4001"
+    ],
+    "workers": 15
+  }
+}

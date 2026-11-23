@@ -21,6 +21,11 @@ if sys.platform == "win32":
     except ImportError:
         pass
     else:
-        _qt_bin_dir = os.path.join(os.path.dirname(PyQt6.__file__), "Qt6", "bin")
-        if os.path.isdir(_qt_bin_dir):
-            os.add_dll_directory(_qt_bin_dir)
+        # A half-installed PyQt6 (e.g. a failed install on a deep Windows path)
+        # imports as a namespace package with __file__ = None. Skip the DLL fix
+        # then, so headless use still works (HS5-05 / FP-02).
+        _pyqt_file = getattr(PyQt6, "__file__", None)
+        if _pyqt_file:
+            _qt_bin_dir = os.path.join(os.path.dirname(_pyqt_file), "Qt6", "bin")
+            if os.path.isdir(_qt_bin_dir):
+                os.add_dll_directory(_qt_bin_dir)

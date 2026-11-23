@@ -148,6 +148,25 @@ about 1.5 h).
 Not done by the AI: the walkthrough recording; choosing a licence (HS5-03);
 decision D-HS5-1; the commit, tag and push that start CI; signing below.
 
+## Hard Stop 6 / RU-12 (2026-11-21)
+
+| Period | AI contribution | Verification | Appears in |
+| --- | --- | --- | --- |
+| Nov 21, 2026 | Claude Code (Claude Opus 5.5), working from the student's Week 12 handoff worksheet: implemented the well-mixed mode, the production estimators and the pathway table in `ppets/` (with the HS5-05/07 fixes, as D-HS5-1 proposed); wrote `tests/test_hs6_final.py`; wrote `evidence/hs6/ANALYSIS_PLAN.md` after a 120-run pilot and before the formal runs; ran the studies, analysis, figures, final test suite, validation, integrity check and a clean-environment pass; revised the report (HS6 package), built the deck, demo and walkthrough scripts; updated these logs. | Estimators reproduce the published RU-09 values to 1e-12; F0: two published studies regenerate byte for byte; 135 tests, 12/12 checks, 31/31 evidence files, clean run passes; the F2 rule, set in advance, was applied even though it went against the chosen estimator. | `ppets/`, `tests/`, `validation/hs6_*`, `evidence/hs6/`, HS6 package |
+
+Corrected AI errors this checkpoint: a first PyQt6-guard test used an empty
+folder that did not shadow the installed package, so it tested nothing
+(replaced by a stub module; the test now fails on the old code); the first
+analysis code tested "all well-mixed runs extinct" instead of the plan's
+"never below 0.5" and crashed on four survivors (fixed to the plan's wording
+before reading results; logged as deviation 1); re-running the validation and
+integrity scripts as written would have overwritten the HS5 record (added
+`--out`); a draft abstract claimed log-log "stays close to nominal coverage"
+before the stress test had been read, and was wrong (rewritten from the result).
+
+Not done by the AI: the commit, tag and push; decisions D-HS6-1 and SC9; the
+walkthrough recording; signing below.
+
 ## Student declaration
 
 Signature: ______________________________          Date: ______________

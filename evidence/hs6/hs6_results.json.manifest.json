@@ -1,0 +1,26 @@
+{
+  "output": "hs6_results.json",
+  "output_sha256": "93c7e4b7a8e77ddd",
+  "script": "validation/hs6_analyze.py",
+  "command": "python validation/hs6_analyze.py ",
+  "generated_at": "2026-11-21 21:59:55 -0500",
+  "wall_seconds": 43.1,
+  "code": {
+    "git_commit": "a0bdac4",
+    "uncommitted_changes_in_ppets": true,
+    "ppets_tree_sha256": "93ee0dd3e614fe55"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16
+  },
+  "params": {
+    "bootstrap": 1000,
+    "f2_simulations": 200,
+    "f2_bootstrap": 200,
+    "seeds": "1000+L, 2000+L, 3000+L, 4000+L, 5000+study, 6000+truth"
+  }
+}

@@ -42,6 +42,9 @@ from ppets.simulation import CellularAutomatonEngine, SimulationConfig  # noqa: 
 RESULTS: list[dict] = []
 # Kept apart from evidence/validation/ so a re-run never overwrites the RU-06 record.
 EVIDENCE = REPO / "evidence" / "hs5" / "validation"
+# HS6: `--out evidence/hs6/validation` keeps a later run from overwriting the HS5 record.
+if "--out" in sys.argv:
+    EVIDENCE = REPO / sys.argv[sys.argv.index("--out") + 1]
 EVIDENCE.mkdir(parents=True, exist_ok=True)
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")

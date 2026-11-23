@@ -1,0 +1,24 @@
+Name                                   Stmts   Miss  Cover
+----------------------------------------------------------
+main.py                                  109      6    94%
+ppets\__init__.py                         12      2    83%
+ppets\analysis\__init__.py                 3      0   100%
+ppets\analysis\estimates.py              244     18    93%
+ppets\analysis\threshold_analyzer.py     164      3    98%
+ppets\controller.py                       68     10    85%
+ppets\simulation\__init__.py               6      0   100%
+ppets\simulation\cell.py                  50      1    98%
+ppets\simulation\config.py                66      0   100%
+ppets\simulation\engine.py                35      0   100%
+ppets\simulation\grid.py                  78      0   100%
+ppets\simulation\stats.py                 14      0   100%
+ppets\ui\__init__.py                       2      0   100%
+ppets\ui\chart_view.py                    37     10    73%
+ppets\ui\config_panel.py                  99     15    85%
+ppets\ui\grid_view.py                     41     19    54%
+ppets\ui\heatmap_view.py                  34      0   100%
+ppets\ui\main_window.py                  105     34    68%
+ppets\ui\playback_controls.py             54      2    96%
+ppets\ui\stats_panel.py                   22      6    73%
+----------------------------------------------------------
+TOTAL                                   1243    126    90%

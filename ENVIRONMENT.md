@@ -10,7 +10,7 @@
 | Dependencies | `requirements.txt` (unpinned: numpy, PyQt6, pyqtgraph, scipy, pytest, coverage); `requirements-lock.txt` (exact); `requirements-optional.txt` (matplotlib, figures only) |
 | Preflight | `python check_env.py` |
 | Clean-room check | `python validation/hs5_clean_run.py` -> `evidence/hs5/clean_run_*.json` |
-| CI | `.github/workflows/ci.yml`: Windows + Ubuntu, 3.14 lock and 3.11 unpinned (not yet run) |
+| CI | `.github/workflows/ci.yml`: Windows + Ubuntu, 3.14 lock and 3.11 unpinned; first run green 2026-11-08 (https://github.com/QuanTakeuchi/ppets/actions/runs/42508719825) |
 | Network / services | `pip install` only; no API, credentials or `.env` |
 
 What changed since RU-06: scipy is required (tests and analysis), the
@@ -19,7 +19,7 @@ determinism now holds across Python 3.11 and 3.14 as well as across
 `PYTHONHASHSEED` values. Friction found in the HS5 clean pass, including
 the Windows path-length limit: `evidence/hs5/REPRODUCIBILITY_NOTES.md`.
 
-Still unverified: Linux and macOS (until CI runs), a second physical
+Still unverified: macOS, a second physical
 machine, containers (Docker not installed), and a manual GUI click-through
 outside the recorded walkthrough.
 

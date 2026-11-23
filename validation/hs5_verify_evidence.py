@@ -19,6 +19,9 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 OUT = REPO / "evidence" / "hs5" / "evidence_integrity.json"
+# HS6: `--out evidence/hs6/evidence_integrity.json` keeps the HS5 record unchanged.
+if "--out" in sys.argv:
+    OUT = REPO / sys.argv[sys.argv.index("--out") + 1]
 
 
 def digest(data: bytes) -> str:
